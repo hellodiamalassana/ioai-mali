@@ -186,7 +186,7 @@ const Timeline = () => {
               <div className="space-y-6">
                 <CategoryInfo
                   title="Catégorie Internationale"
-                  description="Réservée aux moins de 20 ans, cette catégorie mène à l'IOAI."
+                  description="Réservée aux lycéens et élèves des écoles fondamentales, cette catégorie mène à l'IOAI."
                   details={[
                     "Lycéens",
                     "Élèves des écoles fondamentales",

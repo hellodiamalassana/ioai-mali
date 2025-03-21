@@ -322,9 +322,12 @@ const ApplicationForm = () => {
                           <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
                           <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
                           <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
-                          <SelectItem value="fondamentale7">Fondamentale - 7ème année</SelectItem>
-                          <SelectItem value="fondamentale8">Fondamentale - 8ème année</SelectItem>
-                          <SelectItem value="fondamentale9">Fondamentale - 9ème année</SelectItem>
+                          <SelectItem value="fondamentale7">École Fondamentale - 7ème année</SelectItem>
+                          <SelectItem value="fondamentale8">École Fondamentale - 8ème année</SelectItem>
+                          <SelectItem value="fondamentale9">École Fondamentale - 9ème année</SelectItem>
+                          <SelectItem value="fondamentale6">École Fondamentale - 6ème année</SelectItem>
+                          <SelectItem value="fondamentale5">École Fondamentale - 5ème année</SelectItem>
+                          <SelectItem value="fondamentale4">École Fondamentale - 4ème année</SelectItem>
                           <SelectItem value="autre">Autre</SelectItem>
                         </SelectContent>
                       </Select>

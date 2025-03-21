@@ -92,7 +92,7 @@ const Application = () => {
                 
                 <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
                   <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
-                  <p className="text-sm">Moins de 20 ans</p>
+                  <p className="text-sm">Lycéens et élèves des écoles fondamentales (moins de 20 ans)</p>
                 </div>
               </div>
             </ScrollReveal>
