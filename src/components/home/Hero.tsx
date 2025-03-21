@@ -49,7 +49,7 @@ const Hero = () => {
                   <ArrowRight size={18} />
                 </Link>
                 <Link to="/application" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
-                  S'inscrire
+                  Commencer le test
                 </Link>
               </div>
             </ScrollReveal>
