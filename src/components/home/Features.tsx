@@ -31,30 +31,30 @@ const Features = () => {
     <section className="w-full py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title">Pourquoi rejoindre RobotsMali IOAI ?</h2>
+          <h2 className="section-title">Pourquoi cette aventure va transformer votre avenir</h2>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12">
           <Feature 
             icon={<Users size={24} />}
-            title="Sélection et Formation"
-            description="Nous identifions et accompagnons les jeunes talents maliens à travers un processus de sélection rigoureux et une formation de qualité."
+            title="Une formation d'élite mondiale"
+            description="Bénéficiez d'un accompagnement exceptionnel conçu par des experts internationaux. Développez des compétences qui vous distingueront sur le marché mondial de l'IA."
             delay={100}
             className="card-hover"
           />
           
           <Feature 
             icon={<Award size={24} />}
-            title="Compétition Internationale"
-            description="Nos finalistes représenteront le Mali à Beijing, Chine du 2 au 9 août 2025, lors de la compétition internationale la plus prestigieuse en IA."
+            title="Brillez à l'échelle internationale"
+            description="Devenez l'un des ambassadeurs du Mali à Beijing en août 2025 et mesurez-vous aux meilleurs talents mondiaux dans la compétition la plus prestigieuse en IA."
             delay={200}
             className="card-hover"
           />
           
           <Feature 
             icon={<BookOpen size={24} />}
-            title="Ressources & Mentorat"
-            description="Accédez à des cours gratuits, tutoriels et sessions de mentorat pour vous préparer aux défis en intelligence artificielle."
+            title="Ressources exclusives & mentors d'exception"
+            description="Accédez gratuitement à un contenu pédagogique de pointe et bénéficiez des conseils personnalisés d'experts reconnus qui vous guideront vers l'excellence."
             delay={300}
             className="card-hover"
           />

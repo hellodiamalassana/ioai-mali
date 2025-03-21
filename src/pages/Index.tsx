@@ -26,7 +26,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
-            <h2 className="section-title mb-12">L'Intelligence Artificielle au Cœur de Notre Avenir</h2>
+            <h2 className="section-title mb-12">Explorez le Futur avec l'Intelligence Artificielle</h2>
           </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -41,13 +41,13 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Apprentissage Automatique</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Découvrez comment les algorithmes peuvent apprendre à partir de données et prendre des décisions autonomes.
+                  Plongez dans le monde fascinant où les algorithmes apprennent par eux-mêmes et révolutionnent notre façon de résoudre les problèmes.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer les ressources
+                  Découvrir nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -64,13 +64,13 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Traitement du Langage Naturel</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Apprenez comment les machines peuvent comprendre, interpréter et générer du langage humain.
+                  Explorez comment l'IA comprend, interprète et génère le langage humain, ouvrant la voie à des interactions homme-machine révolutionnaires.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer les ressources
+                  Découvrir nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -87,13 +87,13 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Vision par Ordinateur</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Explorez comment les ordinateurs peuvent extraire des informations significatives à partir d'images et de vidéos.
+                  Découvrez comment l'IA donne des "yeux" aux machines, transformant notre approche de la reconnaissance d'images et ouvrant un monde de possibilités infinies.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer les ressources
+                  Découvrir nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -114,13 +114,13 @@ const Index = () => {
           
           <ScrollReveal animation="fade-in" delay={100}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Prêt à relever le défi?
+              Votre talent mérite une scène internationale !
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Inscrivez-vous dès maintenant pour participer à l'Olympiade Nationale d'Intelligence Artificielle et tenter de représenter le Mali à l'IOAI 2025.
+              Saisissez cette opportunité unique de briller parmi les meilleurs talents en IA du monde entier. Le Mali compte sur vous pour faire rayonner son génie à l'IOAI 2025.
             </p>
           </ScrollReveal>
           
@@ -130,7 +130,7 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Commencer le test
+                Lancez-vous maintenant
                 <ChevronRight size={18} />
               </Link>
               
@@ -138,7 +138,7 @@ const Index = () => {
                 to="/timeline" 
                 className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10"
               >
-                Voir le calendrier
+                Voir les étapes du concours
               </Link>
             </div>
           </ScrollReveal>

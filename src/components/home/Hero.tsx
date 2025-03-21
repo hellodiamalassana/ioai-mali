@@ -37,25 +37,24 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-                Le Mali fait ses débuts à l'Olympiade Internationale d'Intelligence Artificielle
+                Rejoignez l'élite mondiale de l'IA et portez haut les couleurs du Mali !
               </h1>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Bienvenue sur le site officiel de RobotsMali, coordinateur national pour l'IOAI au Mali ! 
-                Préparez-vous à relever des défis stimulants et à vivre une aventure internationale unique.
+                Faites partie de l'histoire ! RobotsMali vous invite à représenter le Mali à l'Olympiade Internationale d'Intelligence Artificielle 2025. Une opportunité unique de démontrer votre talent et de briller sur la scène mondiale.
               </p>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
                 <Link to="/about" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                  Découvrir l'ONIA
+                  Démarrer l'aventure
                   <ArrowRight size={18} />
                 </Link>
                 <Link to="/application" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
-                  Commencer le test
+                  Relevez le défi maintenant
                 </Link>
               </div>
             </ScrollReveal>
