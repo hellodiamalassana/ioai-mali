@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
-import Certificate from '@/components/home/Certificate';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { ChevronRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -102,8 +101,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      <Certificate />
       
       {/* Call to Action Section with Competition Date */}
       <section className="w-full py-20 bg-mali-blue text-white">
