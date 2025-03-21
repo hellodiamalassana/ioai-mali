@@ -14,44 +14,13 @@ const Certificate = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal animation="slide-right">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-mali-blue/10 relative overflow-hidden">
-              {/* Certificate-like design */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-mali-green via-mali-yellow to-mali-red"></div>
-              
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-mali-blue">Certificat d'Accréditation</h3>
-                <p className="text-muted-foreground text-sm">Numéro 81 / 4 février 2025</p>
-              </div>
-              
-              <div className="mb-8 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full border-2 border-dashed border-mali-blue flex items-center justify-center">
-                    <span className="text-sm font-semibold text-mali-blue">IOAI 2025</span>
-                  </div>
-                </div>
-                
-                <p className="text-base">
-                  RobotsMali est officiellement accrédité pour coordonner la participation du Mali à l'IOAI.
-                </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Ce certificat est valide jusqu'à la fin de l'édition 2025.
-                </p>
-              </div>
-              
-              <div className="flex justify-center">
-                <a 
-                  href="https://ioai-official.org/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-mali-blue text-white rounded-md text-sm font-medium transition-all hover:bg-mali-blue/90"
-                >
-                  Consultez le statut sur ioai-official.org
-                </a>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute bottom-4 left-4 w-20 h-20 border-4 border-mali-blue/5 rounded-full"></div>
-              <div className="absolute top-12 right-6 w-16 h-16 border-4 border-mali-yellow/10 rounded-full"></div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-mali-blue/10 relative overflow-hidden">
+              {/* Official Certificate Image */}
+              <img 
+                src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
+                alt="Certificat d'Accréditation IOAI" 
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </ScrollReveal>
           

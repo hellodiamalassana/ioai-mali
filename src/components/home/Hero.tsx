@@ -59,22 +59,13 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-white/20">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
-              <div className="p-8 relative z-10">
-                <div className="w-full aspect-video rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center mb-6 border border-blue-100/50 shadow-inner overflow-hidden">
-                  <div className="text-center">
-                    <div className="px-6 py-4 bg-white/80 backdrop-blur rounded-lg shadow-sm inline-block mb-4">
-                      <span className="text-mali-blue font-semibold">Certificat d'Accréditation</span>
-                    </div>
-                    
-                    <div className="space-y-1 text-center">
-                      <p className="text-sm text-muted-foreground">Numéro 81 / 4 février 2025</p>
-                      <p className="text-base max-w-xs mx-auto">
-                        RobotsMali est officiellement accrédité pour coordonner la participation du Mali à l'IOAI.
-                      </p>
-                      <p className="text-sm text-muted-foreground">Ce certificat est valide jusqu'à la fin de l'édition 2025.</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="p-6 relative z-10">
+                {/* Updated to show actual certificate */}
+                <img 
+                  src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
+                  alt="Certificat d'Accréditation IOAI" 
+                  className="w-full h-auto rounded-lg mb-4"
+                />
                 
                 <div className="text-center">
                   <a 
