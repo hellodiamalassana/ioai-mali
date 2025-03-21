@@ -48,20 +48,20 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "Email",
-      value: "contact@robotsmali.org",
-      link: "mailto:contact@robotsmali.org",
+      value: "info@robotsmali.org",
+      link: "mailto:info@robotsmali.org",
     },
     {
       icon: <Phone size={24} />,
       title: "Téléphone",
-      value: "+223 XX XX XX XX",
-      link: "tel:+223XXXXXXXX",
+      value: "+223 73 65 55 01",
+      link: "tel:+22373655501",
     },
     {
       icon: <MapPin size={24} />,
       title: "Adresse",
-      value: "RobotsMali – Bamako, Mali",
-      link: "https://maps.google.com",
+      value: "SEBENIKORO COMMUNE IV, Rue: 00394 Porte: 08 Bamako, Mali",
+      link: "https://maps.google.com/maps?q=SEBENIKORO+COMMUNE+IV,+Rue:+00394+Porte:+08+Bamako,+Mali",
     },
   ];
 

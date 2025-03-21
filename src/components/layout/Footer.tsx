@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -55,9 +54,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="text-muted-foreground">Email: contact@robotsmali.org</li>
-              <li className="text-muted-foreground">Téléphone: +223 XX XX XX XX</li>
-              <li className="text-muted-foreground">Adresse: RobotsMali – Bamako, Mali</li>
+              <li className="text-muted-foreground">Email: info@robotsmali.org</li>
+              <li className="text-muted-foreground">Téléphone: +223 73 65 55 01</li>
+              <li className="text-muted-foreground">Adresse: SEBENIKORO COMMUNE IV, Rue: 00394 Porte: 08 Bamako, Mali</li>
             </ul>
           </div>
         </div>
