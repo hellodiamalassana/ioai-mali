@@ -4,7 +4,7 @@ import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
 import Certificate from '@/components/home/Certificate';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { ChevronRight, Calendar, ArrowRight } from 'lucide-react';
+import { ChevronRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -49,7 +49,7 @@ const Index = () => {
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   Explorer les ressources
-                  <ArrowRight size={14} />
+                  <ChevronRight size={14} />
                 </Link>
               </div>
             </ScrollReveal>
@@ -72,7 +72,7 @@ const Index = () => {
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   Explorer les ressources
-                  <ArrowRight size={14} />
+                  <ChevronRight size={14} />
                 </Link>
               </div>
             </ScrollReveal>
@@ -95,7 +95,7 @@ const Index = () => {
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   Explorer les ressources
-                  <ArrowRight size={14} />
+                  <ChevronRight size={14} />
                 </Link>
               </div>
             </ScrollReveal>

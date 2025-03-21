@@ -81,7 +81,6 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                {/* Updated to show actual certificate */}
                 <img 
                   src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
                   alt="Certificat d'Accréditation IOAI" 
