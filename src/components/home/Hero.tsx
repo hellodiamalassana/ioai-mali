@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Star, Users } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
@@ -30,31 +30,44 @@ const Hero = () => {
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   <Calendar size={14} />
-                  <span>Phase 1: dès le 4 avril</span>
+                  <span>Phase 1: dès le 4 avril - Ouvert à tous!</span>
                 </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-                Propulsez le Mali sur la scène mondiale de l'intelligence artificielle !
+                Devenez pionnier de l'IA au Mali et brillez sur la scène mondiale!
               </h1>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Le Mali fait ses débuts à l'Olympiade Internationale d'Intelligence Artificielle ! Rejoignez l'élite technologique et devenez pionnier dans l'aventure qui transformera votre carrière et l'avenir numérique de notre nation.
+                Pour la première fois, le Mali participera à l'Olympiade Internationale d'Intelligence Artificielle! Rejoignez ce mouvement historique et représentez votre pays à Beijing en 2025. Aucune expérience préalable requise!
               </p>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-in" delay={500}>
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">
+                  <Star size={14} />
+                  <span>Phase 1 & 2: Tests simples en ligne accessibles à tous</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                  <Users size={14} />
+                  <span>1000 places disponibles!</span>
+                </div>
+              </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
-                <Link to="/about" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                  Découvrir l'ONIA
+                <Link to="/application" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
+                  S'inscrire maintenant
                   <ArrowRight size={18} />
                 </Link>
-                <Link to="/application" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
-                  Commencer le test
+                <Link to="/timeline" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
+                  Voir les phases du concours
                 </Link>
               </div>
             </ScrollReveal>
@@ -65,18 +78,20 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
               <div className="p-6 relative z-10">
-                {/* Updated image with better quality */}
+                {/* Optimized image with better quality */}
                 <div className="relative mb-4 rounded-lg overflow-hidden shadow-md">
                   <img 
-                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2000&h=1200" 
-                    alt="Intelligence Artificielle" 
-                    className="w-full h-64 object-cover"
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200&h=720" 
+                    alt="Intelligence Artificielle au Mali" 
+                    className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500"
                     loading="eager"
+                    width="1200"
+                    height="720"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                     <div className="p-4 text-white">
-                      <h3 className="text-lg font-semibold">L'IA du Futur</h3>
-                      <p className="text-sm">Le Mali à l'avant-garde de l'innovation</p>
+                      <h3 className="text-lg font-semibold">Votre chance historique</h3>
+                      <p className="text-sm">Premiers représentants du Mali en IA mondiale</p>
                     </div>
                   </div>
                 </div>
@@ -86,6 +101,8 @@ const Hero = () => {
                   alt="Certificat d'Accréditation IOAI" 
                   className="w-full h-auto rounded-lg mb-4"
                   loading="eager"
+                  width="600"
+                  height="400"
                 />
                 
                 <div className="text-center">
