@@ -133,7 +133,7 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Postuler maintenant
+                Rejoindre l'aventure maintenant
                 <ChevronRight size={18} />
               </Link>
               
@@ -141,7 +141,7 @@ const Index = () => {
                 to="/timeline" 
                 className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10"
               >
-                Calendrier du concours
+                Découvrir les étapes du concours
               </Link>
             </div>
           </ScrollReveal>
