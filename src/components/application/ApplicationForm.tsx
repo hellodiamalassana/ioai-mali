@@ -6,12 +6,12 @@ import { z } from "zod";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, AlertTriangle } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 // Define form schema with Zod
 const formSchema = z.object({
@@ -47,9 +47,6 @@ const formSchema = z.object({
   }),
   school: z.string().optional(),
   level: z.string().optional(),
-  motivation: z.string().min(50, {
-    message: "Veuillez entrer au moins 50 caractères",
-  }),
   termsAccepted: z.literal(true, {
     errorMap: () => ({ message: "Vous devez accepter les conditions d'utilisation" }),
   }),
@@ -76,7 +73,6 @@ const ApplicationForm = () => {
       city: "",
       school: "",
       level: "",
-      motivation: "",
       termsAccepted: false as unknown as true, // This line fixes the type error
     },
   });
@@ -96,7 +92,7 @@ const ApplicationForm = () => {
       
       toast({
         title: "Inscription réussie !",
-        description: `Merci pour votre inscription. Un email de confirmation a été envoyé à ${data.email}`,
+        description: `Merci pour votre inscription. Un email contenant vos tokens d'accès uniques sera envoyé à ${data.email}`,
       });
       
       form.reset();
@@ -114,6 +110,14 @@ const ApplicationForm = () => {
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-sm border p-6 md:p-8">
+      <Alert className="mb-6 bg-amber-50 border-amber-200">
+        <AlertTriangle className="h-4 w-4 text-amber-600" />
+        <AlertDescription className="text-amber-700">
+          <strong>Attention :</strong> Les tokens d'accès pour la Phase 1 seront à usage unique et strictement personnels. 
+          Toute tentative de partage ou d'utilisation multiple entraînera la disqualification immédiate du candidat.
+        </AlertDescription>
+      </Alert>
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           {/* Catégorie */}
@@ -338,28 +342,6 @@ const ApplicationForm = () => {
               </div>
             </>
           )}
-
-          {/* Motivation */}
-          <FormField
-            control={form.control}
-            name="motivation"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Lettre de motivation</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Expliquez pourquoi vous souhaitez participer à l'IOAI et quelles sont vos attentes..." 
-                    {...field} 
-                    rows={5}
-                  />
-                </FormControl>
-                <FormDescription>
-                  Décrivez brièvement votre intérêt pour l'intelligence artificielle et vos objectifs en participant à cette compétition.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           {/* Conditions d'utilisation */}
           <FormField

@@ -1,8 +1,10 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { GraduationCap, User, ArrowRight, CheckCircle, Mail } from 'lucide-react';
+import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ApplicationForm from '@/components/application/ApplicationForm';
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 // Criteria Item component
 interface CriteriaItemProps {
@@ -67,6 +69,15 @@ const Application = () => {
             <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-8">
               Participez à l'Aventure Internationale de l'IA ! Nous invitons les jeunes talents maliens à représenter notre pays à l'IOAI 2025 en Chine.
             </p>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={300}>
+            <Alert className="max-w-2xl mx-auto bg-mali-blue/10 border-mali-blue/20 text-center">
+              <AlertCircle className="h-5 w-5 text-mali-blue mx-auto mb-2" />
+              <AlertDescription className="text-center font-medium text-mali-blue">
+                La Phase 1 démarre le 4 Avril 2023. Les tokens d'accès seront à usage unique pour chaque candidat.
+              </AlertDescription>
+            </Alert>
           </ScrollReveal>
         </div>
       </section>
