@@ -141,7 +141,7 @@ const ApplicationForm = () => {
                       <RadioGroupItem value="national" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">
-                      Nationale (20 ans et plus)
+                      Nationale (Universitaires et tout le monde)
                     </FormLabel>
                   </FormItem>
                 </RadioGroup>

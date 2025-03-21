@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GraduationCap, User, ArrowRight, CheckCircle, Mail } from 'lucide-react';
@@ -92,7 +91,7 @@ const Application = () => {
                 
                 <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
                   <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
-                  <p className="text-sm">Lycéens et élèves des écoles fondamentales (moins de 20 ans)</p>
+                  <p className="text-sm">Lycéens et élèves des écoles fondamentales</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -108,7 +107,7 @@ const Application = () => {
                 
                 <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
                   <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
-                  <p className="text-sm">20 ans et plus</p>
+                  <p className="text-sm">Universitaires et tout le monde</p>
                 </div>
               </div>
             </ScrollReveal>
