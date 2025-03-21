@@ -26,7 +26,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
-            <h2 className="section-title mb-12">Explorez le Futur avec l'Intelligence Artificielle</h2>
+            <h2 className="section-title mb-12">Façonnez l'avenir numérique du Mali</h2>
           </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,20 +34,21 @@ const Index = () => {
               <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100 h-full flex flex-col card-hover">
                 <div className="bg-blue-50 rounded-lg mb-6 p-4 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1677442135133-4521dfd2964f?q=80&w=1932&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800&h=600" 
                     alt="Intelligence Artificielle" 
                     className="w-full h-48 object-cover rounded-md"
+                    loading="lazy"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Apprentissage Automatique</h3>
+                <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Plongez dans le monde fascinant où les algorithmes apprennent par eux-mêmes et révolutionnent notre façon de résoudre les problèmes.
+                  Maîtrisez les algorithmes qui révolutionnent les industries et créez des solutions innovantes pour les défis spécifiques du Mali et de l'Afrique.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Découvrir nos ressources
+                  Explorer nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -57,20 +58,21 @@ const Index = () => {
               <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100 h-full flex flex-col card-hover">
                 <div className="bg-blue-50 rounded-lg mb-6 p-4 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1563265470-2d3a464c9828?q=80&w=1932&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80&w=800&h=600" 
                     alt="Intelligence Artificielle" 
                     className="w-full h-48 object-cover rounded-md"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Traitement du Langage Naturel</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Explorez comment l'IA comprend, interprète et génère le langage humain, ouvrant la voie à des interactions homme-machine révolutionnaires.
+                  Développez des solutions linguistiques adaptées aux langues africaines et créez des applications qui rendent la technologie accessible à tous.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Découvrir nos ressources
+                  Explorer nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -80,20 +82,21 @@ const Index = () => {
               <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100 h-full flex flex-col card-hover">
                 <div className="bg-blue-50 rounded-lg mb-6 p-4 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1932&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=800&h=600" 
                     alt="Intelligence Artificielle" 
                     className="w-full h-48 object-cover rounded-md"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Vision par Ordinateur</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Découvrez comment l'IA donne des "yeux" aux machines, transformant notre approche de la reconnaissance d'images et ouvrant un monde de possibilités infinies.
+                  Construisez les systèmes visuels qui transformeront l'agriculture, la santé et l'éducation au Mali, avec des applications adaptées aux réalités locales.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Découvrir nos ressources
+                  Explorer nos ressources
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -108,19 +111,19 @@ const Index = () => {
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
               <Calendar size={18} />
-              <span className="font-medium">Phase 1 débute le 4 avril 2024</span>
+              <span className="font-medium">Les inscriptions sont ouvertes - Phase 1 débute le 4 avril</span>
             </div>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={100}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Votre talent mérite une scène internationale !
+              Écrivez un nouveau chapitre de l'histoire technologique du Mali
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Saisissez cette opportunité unique de briller parmi les meilleurs talents en IA du monde entier. Le Mali compte sur vous pour faire rayonner son génie à l'IOAI 2025.
+              Cette opportunité ne se présente qu'une fois. Aujourd'hui, c'est vous qui pouvez porter l'innovation malienne sur la scène mondiale et inspirer toute une génération de jeunes talents africains.
             </p>
           </ScrollReveal>
           
@@ -130,7 +133,7 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Lancez-vous maintenant
+                Postuler maintenant
                 <ChevronRight size={18} />
               </Link>
               
@@ -138,7 +141,7 @@ const Index = () => {
                 to="/timeline" 
                 className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10"
               >
-                Voir les étapes du concours
+                Calendrier du concours
               </Link>
             </div>
           </ScrollReveal>

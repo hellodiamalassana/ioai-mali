@@ -31,30 +31,30 @@ const Features = () => {
     <section className="w-full py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title">Pourquoi cette aventure va transformer votre avenir</h2>
+          <h2 className="section-title">Trois raisons de saisir cette opportunité unique</h2>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12">
           <Feature 
             icon={<Users size={24} />}
-            title="Une formation d'élite mondiale"
-            description="Bénéficiez d'un accompagnement exceptionnel conçu par des experts internationaux. Développez des compétences qui vous distingueront sur le marché mondial de l'IA."
+            title="Formation d'excellence internationale"
+            description="Accédez à un programme exclusif développé par des experts mondiaux en IA. Acquérez des compétences recherchées qui vous ouvriront des portes partout dans le monde."
             delay={100}
             className="card-hover"
           />
           
           <Feature 
             icon={<Award size={24} />}
-            title="Brillez à l'échelle internationale"
-            description="Devenez l'un des ambassadeurs du Mali à Beijing en août 2025 et mesurez-vous aux meilleurs talents mondiaux dans la compétition la plus prestigieuse en IA."
+            title="Représentez le Mali à Beijing 2025"
+            description="Devenez ambassadeur de l'innovation malienne sur la scène internationale. Affrontez les meilleurs talents mondiaux dans la compétition la plus prestigieuse d'IA en Chine."
             delay={200}
             className="card-hover"
           />
           
           <Feature 
             icon={<BookOpen size={24} />}
-            title="Ressources exclusives & mentors d'exception"
-            description="Accédez gratuitement à un contenu pédagogique de pointe et bénéficiez des conseils personnalisés d'experts reconnus qui vous guideront vers l'excellence."
+            title="Mentorat personnalisé et réseau global"
+            description="Bénéficiez gratuitement d'un accompagnement d'élite et rejoignez une communauté mondiale de pionniers qui façonnent l'avenir de l'IA. Votre réseau sera votre force."
             delay={300}
             className="card-hover"
           />

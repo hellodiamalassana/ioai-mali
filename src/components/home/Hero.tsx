@@ -37,24 +37,24 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-                Rejoignez l'élite mondiale de l'IA et portez haut les couleurs du Mali !
+                Propulsez le Mali sur la scène mondiale de l'intelligence artificielle !
               </h1>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Faites partie de l'histoire ! RobotsMali vous invite à représenter le Mali à l'Olympiade Internationale d'Intelligence Artificielle 2025. Une opportunité unique de démontrer votre talent et de briller sur la scène mondiale.
+                Le Mali fait ses débuts à l'Olympiade Internationale d'Intelligence Artificielle ! Rejoignez l'élite technologique et devenez pionnier dans l'aventure qui transformera votre carrière et l'avenir numérique de notre nation.
               </p>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
                 <Link to="/about" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                  Démarrer l'aventure
+                  Découvrir l'ONIA
                   <ArrowRight size={18} />
                 </Link>
                 <Link to="/application" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
-                  Relevez le défi maintenant
+                  Commencer le test
                 </Link>
               </div>
             </ScrollReveal>
@@ -65,12 +65,13 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
               <div className="p-6 relative z-10">
-                {/* Updated image showing AI illustrations */}
+                {/* Updated image with better quality */}
                 <div className="relative mb-4 rounded-lg overflow-hidden shadow-md">
                   <img 
-                    src="https://images.unsplash.com/photo-1676377421944-724ed6dbea2a?q=80&w=2070&auto=format&fit=crop" 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2000&h=1200" 
                     alt="Intelligence Artificielle" 
-                    className="w-full h-auto"
+                    className="w-full h-64 object-cover"
+                    loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                     <div className="p-4 text-white">
@@ -84,6 +85,7 @@ const Hero = () => {
                   src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
                   alt="Certificat d'Accréditation IOAI" 
                   className="w-full h-auto rounded-lg mb-4"
+                  loading="eager"
                 />
                 
                 <div className="text-center">
@@ -93,7 +95,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-mali-blue hover:underline text-sm font-medium"
                   >
-                    Consultez le statut sur ioai-official.org
+                    Site officiel de l'IOAI
                     <ArrowRight size={14} />
                   </a>
                 </div>
