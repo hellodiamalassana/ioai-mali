@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
@@ -24,9 +24,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <ScrollReveal animation="slide-right">
-              <span className="inline-block py-1 px-3 bg-blue-100 text-mali-blue rounded-full text-sm font-medium mb-6">
-                RobotsMali IOAI 2025
-              </span>
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <span className="inline-block py-1 px-3 bg-blue-100 text-mali-blue rounded-full text-sm font-medium">
+                  RobotsMali IOAI 2025
+                </span>
+                <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                  <Calendar size={14} />
+                  <span>Phase 1: dès le 4 avril</span>
+                </div>
+              </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={200}>
@@ -60,6 +66,21 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
               <div className="p-6 relative z-10">
+                {/* Updated image showing AI illustrations */}
+                <div className="relative mb-4 rounded-lg overflow-hidden shadow-md">
+                  <img 
+                    src="https://images.unsplash.com/photo-1676377421944-724ed6dbea2a?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Intelligence Artificielle" 
+                    className="w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                    <div className="p-4 text-white">
+                      <h3 className="text-lg font-semibold">L'IA du Futur</h3>
+                      <p className="text-sm">Le Mali à l'avant-garde de l'innovation</p>
+                    </div>
+                  </div>
+                </div>
+                
                 {/* Updated to show actual certificate */}
                 <img 
                   src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
