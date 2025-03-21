@@ -1,0 +1,240 @@
+
+import React, { useEffect } from 'react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
+import { ArrowRight, Heart, Network, Award, Gift } from 'lucide-react';
+
+// Sponsor level component
+interface SponsorLevelProps {
+  title: string;
+  description: string;
+  examples: string[];
+  color: string;
+  delay?: number;
+}
+
+const SponsorLevel: React.FC<SponsorLevelProps> = ({ title, description, examples, color, delay = 0 }) => (
+  <ScrollReveal animation="slide-up" delay={delay} className="h-full">
+    <div className={`h-full rounded-xl p-6 border shadow-sm ${color}`}>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <p className="text-muted-foreground mb-4">{description}</p>
+      
+      <div className="space-y-2 mt-4">
+        <h4 className="font-medium text-sm text-muted-foreground">Exemples :</h4>
+        <ul className="space-y-1">
+          {examples.map((example, index) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="h-5 w-5 rounded-full bg-blue-100 text-mali-blue flex items-center justify-center text-xs mt-0.5 flex-shrink-0">
+                {index + 1}
+              </span>
+              <span>{example}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </ScrollReveal>
+);
+
+// Sponsorship need component
+interface SponsorshipNeedProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  delay?: number;
+}
+
+const SponsorshipNeed: React.FC<SponsorshipNeedProps> = ({ icon, title, description, delay = 0 }) => (
+  <ScrollReveal animation="slide-up" delay={delay}>
+    <div className="bg-white rounded-lg p-5 shadow-sm border border-blue-100 flex gap-4">
+      <div className="w-10 h-10 flex-shrink-0 bg-blue-100 rounded-lg flex items-center justify-center text-mali-blue">
+        {icon}
+      </div>
+      <div>
+        <h3 className="font-semibold mb-1">{title}</h3>
+        <p className="text-muted-foreground text-sm">{description}</p>
+      </div>
+    </div>
+  </ScrollReveal>
+);
+
+const Sponsors = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen pt-20">
+      <section className="bg-gradient-to-b from-blue-50 to-white py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <ScrollReveal animation="fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+              Devenez Sponsor de l'IOAI Mali
+            </h1>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-8">
+              Votre soutien est essentiel pour permettre aux jeunes talents maliens de participer à l'IOAI et de représenter notre pays sur la scène internationale.
+            </p>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={300} className="flex justify-center">
+            <button className="px-6 py-3 bg-mali-blue text-white rounded-lg font-medium flex items-center gap-2 shadow-lg hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+              Devenir Sponsor
+              <ArrowRight size={18} />
+            </button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <ScrollReveal animation="fade-in">
+            <h2 className="section-title">Pourquoi Sponsoriser ?</h2>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <ScrollReveal animation="slide-up" delay={100} className="h-full">
+              <div className="h-full bg-white rounded-xl p-6 shadow-sm border flex flex-col">
+                <div className="w-12 h-12 flex items-center justify-center bg-red-100 rounded-lg text-red-600 mb-4">
+                  <Heart size={24} />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Responsabilité Sociale</h3>
+                <p className="text-muted-foreground flex-grow">
+                  Soutenez la formation et l'épanouissement des futurs innovateurs en IA, contribuant ainsi au développement technologique du Mali.
+                </p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="slide-up" delay={200} className="h-full">
+              <div className="h-full bg-white rounded-xl p-6 shadow-sm border flex flex-col">
+                <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-4">
+                  <Network size={24} />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Opportunités de Réseautage</h3>
+                <p className="text-muted-foreground flex-grow">
+                  Participez à des événements exclusifs et rencontrez des experts, des leaders d'industrie et des talents émergents dans le domaine de l'IA.
+                </p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="slide-up" delay={300} className="h-full">
+              <div className="h-full bg-white rounded-xl p-6 shadow-sm border flex flex-col">
+                <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg text-green-600 mb-4">
+                  <Award size={24} />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Valorisation de Votre Marque</h3>
+                <p className="text-muted-foreground flex-grow">
+                  Votre entreprise sera mise en avant dans tous nos supports de communication incluant les réseaux sociaux, communiqués de presse et événements.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <ScrollReveal animation="fade-in">
+            <h2 className="section-title">Niveaux de Parrainage</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <p className="section-subtitle">
+              Différentes options de parrainage sont disponibles pour s'adapter à vos objectifs et à votre budget.
+            </p>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <SponsorLevel
+              title="Sponsors Platine"
+              description="Partenaires principaux de l'IOAI Mali avec une visibilité maximale et des avantages exclusifs."
+              examples={[
+                "Leading Coding – école de programmation de premier plan à Adélaïde",
+                "Entreprises technologiques majeures"
+              ]}
+              color="bg-gradient-to-br from-white to-gray-100 border-gray-200"
+              delay={100}
+            />
+            
+            <SponsorLevel
+              title="Commanditaires Or"
+              description="Soutien important avec une forte visibilité lors des événements et dans les communications."
+              examples={[
+                "Institut Australien d'Apprentissage Automatique (AIML)",
+                "Entreprises d'innovation technologique"
+              ]}
+              color="bg-gradient-to-br from-white to-yellow-50 border-yellow-200"
+              delay={200}
+            />
+            
+            <SponsorLevel
+              title="Autres Partenaires"
+              description="Collaboration précieuse incluant médias, centres de santé innovants et autres entreprises soutenant l'initiative."
+              examples={[
+                "AI Doctor™️ - centre de santé innovant",
+                "Médias et institutions éducatives"
+              ]}
+              color="bg-gradient-to-br from-white to-blue-50 border-blue-200"
+              delay={300}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <ScrollReveal animation="fade-in">
+            <h2 className="section-title">Besoins de Parrainage</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <p className="section-subtitle">
+              Votre soutien peut prendre différentes formes selon vos possibilités et vos domaines d'expertise.
+            </p>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <SponsorshipNeed
+              icon={<Award size={20} />}
+              title="Financier"
+              description="Couvrir les frais de logistique, de formation et d'organisation liés à la compétition nationale et internationale."
+              delay={100}
+            />
+            
+            <SponsorshipNeed
+              icon={<Network size={20} />}
+              title="Matériel et Logistique"
+              description="Fourniture d'équipements informatiques, de licences logicielles et prise en charge des déplacements."
+              delay={200}
+            />
+            
+            <SponsorshipNeed
+              icon={<Heart size={20} />}
+              title="Services et Ressources"
+              description="Formation, mentorat et mise à disposition d'installations pour les concours et les sessions de préparation."
+              delay={300}
+            />
+            
+            <SponsorshipNeed
+              icon={<Gift size={20} />}
+              title="Bourses et Récompenses"
+              description="Encourager les participants par des aides financières et des prix pour valoriser l'excellence et l'innovation."
+              delay={400}
+            />
+          </div>
+          
+          <ScrollReveal animation="fade-in" delay={500} className="mt-16 text-center">
+            <a href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+              En savoir plus
+              <ArrowRight size={18} />
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Sponsors;

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				mali: {
+					'green': '#009E60',
+					'yellow': '#FFD700',
+					'red': '#CC071E',
+					'blue': '#0056B3',
+					'dark': '#0F172A',
+					'light': '#F8FAFC',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,59 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-out': {
+					'0%': { opacity: '1', transform: 'translateY(0)' },
+					'100%': { opacity: '0', transform: 'translateY(20px)' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-down': {
+					'0%': { transform: 'translateY(-100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-left': {
+					'0%': { transform: 'translateX(100px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-right': {
+					'0%': { transform: 'translateX(-100px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'scale': {
+					'0%': { transform: 'scale(0.8)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'fade-out': 'fade-out 0.8s ease-out forwards',
+				'slide-up': 'slide-up 0.8s ease-out forwards',
+				'slide-down': 'slide-down 0.8s ease-out forwards',
+				'slide-left': 'slide-left 0.8s ease-out forwards',
+				'slide-right': 'slide-right 0.8s ease-out forwards',
+				'scale': 'scale 0.8s ease-out forwards',
+				'pulse-soft': 'pulse-soft 3s infinite ease-in-out'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+				'display': ['Poppins', 'sans-serif']
+			},
+			transitionDuration: {
+				'2000': '2000ms',
+				'3000': '3000ms',
 			}
 		}
 	},
