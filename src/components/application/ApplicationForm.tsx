@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -56,13 +55,14 @@ type FormValues = z.infer<typeof formSchema>;
 
 const ApplicationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [categorySelected, setCategorySelected] = useState(false);
   const { toast } = useToast();
   
   // Initialize the form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      category: "international",
+      category: undefined,
       firstName: "",
       lastName: "",
       email: "",
@@ -80,6 +80,12 @@ const ApplicationForm = () => {
   const selectedCategory = form.watch("category");
   const isInternational = selectedCategory === "international";
   
+  // Handle category selection
+  const handleCategoryChange = (value: string) => {
+    form.setValue('category', value as "international" | "national");
+    setCategorySelected(true);
+  };
+  
   // Form submission handler
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
@@ -96,6 +102,7 @@ const ApplicationForm = () => {
       });
       
       form.reset();
+      setCategorySelected(false);
     } catch (error) {
       toast({
         title: "Erreur lors de l'inscription",
@@ -120,15 +127,15 @@ const ApplicationForm = () => {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          {/* Catégorie */}
+          {/* Catégorie - Always visible */}
           <FormField
             control={form.control}
             name="category"
             render={({ field }) => (
               <FormItem className="space-y-3">
-                <FormLabel>Catégorie</FormLabel>
+                <FormLabel className="text-lg font-semibold">Choisissez votre catégorie</FormLabel>
                 <RadioGroup
-                  onValueChange={field.onChange}
+                  onValueChange={(value) => handleCategoryChange(value)}
                   defaultValue={field.value}
                   className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4"
                 >
@@ -153,146 +160,148 @@ const ApplicationForm = () => {
               </FormItem>
             )}
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Prénom */}
-            <FormField
-              control={form.control}
-              name="firstName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Prénom</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Votre prénom" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Nom */}
-            <FormField
-              control={form.control}
-              name="lastName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nom</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Votre nom" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Email */}
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="votre.email@exemple.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Téléphone */}
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Téléphone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="+223 xxxxxxxx" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Date de naissance */}
-            <FormField
-              control={form.control}
-              name="birthdate"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Date de naissance</FormLabel>
-                  <FormControl>
-                    <Input type="date" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Genre */}
-            <FormField
-              control={form.control}
-              name="gender"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Genre</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Sélectionnez votre genre" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="male">Masculin</SelectItem>
-                      <SelectItem value="female">Féminin</SelectItem>
-                      <SelectItem value="other">Autre</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Adresse */}
-            <FormField
-              control={form.control}
-              name="address"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Adresse</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Votre adresse" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Ville */}
-            <FormField
-              control={form.control}
-              name="city"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Ville</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Votre ville" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          {isInternational && (
+          
+          {/* Rest of the form appears only after category is selected */}
+          {categorySelected && (
             <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Prénom */}
+                <FormField
+                  control={form.control}
+                  name="firstName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Prénom</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Votre prénom" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Nom */}
+                <FormField
+                  control={form.control}
+                  name="lastName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nom</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Votre nom" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Email */}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="votre.email@exemple.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Téléphone */}
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Téléphone</FormLabel>
+                      <FormControl>
+                        <Input placeholder="+223 xxxxxxxx" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Date de naissance */}
+                <FormField
+                  control={form.control}
+                  name="birthdate"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Date de naissance</FormLabel>
+                      <FormControl>
+                        <Input type="date" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Genre */}
+                <FormField
+                  control={form.control}
+                  name="gender"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Genre</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Sélectionnez votre genre" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="male">Masculin</SelectItem>
+                          <SelectItem value="female">Féminin</SelectItem>
+                          <SelectItem value="other">Autre</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Adresse */}
+                <FormField
+                  control={form.control}
+                  name="address"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Adresse</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Votre adresse" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Ville */}
+                <FormField
+                  control={form.control}
+                  name="city"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Ville</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Votre ville" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Niveau d'études pour les deux catégories */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* École */}
                 <FormField
@@ -323,15 +332,30 @@ const ApplicationForm = () => {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
-                          <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
-                          <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
-                          <SelectItem value="fondamentale7">École Fondamentale - 7ème année</SelectItem>
-                          <SelectItem value="fondamentale8">École Fondamentale - 8ème année</SelectItem>
-                          <SelectItem value="fondamentale9">École Fondamentale - 9ème année</SelectItem>
-                          <SelectItem value="fondamentale6">École Fondamentale - 6ème année</SelectItem>
-                          <SelectItem value="fondamentale5">École Fondamentale - 5ème année</SelectItem>
-                          <SelectItem value="fondamentale4">École Fondamentale - 4ème année</SelectItem>
+                          {isInternational ? (
+                            <>
+                              <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
+                              <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
+                              <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
+                              <SelectItem value="fondamentale9">École Fondamentale - 9ème année</SelectItem>
+                              <SelectItem value="fondamentale8">École Fondamentale - 8ème année</SelectItem>
+                              <SelectItem value="fondamentale7">École Fondamentale - 7ème année</SelectItem>
+                              <SelectItem value="fondamentale6">École Fondamentale - 6ème année</SelectItem>
+                              <SelectItem value="fondamentale5">École Fondamentale - 5ème année</SelectItem>
+                              <SelectItem value="fondamentale4">École Fondamentale - 4ème année</SelectItem>
+                            </>
+                          ) : (
+                            <>
+                              <SelectItem value="licence1">Licence - 1ère année</SelectItem>
+                              <SelectItem value="licence2">Licence - 2ème année</SelectItem>
+                              <SelectItem value="licence3">Licence - 3ème année</SelectItem>
+                              <SelectItem value="master1">Master - 1ère année</SelectItem>
+                              <SelectItem value="master2">Master - 2ème année</SelectItem>
+                              <SelectItem value="doctorat">Doctorat</SelectItem>
+                              <SelectItem value="professionnel">Professionnel</SelectItem>
+                              <SelectItem value="autodidacte">Autodidacte</SelectItem>
+                            </>
+                          )}
                           <SelectItem value="autre">Autre</SelectItem>
                         </SelectContent>
                       </Select>
@@ -340,51 +364,51 @@ const ApplicationForm = () => {
                   )}
                 />
               </div>
+
+              {/* Conditions d'utilisation */}
+              <FormField
+                control={form.control}
+                name="termsAccepted"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>
+                        J'accepte les conditions d'utilisation et la politique de confidentialité
+                      </FormLabel>
+                      <FormDescription>
+                        En soumettant ce formulaire, vous acceptez que vos informations soient utilisées pour traiter votre candidature.
+                      </FormDescription>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button 
+                type="submit" 
+                className="w-full bg-mali-blue hover:bg-mali-blue/90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Traitement en cours...
+                  </>
+                ) : (
+                  <>
+                    Soumettre ma candidature
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </>
+                )}
+              </Button>
             </>
           )}
-
-          {/* Conditions d'utilisation */}
-          <FormField
-            control={form.control}
-            name="termsAccepted"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel>
-                    J'accepte les conditions d'utilisation et la politique de confidentialité
-                  </FormLabel>
-                  <FormDescription>
-                    En soumettant ce formulaire, vous acceptez que vos informations soient utilisées pour traiter votre candidature.
-                  </FormDescription>
-                </div>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button 
-            type="submit" 
-            className="w-full bg-mali-blue hover:bg-mali-blue/90"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Traitement en cours...
-              </>
-            ) : (
-              <>
-                Soumettre ma candidature
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </>
-            )}
-          </Button>
         </form>
       </Form>
     </div>
