@@ -16,7 +16,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              IOAI – L'Odyssée Internationale de l'Intelligence Artificielle
+              L'Olympiade Internationale d'Intelligence Artificielle (IOAI)
             </h1>
           </ScrollReveal>
           
