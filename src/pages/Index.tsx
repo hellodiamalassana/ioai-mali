@@ -123,7 +123,7 @@ const Index = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Cette opportunité ne se présente qu'une fois. Aujourd'hui, c'est vous qui pouvez porter l'innovation malienne sur la scène mondiale et inspirer toute une génération de jeunes talents africains.
+              Les premières phases sont conçues pour être accessibles à tous! Inscrivez-vous dès maintenant pour réserver votre place et tenter de représenter le Mali à l'IOAI 2025.
             </p>
           </ScrollReveal>
           
@@ -133,7 +133,7 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Rejoindre l'aventure maintenant
+                Prêt à commencer l'aventure?
                 <ChevronRight size={18} />
               </Link>
               
