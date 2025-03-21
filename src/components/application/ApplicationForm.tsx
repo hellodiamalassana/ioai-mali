@@ -47,7 +47,6 @@ const formSchema = z.object({
   }),
   school: z.string().optional(),
   level: z.string().optional(),
-  experience: z.string().optional(),
   motivation: z.string().min(50, {
     message: "Veuillez entrer au moins 50 caractères",
   }),
@@ -77,9 +76,8 @@ const ApplicationForm = () => {
       city: "",
       school: "",
       level: "",
-      experience: "",
       motivation: "",
-      termsAccepted: false,
+      termsAccepted: false as unknown as true, // This line fixes the type error
     },
   });
 
@@ -135,7 +133,7 @@ const ApplicationForm = () => {
                       <RadioGroupItem value="international" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">
-                      Internationale (moins de 20 ans)
+                      Internationale (Lycéens et école fondamentale)
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
@@ -324,7 +322,9 @@ const ApplicationForm = () => {
                           <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
                           <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
                           <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
-                          <SelectItem value="professionnel">École professionnelle</SelectItem>
+                          <SelectItem value="fondamentale7">Fondamentale - 7ème année</SelectItem>
+                          <SelectItem value="fondamentale8">Fondamentale - 8ème année</SelectItem>
+                          <SelectItem value="fondamentale9">Fondamentale - 9ème année</SelectItem>
                           <SelectItem value="autre">Autre</SelectItem>
                         </SelectContent>
                       </Select>
@@ -335,31 +335,6 @@ const ApplicationForm = () => {
               </div>
             </>
           )}
-
-          {/* Expérience en programmation/IA */}
-          <FormField
-            control={form.control}
-            name="experience"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Expérience en programmation/IA</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez votre niveau d'expérience" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="debutant">Débutant</SelectItem>
-                    <SelectItem value="intermediaire">Intermédiaire</SelectItem>
-                    <SelectItem value="avance">Avancé</SelectItem>
-                    <SelectItem value="expert">Expert</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           {/* Motivation */}
           <FormField
@@ -376,7 +351,7 @@ const ApplicationForm = () => {
                   />
                 </FormControl>
                 <FormDescription>
-                  Décrivez brièvement votre intérêt pour l'IA et vos objectifs en participant à cette compétition.
+                  Décrivez brièvement votre intérêt pour l'intelligence artificielle et vos objectifs en participant à cette compétition.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

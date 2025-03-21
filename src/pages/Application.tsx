@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GraduationCap, User, ArrowRight, CheckCircle, Mail } from 'lucide-react';
@@ -87,7 +88,7 @@ const Application = () => {
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-3">Catégorie Internationale</h3>
-                <p className="mb-4 flex-grow">Destinée aux lycéens, aux élèves des écoles professionnelles et aux étudiants du secondaire. Les meilleurs représenteront le Mali à l'IOAI.</p>
+                <p className="mb-4 flex-grow">Destinée aux lycéens et aux élèves des écoles fondamentales. Les meilleurs représenteront le Mali à l'IOAI.</p>
                 
                 <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
                   <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
@@ -137,13 +138,13 @@ const Application = () => {
               
               <CriteriaItem
                 title="Statut d'étudiant"
-                description="Être un lycéen, élève d'école professionnelle ou étudiant du secondaire (moins de 20 ans)."
+                description="Être un lycéen ou élève de l'école fondamentale (moins de 20 ans)."
                 delay={200}
               />
               
               <CriteriaItem
-                title="Connaissances de base"
-                description="Avoir des connaissances de base en programmation et en intelligence artificielle."
+                title="Intérêt pour l'IA"
+                description="Avoir un intérêt pour l'intelligence artificielle et ses applications."
                 delay={300}
               />
               

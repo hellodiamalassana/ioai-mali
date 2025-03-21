@@ -107,11 +107,11 @@ const Timeline = () => {
       number: 2,
       title: "Approfondissement",
       dates: "18 avril – 27 avril",
-      description: "Seconde évaluation pour tester la compréhension technique approfondie.",
+      description: "Seconde évaluation pour tester la compréhension approfondie.",
       items: [
         "Test en ligne (20 questions QCM)",
         "Ouvert aux candidats ayant validé la Phase 1",
-        "Évaluation des notions techniques plus avancées",
+        "Évaluation des notions plus avancées",
       ],
     },
     {
@@ -120,8 +120,7 @@ const Timeline = () => {
       dates: "1ᵉʳ mai – 18 mai",
       description: "Application pratique des connaissances dans un projet concret d'IA.",
       items: [
-        "Exercice en ligne de programmation",
-        "Entraînement d'un modèle d'intelligence artificielle",
+        "Exercice en ligne",
         "Application des compétences acquises lors des phases précédentes",
       ],
     },
@@ -189,8 +188,8 @@ const Timeline = () => {
                   title="Catégorie Internationale"
                   description="Réservée aux moins de 20 ans, cette catégorie mène à l'IOAI."
                   details={[
-                    "Lycéens et élèves des écoles professionnelles",
-                    "Étudiants du secondaire",
+                    "Lycéens",
+                    "Élèves des écoles fondamentales",
                     "Objectif : intégrer l'équipe nationale pour l'IOAI"
                   ]}
                   color="bg-mali-blue text-white"
