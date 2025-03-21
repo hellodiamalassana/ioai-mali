@@ -1,52 +1,8 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { GraduationCap, User, ArrowRight, CheckCircle, FileText, Mail } from 'lucide-react';
+import { GraduationCap, User, ArrowRight, CheckCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// Category Card component
-interface CategoryCardProps {
-  title: string;
-  description: string;
-  audience: string;
-  color: string;
-  icon: React.ReactNode;
-  formLink?: string;
-  delay?: number;
-}
-
-const CategoryCard: React.FC<CategoryCardProps> = ({ 
-  title, 
-  description, 
-  audience, 
-  color, 
-  icon, 
-  formLink = "#", 
-  delay = 0 
-}) => (
-  <ScrollReveal animation="slide-up" delay={delay} className="h-full">
-    <div className={`h-full rounded-xl p-6 border shadow-sm flex flex-col ${color}`}>
-      <div className="w-12 h-12 flex items-center justify-center bg-white/50 backdrop-blur rounded-lg mb-4">
-        {icon}
-      </div>
-      
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="mb-4 flex-grow">{description}</p>
-      
-      <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
-        <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
-        <p className="text-sm">{audience}</p>
-      </div>
-      
-      <a 
-        href={formLink} 
-        className="px-4 py-2 bg-white/80 backdrop-blur text-center rounded-lg font-medium hover:bg-white transition-colors shadow-sm"
-      >
-        Formulaire d'Inscription
-      </a>
-    </div>
-  </ScrollReveal>
-);
+import ApplicationForm from '@/components/application/ApplicationForm';
 
 // Criteria Item component
 interface CriteriaItemProps {
@@ -118,35 +74,43 @@ const Application = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
-            <h2 className="section-title">Catégories de Participation</h2>
+            <h2 className="section-title mb-8">Formulaire d'Inscription</h2>
           </ScrollReveal>
           
-          <ScrollReveal animation="fade-in" delay={200}>
-            <p className="section-subtitle">
-              Les candidatures se font via deux catégories distinctes, adaptées à différents profils de participants.
-            </p>
-          </ScrollReveal>
+          <ApplicationForm />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <CategoryCard
-              title="Catégorie Internationale"
-              description="Destinée aux lycéens, aux élèves des écoles professionnelles et aux étudiants du secondaire. Les meilleurs représenteront le Mali à l'IOAI."
-              audience="Moins de 20 ans"
-              color="bg-gradient-to-br from-blue-600 to-blue-700 text-white"
-              icon={<GraduationCap size={24} className="text-white" />}
-              formLink="#"
-              delay={100}
-            />
+            <ScrollReveal animation="fade-in" delay={100} className="h-full">
+              <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+                <div className="w-12 h-12 flex items-center justify-center bg-white/50 backdrop-blur rounded-lg mb-4">
+                  <GraduationCap size={24} className="text-white" />
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-3">Catégorie Internationale</h3>
+                <p className="mb-4 flex-grow">Destinée aux lycéens, aux élèves des écoles professionnelles et aux étudiants du secondaire. Les meilleurs représenteront le Mali à l'IOAI.</p>
+                
+                <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
+                  <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
+                  <p className="text-sm">Moins de 20 ans</p>
+                </div>
+              </div>
+            </ScrollReveal>
             
-            <CategoryCard
-              title="Catégorie Nationale"
-              description="Ouverte aux universitaires et au grand public. Cette catégorie vise à promouvoir l'apprentissage de l'IA à l'échelle nationale."
-              audience="20 ans et plus"
-              color="bg-gradient-to-br from-mali-green to-emerald-600 text-white"
-              icon={<User size={24} className="text-white" />}
-              formLink="#"
-              delay={200}
-            />
+            <ScrollReveal animation="fade-in" delay={200} className="h-full">
+              <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-mali-green to-emerald-600 text-white">
+                <div className="w-12 h-12 flex items-center justify-center bg-white/50 backdrop-blur rounded-lg mb-4">
+                  <User size={24} className="text-white" />
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-3">Catégorie Nationale</h3>
+                <p className="mb-4 flex-grow">Ouverte aux universitaires et au grand public. Cette catégorie vise à promouvoir l'apprentissage de l'IA à l'échelle nationale.</p>
+                
+                <div className="mb-6 p-3 bg-white/30 backdrop-blur rounded-lg">
+                  <h4 className="font-medium text-sm mb-1">Pour qui ?</h4>
+                  <p className="text-sm">20 ans et plus</p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -235,26 +199,18 @@ const Application = () => {
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Prêt à relever le défi?
+              Des questions?
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Inscrivez-vous dès maintenant pour participer à l'Olympiade Nationale d'Intelligence Artificielle et tentez votre chance de représenter le Mali sur la scène internationale.
+              Si vous avez besoin d'aide pour remplir le formulaire ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
             </p>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={400}>
             <div className="flex flex-wrap justify-center gap-4">
-              <a 
-                href="#" 
-                className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
-              >
-                <FileText size={18} />
-                Formulaire d'Inscription
-              </a>
-              
               <Link 
                 to="/timeline" 
                 className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
@@ -268,7 +224,7 @@ const Application = () => {
           <ScrollReveal animation="fade-in" delay={600} className="mt-8">
             <div className="inline-flex items-center gap-2 text-white/80 text-sm">
               <Mail size={16} />
-              Des questions? Contactez-nous à <a href="mailto:contact@robotsmali.org" className="underline hover:text-white">contact@robotsmali.org</a>
+              Contactez-nous à <a href="mailto:contact@robotsmali.org" className="underline hover:text-white">contact@robotsmali.org</a>
             </div>
           </ScrollReveal>
         </div>

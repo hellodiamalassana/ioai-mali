@@ -3,30 +3,30 @@ import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { ArrowRight, Heart, Network, Award, Gift } from 'lucide-react';
 
-// Sponsor level component
+// Sponsorship level component
 interface SponsorLevelProps {
   title: string;
   description: string;
-  examples: string[];
+  benefits: string[];
   color: string;
   delay?: number;
 }
 
-const SponsorLevel: React.FC<SponsorLevelProps> = ({ title, description, examples, color, delay = 0 }) => (
+const SponsorLevel: React.FC<SponsorLevelProps> = ({ title, description, benefits, color, delay = 0 }) => (
   <ScrollReveal animation="slide-up" delay={delay} className="h-full">
     <div className={`h-full rounded-xl p-6 border shadow-sm ${color}`}>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-muted-foreground mb-4">{description}</p>
       
       <div className="space-y-2 mt-4">
-        <h4 className="font-medium text-sm text-muted-foreground">Exemples :</h4>
+        <h4 className="font-medium text-sm text-muted-foreground">Avantages :</h4>
         <ul className="space-y-1">
-          {examples.map((example, index) => (
+          {benefits.map((benefit, index) => (
             <li key={index} className="flex items-start gap-2">
               <span className="h-5 w-5 rounded-full bg-blue-100 text-mali-blue flex items-center justify-center text-xs mt-0.5 flex-shrink-0">
-                {index + 1}
+                ✓
               </span>
-              <span>{example}</span>
+              <span>{benefit}</span>
             </li>
           ))}
         </ul>
@@ -148,33 +148,42 @@ const Sponsors = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <SponsorLevel
-              title="Sponsors Platine"
+              title="Partenaire Platine"
               description="Partenaires principaux de l'IOAI Mali avec une visibilité maximale et des avantages exclusifs."
-              examples={[
-                "Leading Coding – école de programmation de premier plan à Adélaïde",
-                "Entreprises technologiques majeures"
+              benefits={[
+                "Logo sur tous les supports de communication (taille premium)",
+                "Présence VIP lors de tous les événements",
+                "Invitation à la cérémonie de départ de l'équipe nationale",
+                "Publication d'articles dédiés sur notre site et réseaux sociaux",
+                "Mention prioritaire dans les communiqués de presse"
               ]}
               color="bg-gradient-to-br from-white to-gray-100 border-gray-200"
               delay={100}
             />
             
             <SponsorLevel
-              title="Commanditaires Or"
+              title="Partenaire Or"
               description="Soutien important avec une forte visibilité lors des événements et dans les communications."
-              examples={[
-                "Institut Australien d'Apprentissage Automatique (AIML)",
-                "Entreprises d'innovation technologique"
+              benefits={[
+                "Logo sur les supports de communication principaux",
+                "Présence lors des événements majeurs",
+                "Mention dans nos communications sur les réseaux sociaux",
+                "Invitation aux cérémonies officielles",
+                "Contenu dédié sur notre site web"
               ]}
               color="bg-gradient-to-br from-white to-yellow-50 border-yellow-200"
               delay={200}
             />
             
             <SponsorLevel
-              title="Autres Partenaires"
-              description="Collaboration précieuse incluant médias, centres de santé innovants et autres entreprises soutenant l'initiative."
-              examples={[
-                "AI Doctor™️ - centre de santé innovant",
-                "Médias et institutions éducatives"
+              title="Partenaire Bronze"
+              description="Collaboration précieuse incluant visibilité et reconnaissance de votre soutien à notre initiative."
+              benefits={[
+                "Logo sur notre site web",
+                "Mention dans nos communications",
+                "Invitation aux principaux événements",
+                "Remerciements officiels lors des cérémonies",
+                "Certificat de partenariat"
               ]}
               color="bg-gradient-to-br from-white to-blue-50 border-blue-200"
               delay={300}
