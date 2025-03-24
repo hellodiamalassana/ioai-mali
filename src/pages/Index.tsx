@@ -45,7 +45,7 @@ const Index = () => {
                   Découvrez les systèmes qui apprennent par eux-mêmes et qui peuvent créer des solutions pour les défis spécifiques du Mali et de l'Afrique.
                 </p>
                 <Link 
-                  to="/resources" 
+                  to="/about" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   En savoir plus
@@ -69,7 +69,7 @@ const Index = () => {
                   Explorez les technologies qui comprennent et produisent le langage humain, avec un potentiel immense pour les langues africaines.
                 </p>
                 <Link 
-                  to="/resources" 
+                  to="/about" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   En savoir plus
@@ -93,7 +93,7 @@ const Index = () => {
                   Découvrez comment les machines peuvent voir et comprendre le monde, avec des applications pratiques pour l'agriculture, la santé et l'éducation au Mali.
                 </p>
                 <Link 
-                  to="/resources" 
+                  to="/about" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
                   En savoir plus
