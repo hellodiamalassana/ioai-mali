@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Award, Calendar, Lock, Zap } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
@@ -66,7 +67,7 @@ const Features = () => {
           <Feature 
             icon={<Users size={24} />}
             title="Accessible à tous les niveaux"
-            description="Que vous soyez débutant ou initié, lycéen ou professionnel, les premières phases sont conçues pour être inclusives. Seule votre curiosité et votre logique comptent pour démarrer."
+            description="Que vous soyez débutant ou initié, lycéen ou eleve professionnel et technique, les premières phases sont conçues pour être inclusives. Seule votre curiosité et votre logique comptent pour démarrer."
             delay={400}
             className="card-hover"
           />
