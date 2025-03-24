@@ -25,7 +25,7 @@ const Index = () => {
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
               <Calendar size={18} />
-              <span className="font-medium">Les inscriptions sont ouvertes - Phase 1 débute le 4 avril</span>
+              <span className="font-medium">Les participations sont ouvertes - Phase 1 débute le 4 avril</span>
             </div>
           </ScrollReveal>
           
