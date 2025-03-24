@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle } from 'lucide-react';
@@ -221,7 +222,7 @@ const Application = () => {
           <ScrollReveal animation="fade-in" delay={600} className="mt-8">
             <div className="inline-flex items-center gap-2 text-white/80 text-sm">
               <Mail size={16} />
-              Contactez-nous à <a href="mailto:contact@robotsmali.org" className="underline hover:text-white">contact@robotsmali.org</a>
+              Contactez-nous à <a href="mailto:info@robotsmali.org" className="underline hover:text-white">info@robotsmali.org</a>
             </div>
           </ScrollReveal>
         </div>
