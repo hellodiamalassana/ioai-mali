@@ -349,7 +349,7 @@ const Timeline = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Les premières étapes sont faciles et accessibles à tous! Inscris-toi maintenant pour tenter ta chance et peut-être représenter le Mali en Chine en 2025.
+              Les premières étapes sont faciles et accessibles à tous! Maintenant pour tenter ta chance et peut-être représenter le Mali en Chine en 2025.
             </p>
           </ScrollReveal>
           
@@ -378,4 +378,3 @@ const Timeline = () => {
 };
 
 export default Timeline;
-
