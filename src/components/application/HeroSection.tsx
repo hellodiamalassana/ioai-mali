@@ -21,7 +21,7 @@ const HeroSection = () => {
               <span className="font-medium">IOAI 2025 - Beijing, Chine</span>
             </div>
             <p className="text-muted-foreground text-lg text-center">
-              Découvrez le monde de l'IA et tentez votre chance de briller sur la scène mondiale. Nous invitons les jeunes talents maliens à représenter notre pays à l'Olympiade Internationale d'Intelligence Artificielle.
+              Cette compétition est ouverte à tous les acteurs de l'écosystème numérique malien ! Qu'importe votre niveau, votre âge ou votre parcours, venez découvrir l'IA et contribuer à faire briller le Mali sur la scène internationale.
             </p>
           </div>
         </ScrollReveal>

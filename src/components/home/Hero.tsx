@@ -43,7 +43,7 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Découvrez le monde de l'IA et tentez votre chance de briller sur la scène mondiale. Rejoignez l'équipe malienne pour l'IOAI 2025 à Beijing.
+                Ensemble, bâtissons l'avenir de l'IA au Mali ! Que vous soyez étudiant, enseignant, professionnel ou passionné, cette aventure est pour vous. Rejoignez-nous pour représenter fièrement le Mali à l'IOAI 2025 à Beijing.
               </p>
             </ScrollReveal>
             

@@ -31,13 +31,13 @@ const Index = () => {
           
           <ScrollReveal animation="fade-in" delay={100}>
             <h2 className="text-3xl md:text-4xl font-bold mb-5">
-              Représentez le Mali à l'IOAI 2025
+              Ensemble, faisons rayonner le Mali à l'IOAI 2025
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
-              Les inscriptions sont ouvertes! Obtenez votre code d'accès personnel dès maintenant.
+              Parents, enseignants, professionnels, étudiants - nous avons tous un rôle à jouer dans ce projet national. Les inscriptions sont ouvertes pour tous !
             </p>
           </ScrollReveal>
           
