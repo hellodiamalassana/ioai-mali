@@ -9,13 +9,13 @@ const ContactSection = () => {
     <section className="py-16 bg-mali-red text-white">
       <div className="container mx-auto px-4 text-center">
         <ScrollReveal animation="fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Des questions?
           </h2>
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={200}>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+          <p className="text-white max-w-2xl mx-auto mb-8">
             Si vous avez besoin d'aide ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
           </p>
         </ScrollReveal>
@@ -33,7 +33,7 @@ const ContactSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={600} className="mt-8">
-          <div className="inline-flex items-center gap-2 text-white/80 text-sm">
+          <div className="inline-flex items-center gap-2 text-white text-sm">
             <Mail size={16} />
             Contactez-nous à <a href="mailto:info@robotsmali.org" className="underline hover:text-white">info@robotsmali.org</a>
           </div>
