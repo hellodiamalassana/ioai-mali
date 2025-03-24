@@ -18,7 +18,7 @@ const Certificate = () => {
               {/* Official Certificate Image */}
               <img 
                 src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
-                alt="Certificat d'Accréditation IOAI" 
+                alt="Olympiade Internationale d'IA" 
                 className="w-full h-auto rounded-lg"
               />
             </div>

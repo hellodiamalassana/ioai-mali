@@ -37,7 +37,7 @@ const Index = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Les premières phases sont conçues pour être accessibles à tous! Inscrivez-vous dès maintenant pour réserver votre place et tenter de représenter le Mali à l'IOAI 2025.
+              Les premières étapes sont faciles et accessibles à tous! Maintenant pour tenter ta chance et peut-être représenter le Mali à l'IOAI 2025.
             </p>
           </ScrollReveal>
           
