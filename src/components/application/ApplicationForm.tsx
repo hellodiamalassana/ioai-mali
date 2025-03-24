@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -13,7 +12,6 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Loader2, AlertTriangle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
-// Define form schema with Zod
 const formSchema = z.object({
   category: z.enum(["international", "national"], {
     required_error: "Veuillez sélectionner une catégorie",
@@ -59,7 +57,6 @@ const ApplicationForm = () => {
   const [categorySelected, setCategorySelected] = useState(false);
   const { toast } = useToast();
   
-  // Initialize the form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -81,27 +78,20 @@ const ApplicationForm = () => {
   const selectedCategory = form.watch("category");
   const isInternational = selectedCategory === "international";
   
-  // Handle category selection
   const handleCategoryChange = (value: string) => {
     form.setValue('category', value as "international" | "national");
     setCategorySelected(true);
   };
   
-  // Form submission handler
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      // This is where you would normally send the form data to your backend
       console.log("Form data:", data);
-      
-      // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
       toast({
         title: "Inscription réussie !",
         description: `Merci pour votre inscription. Un email contenant vos tokens d'accès uniques sera envoyé à ${data.email}`,
       });
-      
       form.reset();
       setCategorySelected(false);
     } catch (error) {
@@ -127,7 +117,6 @@ const ApplicationForm = () => {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          {/* Catégorie - Always visible */}
           <FormField
             control={form.control}
             name="category"
@@ -160,12 +149,10 @@ const ApplicationForm = () => {
               </FormItem>
             )}
           />
-          
-          {/* Rest of the form appears only after category is selected */}
+
           {categorySelected && (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Prénom */}
                 <FormField
                   control={form.control}
                   name="firstName"
@@ -180,7 +167,6 @@ const ApplicationForm = () => {
                   )}
                 />
 
-                {/* Nom */}
                 <FormField
                   control={form.control}
                   name="lastName"
@@ -197,7 +183,6 @@ const ApplicationForm = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Email */}
                 <FormField
                   control={form.control}
                   name="email"
@@ -212,7 +197,6 @@ const ApplicationForm = () => {
                   )}
                 />
 
-                {/* Téléphone */}
                 <FormField
                   control={form.control}
                   name="phone"
@@ -229,7 +213,6 @@ const ApplicationForm = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Date de naissance */}
                 <FormField
                   control={form.control}
                   name="birthdate"
@@ -244,7 +227,6 @@ const ApplicationForm = () => {
                   )}
                 />
 
-                {/* Genre */}
                 <FormField
                   control={form.control}
                   name="gender"
@@ -270,7 +252,6 @@ const ApplicationForm = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Adresse */}
                 <FormField
                   control={form.control}
                   name="address"
@@ -285,7 +266,6 @@ const ApplicationForm = () => {
                   )}
                 />
 
-                {/* Ville */}
                 <FormField
                   control={form.control}
                   name="city"
@@ -301,9 +281,7 @@ const ApplicationForm = () => {
                 />
               </div>
 
-              {/* Niveau d'études pour les deux catégories */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* École */}
                 <FormField
                   control={form.control}
                   name="school"
@@ -318,7 +296,6 @@ const ApplicationForm = () => {
                   )}
                 />
 
-                {/* Niveau d'études */}
                 <FormField
                   control={form.control}
                   name="level"
@@ -337,11 +314,9 @@ const ApplicationForm = () => {
                               <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
                               <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
                               <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
-                              <SelectItem value="professionnel9">École Professionnelle - 9ème année</SelectItem>
-                              <SelectItem value="professionnel8">École Professionnelle - 8ème année</SelectItem>
-                              <SelectItem value="professionnel7">École Professionnelle - 7ème année</SelectItem>
-                              <SelectItem value="professionnel6">École Professionnelle - 6ème année</SelectItem>
-                              <SelectItem value="professionnel5">École Professionnelle - 5ème année</SelectItem>
+                              <SelectItem value="professionnel1">École Professionnelle - 1ère année</SelectItem>
+                              <SelectItem value="professionnel2">École Professionnelle - 2ème année</SelectItem>
+                              <SelectItem value="professionnel3">École Professionnelle - 3ème année</SelectItem>
                               <SelectItem value="professionnel4">École Professionnelle - 4ème année</SelectItem>
                             </>
                           ) : (
@@ -365,7 +340,6 @@ const ApplicationForm = () => {
                 />
               </div>
 
-              {/* Conditions d'utilisation */}
               <FormField
                 control={form.control}
                 name="termsAccepted"
