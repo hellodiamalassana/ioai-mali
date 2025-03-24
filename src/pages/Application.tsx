@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle } from 'lucide-react';
@@ -156,12 +155,6 @@ const Application = () => {
                 title="Intérêt pour l'IA"
                 description="Avoir un intérêt pour l'intelligence artificielle et ses applications."
                 delay={300}
-              />
-              
-              <CriteriaItem
-                title="Réalisations (bonus)"
-                description="Des distinctions ou réalisations dans des concours connexes sont un plus pour votre candidature."
-                delay={400}
               />
             </div>
           </div>
