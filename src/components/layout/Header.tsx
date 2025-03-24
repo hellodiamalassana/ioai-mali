@@ -25,7 +25,6 @@ const Header = () => {
   const navLinks = [
     { path: '/', label: 'Accueil' },
     { path: '/about', label: 'IOAI' },
-    { path: '/resources', label: 'Ressources' },
     { path: '/sponsors', label: 'Sponsors' },
     { path: '/application', label: 'Candidature' },
     { path: '/timeline', label: 'Calendrier' },
