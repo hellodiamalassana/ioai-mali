@@ -84,7 +84,7 @@ const Application = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
-            <h2 className="section-title mb-8">Formulaire d'Inscription</h2>
+            <h2 className="section-title mb-8">Participation</h2>
           </ScrollReveal>
           
           <ApplicationForm />
