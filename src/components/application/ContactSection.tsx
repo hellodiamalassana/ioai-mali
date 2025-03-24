@@ -23,6 +23,13 @@ const ContactSection = () => {
         <ScrollReveal animation="fade-in" delay={400}>
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
+              to="/contact" 
+              className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
+            >
+              Envoyez un message
+              <Mail size={18} />
+            </Link>
+            <Link 
               to="/timeline" 
               className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
             >

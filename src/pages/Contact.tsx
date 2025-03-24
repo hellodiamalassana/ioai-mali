@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -54,6 +53,7 @@ const Contact = () => {
         title: "Message envoyé",
         description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
         variant: "default",
+        className: "bg-mali-green text-white border-mali-green",
       });
       setIsSubmitting(false);
       setFormData({
@@ -243,7 +243,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                      className="w-full px-6 py-3 bg-mali-green text-white font-medium rounded-lg shadow-md hover:bg-mali-green/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
                     >
                       {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                       <Send size={18} />
