@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -120,8 +121,7 @@ const ApplicationForm = () => {
       <Alert className="mb-6 bg-amber-50 border-amber-200">
         <AlertTriangle className="h-4 w-4 text-amber-600" />
         <AlertDescription className="text-amber-700">
-          <strong>Attention :</strong> Les tokens d'accès pour la Phase 1 seront à usage unique et strictement personnels. 
-          Toute tentative de partage ou d'utilisation multiple entraînera la disqualification immédiate du candidat.
+          <strong>Attention :</strong> Pour participer à la première étape du concours qui commence le 4 Avril 2024, vous recevrez un code personnel. Ce code est comme une clé unique qui vous est réservée. Si vous partagez votre code ou si quelqu'un d'autre l'utilise, vous serez automatiquement éliminé du concours.
         </AlertDescription>
       </Alert>
 
