@@ -69,8 +69,8 @@ const Certificate = () => {
             <ScrollReveal animation="slide-left">
               <div className="rounded-2xl overflow-hidden shadow-lg relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=1200&h=720" 
-                  alt="Beijing, Chine" 
+                  src="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" 
+                  alt="Skyline de Beijing la nuit" 
                   className="w-full h-auto object-cover rounded-lg"
                   loading="eager"
                   width="1200"
@@ -104,3 +104,4 @@ const Certificate = () => {
 };
 
 export default Certificate;
+
