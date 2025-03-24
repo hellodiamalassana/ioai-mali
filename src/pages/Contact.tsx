@@ -27,11 +27,32 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // In a real implementation, you would send an email to info@robotsmali.org
+    // This is a simulation of the form submission
+    
+    // Construct email data that would be sent to info@robotsmali.org
+    const emailData = {
+      to: 'info@robotsmali.org',
+      from: formData.email,
+      subject: `Contact Form: ${formData.subject}`,
+      body: `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Subject: ${formData.subject}
+        
+        Message:
+        ${formData.message}
+      `
+    };
+    
+    // Log the email data to console (for development purposes)
+    console.log('Email would be sent to info@robotsmali.org with data:', emailData);
+    
+    // Simulate form submission delay
     setTimeout(() => {
       toast({
         title: "Message envoyé",
-        description: "Nous vous répondrons dans les plus brefs délais.",
+        description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
         variant: "default",
       });
       setIsSubmitting(false);
