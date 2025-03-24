@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -108,76 +109,76 @@ const Timeline = () => {
   const phases = [
     {
       number: 1,
-      title: "Test Initial - OUVERT À TOUS",
+      title: "Test Initial - Facile et Pour Tous",
       dates: "4 avril – 13 avril",
-      description: "Votre première étape vers l'aventure internationale! Un simple test en ligne accessible à tous les niveaux.",
+      description: "Ton premier pas vers l'aventure! Un test simple que tout le monde peut réussir.",
       items: [
-        "Test en ligne de 20 questions QCM (30 minutes)",
-        "AUCUNE expérience en programmation requise",
-        "Accessible sur ordinateur, tablette ou smartphone",
-        "Questions de logique et culture générale sur l'IA",
+        "Test en ligne avec 20 questions à choix multiples (30 minutes)",
+        "Pas besoin de savoir programmer",
+        "Tu peux le faire sur n'importe quel appareil (téléphone, ordinateur)",
+        "Questions de logique et sur les bases de l'IA",
       ],
       highlightItems: [
-        "1000 places disponibles - Inscrivez-vous vite!",
-        "500 tokens pour chaque catégorie (Internationale/Nationale)",
-        "Résultats communiqués par email le 15 avril",
+        "1000 places seulement - Ne tarde pas à t'inscrire!",
+        "500 codes d'accès pour chaque catégorie",
+        "Tu recevras tes résultats par email le 15 avril",
       ],
       isActive: true,
       color: "bg-blue-50"
     },
     {
       number: 2,
-      title: "Approfondissement - QUALIFICATION FACILE",
+      title: "Second Test - Toujours Accessible",
       dates: "18 avril – 27 avril",
-      description: "Si vous réussissez la Phase 1, participez à cette seconde évaluation toujours accessible et sans programmation complexe.",
+      description: "Si tu réussis la Phase 1, tu passeras à cette deuxième étape, toujours sans programmation difficile.",
       items: [
-        "Test en ligne de 20 questions QCM (45 minutes)",
-        "Toujours aucun besoin de savoir programmer",
-        "Concepts basiques d'intelligence artificielle",
-        "Ressources d'étude fournies après la Phase 1",
+        "Test en ligne de 20 questions à choix multiples (45 minutes)",
+        "Toujours pas besoin de savoir programmer",
+        "Introduction aux idées de base de l'intelligence artificielle",
+        "Tu recevras des ressources pour t'aider après la Phase 1",
       ],
       highlightItems: [
-        "80% des participants de Phase 1 seront qualifiés!",
-        "Recevez un certificat de participation digital",
-        "Tous les participants reçoivent des ressources éducatives gratuites",
+        "80% des participants de la Phase 1 pourront continuer!",
+        "Tu recevras un certificat numérique que tu pourras partager",
+        "Tous les participants reçoivent des ressources gratuites pour apprendre",
       ],
       color: "bg-green-50"
     },
     {
       number: 3,
-      title: "Mise en Pratique",
+      title: "Premiers Exercices Pratiques",
       dates: "1ᵉʳ mai – 18 mai",
-      description: "Première application pratique des connaissances acquises, avec support continu de nos mentors.",
+      description: "Tu commenceras à mettre en pratique ce que tu as appris, avec l'aide de nos mentors.",
       items: [
-        "Exercice pratique guidé en ligne",
-        "Introduction aux outils et plateformes d'IA",
-        "Support technique disponible en continu",
+        "Exercices guidés en ligne - pas à pas",
+        "Découverte des outils d'IA faciles à utiliser",
+        "Des mentors disponibles pour répondre à tes questions",
       ],
       color: "bg-yellow-50"
     },
     {
       number: 4,
-      title: "Tutorat Virtuel",
+      title: "Cours Personnalisés en Ligne",
       dates: "23 mai – 27 juin",
-      description: "Formation et accompagnement personnalisé par des experts en intelligence artificielle.",
+      description: "Tu suivras des cours adaptés à ton niveau avec des experts en IA.",
       items: [
-        "Sessions tutorées virtuelles (5 à 10 heures par semaine)",
-        "Formation adaptée à votre niveau de compétence",
-        "Attribution d'un certificat de validation",
-        "Ouvert aux deux catégories avec parcours différenciés",
+        "Cours en ligne (5 à 10 heures par semaine)",
+        "Formation adaptée à ton niveau, même débutant",
+        "Tu obtiendras un certificat officiel",
+        "Ouvert à tous, avec des parcours différents selon ta catégorie",
       ],
       color: "bg-purple-50"
     },
     {
       number: 5,
-      title: "Bootcamp Final",
+      title: "Stage Intensif Final",
       dates: "28 juin – 31 juillet",
-      description: "Formation intensive en présentiel pour sélectionner l'équipe nationale qui représentera le Mali.",
+      description: "Formation sur place pour sélectionner l'équipe qui représentera le Mali à l'olympiade internationale.",
       items: [
-        "Bootcamp intensif en présentiel à RobotsMali",
-        "Réservé à la Catégorie Internationale",
-        "Sélection d'un maximum de 4 participants pour l'IOAI",
-        "Prise en charge complète (transport, hébergement, repas)",
+        "Stage intensif à RobotsMali (à Bamako)",
+        "Réservé aux jeunes de la Catégorie Internationale",
+        "Sélection de maximum 4 participants pour le voyage en Chine",
+        "Tout est pris en charge (transport, logement, repas)",
       ],
       color: "bg-indigo-50"
     },
@@ -189,13 +190,13 @@ const Timeline = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Votre parcours vers Beijing 2025
+              Ton chemin vers Beijing 2025
             </h1>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-8">
-              L'Olympiade Nationale d'Intelligence Artificielle (ONIA) se déroule en plusieurs phases, débutant par des tests accessibles à tous et culminant avec la sélection de l'équipe nationale.
+              L'Olympiade d'Intelligence Artificielle se déroule en plusieurs étapes simples, commençant par des tests faciles et se terminant par la sélection de l'équipe qui ira en Chine.
             </p>
           </ScrollReveal>
           
@@ -203,45 +204,45 @@ const Timeline = () => {
             <ScrollReveal animation="fade-in" delay={300} className="bg-blue-50 rounded-xl p-6 border border-blue-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Clock size={24} className="text-mali-blue" />
-                <h3 className="text-xl font-semibold">Calendrier clé</h3>
+                <h3 className="text-xl font-semibold">Dates importantes</h3>
               </div>
-              <p className="text-muted-foreground mb-4">Phases initiales ouvertes à tous:</p>
+              <p className="text-muted-foreground mb-4">Premières étapes ouvertes à tous:</p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-mali-blue font-medium">
                   <div className="w-6 h-6 rounded-full bg-mali-blue/10 flex items-center justify-center text-sm">1</div>
-                  <span>4-13 avril: Phase 1 (Test en ligne)</span>
+                  <span>4-13 avril: Phase 1 (Test facile en ligne)</span>
                 </li>
                 <li className="flex items-center gap-2 text-mali-green font-medium">
                   <div className="w-6 h-6 rounded-full bg-mali-green/10 flex items-center justify-center text-sm">2</div>
-                  <span>18-27 avril: Phase 2 (Test d'approfondissement)</span>
+                  <span>18-27 avril: Phase 2 (Second test)</span>
                 </li>
               </ul>
               <div className="mt-6 bg-white p-3 rounded-lg border border-blue-100">
-                <p className="font-medium text-center">IOAI 2025: 2-9 août, Beijing, Chine</p>
+                <p className="font-medium text-center">Voyage en Chine: 2-9 août 2025, Beijing</p>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400} className="bg-green-50 rounded-xl p-6 border border-green-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Target size={24} className="text-mali-green" />
-                <h3 className="text-xl font-semibold">Objectifs des premières phases</h3>
+                <h3 className="text-xl font-semibold">Ce que tu vas apprendre</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <CheckCircle size={18} className="text-mali-green flex-shrink-0 mt-0.5" />
-                  <span>Évaluer votre potentiel et votre logique (pas vos connaissances techniques)</span>
+                  <span>Découvrir ton potentiel en résolution de problèmes (pas besoin de connaissances techniques)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={18} className="text-mali-green flex-shrink-0 mt-0.5" />
-                  <span>Identifier les talents cachés dans tout le Mali</span>
+                  <span>Apprendre l'IA de façon simple et amusante</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={18} className="text-mali-green flex-shrink-0 mt-0.5" />
-                  <span>Vous faire découvrir l'IA sans barrière technique</span>
+                  <span>Développer des compétences pour ton avenir</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={18} className="text-mali-green flex-shrink-0 mt-0.5" />
-                  <span>Offrir une formation gratuite même sans qualification</span>
+                  <span>Recevoir une formation gratuite, même si tu ne vas pas jusqu'au bout</span>
                 </li>
               </ul>
             </ScrollReveal>
@@ -249,23 +250,23 @@ const Timeline = () => {
             <ScrollReveal animation="fade-in" delay={500} className="bg-yellow-50 rounded-xl p-6 border border-yellow-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Users size={24} className="text-mali-yellow" />
-                <h3 className="text-xl font-semibold">Pour qui?</h3>
+                <h3 className="text-xl font-semibold">Qui peut participer?</h3>
               </div>
               <div className="space-y-4">
                 <div className="bg-white p-3 rounded-lg border border-yellow-100">
                   <h4 className="font-medium flex items-center gap-2 mb-2">
                     <BookOpen size={16} className="text-mali-blue" />
-                    Catégorie Internationale
+                    Catégorie Internationale (Pour aller en Chine)
                   </h4>
-                  <p className="text-sm">Lycéens, élèves des écoles professionnelles et professionnels de moins de 20 ans (en août 2025)</p>
+                  <p className="text-sm">Élèves au lycée, en école professionnelle ou jeunes professionnels de moins de 20 ans (août 2025)</p>
                 </div>
                 
                 <div className="bg-white p-3 rounded-lg border border-yellow-100">
                   <h4 className="font-medium flex items-center gap-2 mb-2">
                     <Award size={16} className="text-mali-green" />
-                    Catégorie Nationale
+                    Catégorie Nationale (Pour tous)
                   </h4>
-                  <p className="text-sm">Universitaires et grand public de tous âges, désireux d'apprendre l'IA</p>
+                  <p className="text-sm">Étudiants universitaires et toute personne intéressée par l'IA, quel que soit ton âge</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -274,7 +275,7 @@ const Timeline = () => {
           <ScrollReveal animation="fade-in" delay={600} className="text-center mt-10">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-mali-blue px-4 py-2 rounded-lg">
               <Calendar size={20} />
-              <span className="font-medium">IOAI 2025 : 2 - 9 août à Beijing, Chine</span>
+              <span className="font-medium">Compétition internationale: 2 - 9 août 2025 à Beijing, Chine</span>
             </div>
           </ScrollReveal>
         </div>
@@ -285,17 +286,17 @@ const Timeline = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div>
               <ScrollReveal animation="fade-in">
-                <h2 className="text-2xl font-bold mb-6">Catégories de Participation</h2>
+                <h2 className="text-2xl font-bold mb-6">Qui peut participer?</h2>
               </ScrollReveal>
               
               <div className="space-y-6">
                 <CategoryInfo
                   title="Catégorie Internationale"
-                  description="Réservée aux jeunes de moins de 20 ans, cette catégorie mène à l'IOAI."
+                  description="Pour les jeunes de moins de 20 ans qui veulent représenter le Mali en Chine."
                   details={[
-                    "Lycéens et élèves des écoles professionnelles",
-                    "Professionnels de moins de 20 ans (en août 2025)",
-                    "Objectif: représenter le Mali à l'IOAI 2025 en Chine"
+                    "Élèves au lycée et écoles professionnelles",
+                    "Jeunes professionnels de moins de 20 ans (en août 2025)",
+                    "Objectif: voyager en Chine pour l'olympiade IOAI 2025"
                   ]}
                   color="bg-mali-blue text-white"
                   delay={100}
@@ -303,11 +304,11 @@ const Timeline = () => {
                 
                 <CategoryInfo
                   title="Catégorie Nationale"
-                  description="Ouverte au grand public, cette catégorie favorise la diffusion des connaissances en IA."
+                  description="Ouverte à tout le monde pour apprendre l'IA, quel que soit ton âge."
                   details={[
-                    "Universitaires de tous âges",
-                    "Grand public et professionnels",
-                    "Objectif: développer l'écosystème IA au Mali"
+                    "Étudiants universitaires",
+                    "Tout le monde, même sans expérience",
+                    "Objectif: développer tes compétences en IA"
                   ]}
                   color="bg-mali-green text-white"
                   delay={200}
@@ -317,7 +318,7 @@ const Timeline = () => {
             
             <div className="lg:col-span-2">
               <ScrollReveal animation="fade-in">
-                <h2 className="text-2xl font-bold mb-8">Phases du Concours</h2>
+                <h2 className="text-2xl font-bold mb-8">Les étapes du concours</h2>
               </ScrollReveal>
               
               <div className="relative">
@@ -349,7 +350,7 @@ const Timeline = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Les premières phases sont conçues pour être accessibles à tous! Inscrivez-vous dès maintenant pour réserver votre place et tenter de représenter le Mali à l'IOAI 2025.
+              Les premières étapes sont faciles et accessibles à tous! Inscris-toi maintenant pour tenter ta chance et peut-être représenter le Mali en Chine en 2025.
             </p>
           </ScrollReveal>
           
@@ -359,7 +360,7 @@ const Timeline = () => {
                 to="/application" 
                 className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center gap-2"
               >
-                S'inscrire à la Phase 1
+                Participer au concours
                 <ArrowRight size={18} />
               </Link>
               
@@ -367,7 +368,7 @@ const Timeline = () => {
                 href="#" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/10 shadow-sm hover:bg-blue-50 transition-all"
               >
-                Télécharger le Planning Complet
+                Télécharger le calendrier complet
               </a>
             </div>
           </ScrollReveal>
