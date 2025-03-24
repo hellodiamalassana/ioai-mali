@@ -31,8 +31,8 @@ const Certificate = () => {
             
             <ScrollReveal animation="fade-in" delay={200}>
               <p className="text-muted-foreground mb-8">
-                La 2ème édition de l'Olympiade Internationale d'Intelligence Artificielle se tiendra à Beijing, Chine. 
-                C'est une opportunité unique pour les jeunes talents maliens de se mesurer aux meilleurs du monde.
+                La 2ème édition de l'Olympiade Internationale d'Intelligence Artificielle se tiendra dans la capitale chinoise. 
+                Une opportunité unique pour les jeunes talents maliens de se mesurer aux meilleurs du monde.
               </p>
             </ScrollReveal>
             
@@ -44,7 +44,7 @@ const Certificate = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">2 - 9 août 2025</h3>
-                    <p className="text-muted-foreground">La compétition s'étend sur une semaine intensive d'épreuves et d'activités culturelles.</p>
+                    <p className="text-muted-foreground">Une semaine intensive d'épreuves et d'activités culturelles.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -56,7 +56,7 @@ const Certificate = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Beijing, Chine</h3>
-                    <p className="text-muted-foreground">La capitale chinoise accueillera les délégations de plus de 60 pays participants.</p>
+                    <p className="text-muted-foreground">Plus de 60 pays participants réunis dans un événement mondial.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -68,7 +68,7 @@ const Certificate = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Une délégation de 4 participants</h3>
-                    <p className="text-muted-foreground">Le Mali sera représenté par les 4 meilleurs talents sélectionnés lors de l'ONIA.</p>
+                    <p className="text-muted-foreground">Les meilleurs talents sélectionnés lors de l'Olympiade Nationale d'IA (ONIA).</p>
                   </div>
                 </div>
               </ScrollReveal>
