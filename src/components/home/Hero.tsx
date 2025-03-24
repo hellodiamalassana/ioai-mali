@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Star, Users } from 'lucide-react';
@@ -86,12 +87,7 @@ const Hero = () => {
                     width="1200"
                     height="720"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                    <div className="p-4 text-white">
-                      <h3 className="text-lg font-semibold">Votre chance historique</h3>
-                      <p className="text-sm">Premiers représentants du Mali en IA mondiale</p>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 
                 <img 
