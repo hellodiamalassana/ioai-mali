@@ -171,7 +171,7 @@ const Application = () => {
             <ProcessStep
               number={1}
               title="Enregistrement en Ligne"
-              description="Remplissez le formulaire pour votre catégorie. Vous recevrez par email un identifiant et un code personnel pour accéder à la Phase 1."
+              description="Remplissez le formulaire pour votre catégorie. Vous recevrez votre identifiant et un code personnel pour accéder à la Phase 1."
               delay={100}
             />
             
