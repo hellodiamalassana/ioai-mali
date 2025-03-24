@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Globe } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
@@ -43,7 +43,7 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Rejoignez l'équipe malienne pour l'IOAI 2025 à Beijing. Inscrivez-vous dès maintenant pour obtenir votre code d'accès personnel.
+                Découvrez le monde de l'IA et tentez votre chance de briller sur la scène mondiale. Rejoignez l'équipe malienne pour l'IOAI 2025 à Beijing.
               </p>
             </ScrollReveal>
             

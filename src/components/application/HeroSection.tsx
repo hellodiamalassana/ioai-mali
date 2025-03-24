@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { AlertCircle, ExternalLink } from 'lucide-react';
+import { AlertCircle, ExternalLink, Globe } from 'lucide-react';
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const HeroSection = () => {
@@ -15,9 +15,15 @@ const HeroSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={200}>
-          <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-8">
-            Participez à l'Aventure Internationale de l'IA ! Nous invitons les jeunes talents maliens à représenter notre pays à l'IOAI 2025 en Chine.
-          </p>
+          <div className="flex flex-col items-center max-w-3xl mx-auto mb-8">
+            <div className="inline-flex items-center gap-2 bg-mali-blue/10 text-mali-blue px-4 py-2 rounded-full mb-4">
+              <Globe size={18} />
+              <span className="font-medium">IOAI 2025 - Beijing, Chine</span>
+            </div>
+            <p className="text-muted-foreground text-lg text-center">
+              Découvrez le monde de l'IA et tentez votre chance de briller sur la scène mondiale. Nous invitons les jeunes talents maliens à représenter notre pays à l'Olympiade Internationale d'Intelligence Artificielle.
+            </p>
+          </div>
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={300}>
@@ -30,15 +36,24 @@ const HeroSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={400} className="mt-8 text-center">
-          <a 
-            href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
-          >
-            Participation
-            <ExternalLink size={18} />
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+            >
+              Participation
+              <ExternalLink size={18} />
+            </a>
+            
+            <a 
+              href="/timeline" 
+              className="px-6 py-3 bg-transparent text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5"
+            >
+              Voir le calendrier
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>
