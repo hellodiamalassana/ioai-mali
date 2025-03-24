@@ -55,7 +55,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
                 >
-                  Participer à l'aventure
+                  Participation
                   <ArrowRight size={18} />
                 </a>
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">

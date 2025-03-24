@@ -49,7 +49,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Rejoins l'aventure
+                Participation
               </a>
               
               <Link 
