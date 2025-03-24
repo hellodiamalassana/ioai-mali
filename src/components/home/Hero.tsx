@@ -1,10 +1,53 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const targetDate = new Date('2024-04-04T00:00:00');
+    
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+      
+      if (difference <= 0) {
+        // Tests have started
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0
+        });
+        return;
+      }
+      
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+      
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+    
+    // Calculate immediately
+    calculateTimeLeft();
+    
+    // Set up interval to update every second
+    const timer = setInterval(calculateTimeLeft, 1000);
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
@@ -65,7 +108,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
               <div className="p-6 relative z-10">
-                <div className="relative mb-4 rounded-lg overflow-hidden shadow-md">
+                <div className="relative mb-6 rounded-lg overflow-hidden shadow-md">
                   <img 
                     src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200&h=720" 
                     alt="Intelligence Artificielle au Mali" 
@@ -77,16 +120,47 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 
-                <img 
-                  src="/lovable-uploads/da02bc5c-d59a-4336-a0f0-f927faef83ca.png" 
-                  alt="Certificat d'Accréditation IOAI" 
-                  className="w-full h-auto rounded-lg mb-4"
-                  loading="eager"
-                  width="600"
-                  height="400"
-                />
+                {/* Countdown Timer replacing the accreditation image */}
+                <div className="bg-blue-50 rounded-lg p-6 shadow-md border border-blue-100">
+                  <div className="text-center mb-4">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Clock size={20} className="text-mali-blue" />
+                      <h3 className="text-xl font-semibold text-mali-blue">Début des tests</h3>
+                    </div>
+                    <p className="text-muted-foreground">4 avril 2024</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-4 gap-2 text-center">
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.days}</div>
+                      <div className="text-xs text-muted-foreground">Jours</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.hours}</div>
+                      <div className="text-xs text-muted-foreground">Heures</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.minutes}</div>
+                      <div className="text-xs text-muted-foreground">Minutes</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.seconds}</div>
+                      <div className="text-xs text-muted-foreground">Secondes</div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 text-center">
+                    <Link 
+                      to="/application" 
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-mali-blue/10 text-mali-blue rounded-lg hover:bg-mali-blue/20 transition-colors"
+                    >
+                      S'inscrire maintenant
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
                 
-                <div className="text-center">
+                <div className="text-center mt-4">
                   <a 
                     href="https://ioai-official.org/" 
                     target="_blank" 
