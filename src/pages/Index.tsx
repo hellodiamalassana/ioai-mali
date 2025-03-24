@@ -6,6 +6,7 @@ import ApplicationProcess from '@/components/home/ApplicationProcess';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   // Scroll to top when component mounts
@@ -47,7 +48,7 @@ const Index = () => {
                 href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
                 Participation
               </a>

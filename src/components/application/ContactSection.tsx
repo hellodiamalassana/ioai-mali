@@ -24,7 +24,7 @@ const ContactSection = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/timeline" 
-              className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
+              className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
             >
               Voir le calendrier
               <ArrowRight size={18} />

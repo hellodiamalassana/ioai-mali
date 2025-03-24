@@ -22,8 +22,8 @@ const CriteriaItem: React.FC<CriteriaItemProps> = ({
         <CheckCircle size={20} style={{ color: iconColor }} />
       </div>
       <div>
-        <h3 className="font-semibold mb-1">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <h3 className="font-semibold mb-1 text-black">{title}</h3>
+        <p className="text-black">{description}</p>
       </div>
     </div>
   </ScrollReveal>
