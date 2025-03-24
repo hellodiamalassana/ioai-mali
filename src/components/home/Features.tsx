@@ -92,7 +92,7 @@ const Features = () => {
           <Feature 
             icon={<Award size={24} />}
             title="Phase 5"
-            description="Stage final à Bamako et sélection pour Beijing 2025."
+            description="Stage final à RobotsMali AI4D Lab et sélection pour Beijing 2025."
             delay={500}
             className="card-hover"
           />

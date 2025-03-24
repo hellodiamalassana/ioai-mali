@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -171,7 +170,7 @@ const Timeline = () => {
       dates: "28 juin – 31 juillet",
       description: "Formation sur place pour sélectionner l'équipe qui représentera le Mali à l'olympiade internationale.",
       items: [
-        "Stage intensif à RobotsMali (à Bamako)",
+        "Stage intensif à RobotsMali AI4D Lab (à Bamako)",
         "Réservé aux jeunes de la Catégorie Internationale",
         "Sélection de maximum 4 participants pour le voyage en Chine",
         "Tout est pris en charge (transport, logement, repas)",
