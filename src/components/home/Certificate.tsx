@@ -67,16 +67,33 @@ const Certificate = () => {
           
           <div className="w-full lg:w-1/2">
             <ScrollReveal animation="slide-left">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
+              <div className="rounded-2xl overflow-hidden shadow-lg relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200&h=720" 
-                  alt="Technologie de la Chine" 
+                  src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=1200&h=720" 
+                  alt="Beijing, Chine" 
                   className="w-full h-auto object-cover rounded-lg"
                   loading="eager"
                   width="1200"
                   height="720"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-0 right-0 p-3">
+                  <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow">
+                    <div className="w-6 h-4 mr-2 overflow-hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" className="w-full h-full">
+                        <rect width="5" height="3" fill="#DE2910"/>
+                        <svg x="0" y="0" width="5" height="3" viewBox="0 0 30 20">
+                          <path d="M5,1 L6,2 L5,3 L4,2 z" fill="#FFDE00"/>
+                          <path d="M8,1 L9,2 L8,3 L7,2 z" fill="#FFDE00"/>
+                          <path d="M8,4 L9,5 L8,6 L7,5 z" fill="#FFDE00"/>
+                          <path d="M5,4 L6,5 L5,6 L4,5 z" fill="#FFDE00"/>
+                          <path d="M2,2 L3,3 L2,4 L1,3 z" fill="#FFDE00"/>
+                        </svg>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">Beijing, Chine</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
             </ScrollReveal>
           </div>
