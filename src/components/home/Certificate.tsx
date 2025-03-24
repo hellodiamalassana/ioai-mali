@@ -64,6 +64,22 @@ const Certificate = () => {
               </ScrollReveal>
             </div>
           </div>
+          
+          <div className="w-full lg:w-1/2">
+            <ScrollReveal animation="slide-left">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200&h=720" 
+                  alt="Technologie de la Chine" 
+                  className="w-full h-auto object-cover rounded-lg"
+                  loading="eager"
+                  width="1200"
+                  height="720"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>
