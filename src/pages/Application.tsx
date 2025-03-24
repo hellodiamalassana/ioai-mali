@@ -1,10 +1,10 @@
 
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle } from 'lucide-react';
+import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ApplicationForm from '@/components/application/ApplicationForm';
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 
 // Criteria Item component
 interface CriteriaItemProps {
@@ -79,6 +79,18 @@ const Application = () => {
               </AlertDescription>
             </Alert>
           </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={400} className="mt-8 text-center">
+            <a 
+              href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+            >
+              Participer maintenant
+              <ExternalLink size={18} />
+            </a>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -87,8 +99,6 @@ const Application = () => {
           <ScrollReveal animation="fade-in">
             <h2 className="section-title mb-8">Participation</h2>
           </ScrollReveal>
-          
-          <ApplicationForm />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <ScrollReveal animation="fade-in" delay={100} className="h-full">
@@ -190,6 +200,18 @@ const Application = () => {
               delay={300}
             />
           </div>
+          
+          <div className="text-center mt-8">
+            <a 
+              href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+            >
+              S'inscrire maintenant
+              <ExternalLink size={18} />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -203,7 +225,7 @@ const Application = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Si vous avez besoin d'aide pour remplir le formulaire ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
+              Si vous avez besoin d'aide ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
             </p>
           </ScrollReveal>
           
