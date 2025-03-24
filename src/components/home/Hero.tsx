@@ -1,53 +1,10 @@
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    // Set target date to April 4, 2024 at midnight
-    const targetDate = new Date('2024-04-04T00:00:00').getTime();
-    
-    const calculateTimeLeft = () => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-      
-      if (difference <= 0) {
-        // Tests have started
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0
-        });
-        return;
-      }
-      
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / 1000 / 60) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
-      
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
-    
-    // Calculate immediately
-    calculateTimeLeft();
-    
-    // Set up interval to update every second
-    const timer = setInterval(calculateTimeLeft, 1000);
-    
-    // Clean up interval on component unmount
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
@@ -118,46 +75,6 @@ const Hero = () => {
                     height="720"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                
-                {/* Countdown Timer replacing the accreditation image */}
-                <div className="bg-blue-50 rounded-lg p-6 shadow-md border border-blue-100">
-                  <div className="text-center mb-4">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <Clock size={20} className="text-mali-blue" />
-                      <h3 className="text-xl font-semibold text-mali-blue">Début des tests</h3>
-                    </div>
-                    <p className="text-muted-foreground">4 avril 2024</p>
-                  </div>
-                  
-                  <div className="grid grid-cols-4 gap-2 text-center">
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.days}</div>
-                      <div className="text-xs text-muted-foreground">Jours</div>
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.hours}</div>
-                      <div className="text-xs text-muted-foreground">Heures</div>
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.minutes}</div>
-                      <div className="text-xs text-muted-foreground">Minutes</div>
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-3xl font-bold text-mali-blue">{timeLeft.seconds}</div>
-                      <div className="text-xs text-muted-foreground">Secondes</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4 text-center">
-                    <Link 
-                      to="/application" 
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-mali-blue/10 text-mali-blue rounded-lg hover:bg-mali-blue/20 transition-colors"
-                    >
-                      Rejoins l'aventure maintenant
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
                 </div>
                 
                 <div className="text-center mt-4">
