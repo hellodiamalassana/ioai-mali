@@ -22,24 +22,24 @@ const Index = () => {
       <Certificate />
       
       {/* Call to Action Section with Competition Date */}
-      <section className="w-full py-20 bg-mali-blue text-white">
+      <section className="w-full py-16 bg-mali-blue text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Calendar size={18} />
-              <span className="font-medium">Les participations sont ouvertes - Phase 1 débute le 4 avril</span>
+              <span className="font-medium">Début des tests: 4 avril</span>
             </div>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={100}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Écrivez un nouveau chapitre de l'histoire technologique du Mali
+            <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              Représentez le Mali à l'IOAI 2025
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Les premières étapes sont faciles et accessibles à tous! Maintenant pour tenter ta chance et peut-être représenter le Mali à l'IOAI 2025.
+            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
+              Les inscriptions sont ouvertes! Obtenez votre code d'accès personnel dès maintenant.
             </p>
           </ScrollReveal>
           
@@ -49,14 +49,14 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Participer
+                S'inscrire
               </Link>
               
               <Link 
                 to="/timeline" 
                 className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10"
               >
-                Découvrir les étapes du concours
+                Voir le calendrier
               </Link>
             </div>
           </ScrollReveal>

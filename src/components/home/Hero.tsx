@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Star, Users } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
@@ -26,48 +26,35 @@ const Hero = () => {
             <ScrollReveal animation="slide-right">
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="inline-block py-1 px-3 bg-blue-100 text-mali-blue rounded-full text-sm font-medium">
-                  RobotsMali IOAI 2025
+                  IOAI 2025
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   <Calendar size={14} />
-                  <span>Phase 1: dès le 4 avril - Ouvert à tous!</span>
+                  <span>Début: 4 avril</span>
                 </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-                Découvrir le monde de l'IA et tentez votre chance de briller sur la scène mondiale!
+                Olympiade Internationale d'Intelligence Artificielle
               </h1>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Pour la première fois, le Mali participera à l'Olympiade Internationale d'Intelligence Artificielle! Même si vous ne réussissez pas du premier coup, vous apprendrez beaucoup en essayant. Joignez-vous à cette aventure et représentez votre pays à Beijing en 2025.
+                Rejoignez l'équipe malienne pour l'IOAI 2025 à Beijing. Inscrivez-vous dès maintenant pour obtenir votre code d'accès personnel.
               </p>
-            </ScrollReveal>
-            
-            <ScrollReveal animation="fade-in" delay={500}>
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">
-                  <Star size={14} />
-                  <span>Phase 1 & 2: Tests simples en ligne accessibles à tous</span>
-                </div>
-                <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  <Users size={14} />
-                  <span>1000 places disponibles!</span>
-                </div>
-              </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
                 <Link to="/application" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                  Tentez votre chance maintenant
+                  S'inscrire
                   <ArrowRight size={18} />
                 </Link>
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
-                  Découvrir les étapes du concours
+                  Voir le calendrier
                 </Link>
               </div>
             </ScrollReveal>
