@@ -64,11 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				mali: {
-					green: '#45954c',
-					red: '#902127',
-					yellow: '#cbbc34',
-					dark: '#0F172A',
-					light: '#F8FAFC',
+					'green': '#009E60',
+					'yellow': '#FFD700',
+					'red': '#CC071E',
+					'blue': '#0056B3',
+					'dark': '#0F172A',
+					'light': '#F8FAFC',
 				}
 			},
 			borderRadius: {
