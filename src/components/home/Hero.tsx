@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
@@ -14,11 +13,11 @@ const Hero = () => {
 
   useEffect(() => {
     // Set target date to April 4, 2024 at midnight
-    const targetDate = new Date('2024-04-04T00:00:00');
+    const targetDate = new Date('2024-04-04T00:00:00').getTime();
     
     const calculateTimeLeft = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
+      const now = new Date().getTime();
+      const difference = targetDate - now;
       
       if (difference <= 0) {
         // Tests have started
