@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
   return (
-    <section className="py-16 bg-mali-red text-white">
+    <section className="py-16 bg-mali-red text-black">
       <div className="container mx-auto px-4 text-center">
         <ScrollReveal animation="fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
             Des questions?
           </h2>
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={200}>
-          <p className="text-white max-w-2xl mx-auto mb-8">
+          <p className="text-black max-w-2xl mx-auto mb-8">
             Si vous avez besoin d'aide ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
           </p>
         </ScrollReveal>
@@ -31,7 +31,7 @@ const ContactSection = () => {
             </Link>
             <Link 
               to="/timeline" 
-              className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
+              className="px-6 py-3 bg-mali-red text-black font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
             >
               Voir le calendrier
               <ArrowRight size={18} />
@@ -40,9 +40,9 @@ const ContactSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={600} className="mt-8">
-          <div className="inline-flex items-center gap-2 text-white text-sm">
-            <Mail size={16} />
-            Contactez-nous à <a href="mailto:info@robotsmali.org" className="underline hover:text-white">info@robotsmali.org</a>
+          <div className="inline-flex items-center gap-2 text-black text-sm">
+            <Mail size={16} className="text-black" />
+            Contactez-nous à <a href="mailto:info@robotsmali.org" className="underline hover:text-black">info@robotsmali.org</a>
           </div>
         </ScrollReveal>
       </div>
