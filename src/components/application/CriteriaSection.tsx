@@ -5,19 +5,19 @@ import CriteriaItem from './CriteriaItem';
 
 const CriteriaSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-[#cbbc34]/10 to-white">
+    <section className="py-16 bg-gradient-to-br from-mali-yellow/10 to-white">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title text-[#45954c]">Critères d'Éligibilité</h2>
+          <h2 className="section-title text-mali-green">Critères d'Éligibilité</h2>
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={200}>
-          <p className="section-subtitle text-[#902127]/90">
+          <p className="section-subtitle text-mali-red/90">
             Pour la Catégorie Internationale (celle qui mène à l'IOAI)
           </p>
         </ScrollReveal>
         
-        <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-sm border border-[#cbbc34]/20">
+        <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-sm border border-mali-yellow/20">
           <div className="space-y-6">
             <CriteriaItem
               title="Résider au Mali"

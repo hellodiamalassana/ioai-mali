@@ -14,7 +14,7 @@ const CriteriaItem: React.FC<CriteriaItemProps> = ({
   title, 
   description, 
   delay = 0,
-  iconColor = "#0056B3" 
+  iconColor = "#45954c" 
 }) => (
   <ScrollReveal animation="fade-in" delay={delay}>
     <div className="flex gap-3">
