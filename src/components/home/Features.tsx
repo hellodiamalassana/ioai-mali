@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Award, Calendar, Zap } from 'lucide-react';
+import { Award, Calendar, Zap, BookOpen, Users } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { cn } from '@/lib/utils';
 
@@ -34,11 +34,11 @@ const Features = () => {
           <h2 className="section-title">Étapes du concours</h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
           <Feature 
             icon={<Calendar size={24} />}
             title="Phase 1"
-            description="QCM en ligne du 4 au 13 avril. 20 questions accessibles à tous niveaux."
+            description="QCM en ligne du 4 au 13 avril. 20 questions accessibles à tous."
             delay={100}
             className="card-hover bg-blue-50 border-blue-100"
           />
@@ -52,10 +52,26 @@ const Features = () => {
           />
           
           <Feature 
-            icon={<Award size={24} />}
-            title="Finale - Beijing 2025"
-            description="4 finalistes représenteront le Mali à l'Olympiade mondiale en Chine."
+            icon={<BookOpen size={24} />}
+            title="Phase 3"
+            description="Exercices pratiques du 1er au 18 mai avec accompagnement."
             delay={300}
+            className="card-hover bg-yellow-50 border-yellow-100"
+          />
+          
+          <Feature 
+            icon={<Users size={24} />}
+            title="Phase 4"
+            description="Cours en ligne du 23 mai au 27 juin adaptés à chaque niveau."
+            delay={400}
+            className="card-hover bg-purple-50 border-purple-100"
+          />
+          
+          <Feature 
+            icon={<Award size={24} />}
+            title="Phase 5"
+            description="Stage final à Bamako et sélection pour Beijing 2025."
+            delay={500}
             className="card-hover"
           />
         </div>
