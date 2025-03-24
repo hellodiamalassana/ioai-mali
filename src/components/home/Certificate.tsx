@@ -16,8 +16,8 @@ const Certificate = () => {
           <ScrollReveal animation="slide-right">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-mali-blue/10 relative overflow-hidden">
               <img 
-                src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
-                alt="Olympiade Internationale d'IA" 
+                src="/lovable-uploads/da02bc5c-d59a-4336-a0f0-f927faef83ca.png" 
+                alt="Certificat IOAI" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
