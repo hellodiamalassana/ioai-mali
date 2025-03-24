@@ -184,16 +184,9 @@ const Application = () => {
             
             <ProcessStep
               number={3}
-              title="Formation et Aide"
-              description="Vous aurez accès à des cours en ligne, des tutoriels, des vidéos et des séances d'aide pour bien vous préparer aux tests."
-              delay={300}
-            />
-            
-            <ProcessStep
-              number={4}
               title="Sélection Finale – Camp d'Entraînement"
               description="Les candidats de la Catégorie Internationale qui réussissent la Phase 4 participeront à un camp d'entraînement intensif à RobotsMali. À la fin, maximum 4 participants seront choisis pour représenter le Mali à l'IOAI en Chine (2–9 août 2025), avec tous les frais de voyage payés."
-              delay={400}
+              delay={300}
             />
           </div>
         </div>
