@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
 import Certificate from '@/components/home/Certificate';
+import ApplicationProcess from '@/components/home/ApplicationProcess';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -17,6 +18,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Hero />
       <Features />
+      <ApplicationProcess />
       <Certificate />
       
       {/* Call to Action Section with Competition Date */}
