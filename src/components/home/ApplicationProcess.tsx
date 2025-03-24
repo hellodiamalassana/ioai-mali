@@ -65,6 +65,30 @@ const ApplicationProcess = () => {
               delay={400}
             />
             
+            <ScrollReveal animation="fade-in" delay={500}>
+              <div className="bg-white p-4 rounded-lg border border-mali-blue/20 mt-6">
+                <h3 className="text-lg font-semibold mb-3 text-mali-blue">Conditions de test :</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex gap-2 items-start">
+                    <span className="font-bold text-mali-blue">1 -</span>
+                    <span>Le test est individuel : aucune tentative de triche ne sera tolérée.</span>
+                  </li>
+                  <li className="flex gap-2 items-start">
+                    <span className="font-bold text-mali-blue">2 -</span>
+                    <span>Aucune limite de temps, le compte à rebours n'est pas actif.</span>
+                  </li>
+                  <li className="flex gap-2 items-start">
+                    <span className="font-bold text-mali-blue">3 -</span>
+                    <span>Vous pouvez vous déconnecter et continuer ultérieurement.</span>
+                  </li>
+                  <li className="flex gap-2 items-start">
+                    <span className="font-bold text-mali-blue">4 -</span>
+                    <span>Les recherches supplémentaires sont encouragées.</span>
+                  </li>
+                </ul>
+              </div>
+            </ScrollReveal>
+            
             <div className="mt-6">
               <a 
                 href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 

@@ -2,7 +2,8 @@
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import ProcessStep from './ProcessStep';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const ApplicationProcessSection = () => {
   return (
@@ -34,6 +35,30 @@ const ApplicationProcessSection = () => {
             delay={300}
           />
         </div>
+        
+        <ScrollReveal animation="fade-in" delay={400} className="mt-12">
+          <div className="bg-blue-50 p-6 rounded-lg border border-mali-blue/20">
+            <h3 className="text-xl font-semibold mb-4 text-mali-blue">Conditions de test :</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex gap-2 items-start">
+                <span className="font-bold text-mali-blue">1 -</span>
+                <span>Le test est individuel : aucune tentative de triche ne sera tolérée (vérification en présentiel).</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <span className="font-bold text-mali-blue">2 -</span>
+                <span>Aucune limite de temps, le compte à rebours n'est pas actif.</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <span className="font-bold text-mali-blue">3 -</span>
+                <span>Vous pouvez vous déconnecter et continuer ultérieurement.</span>
+              </li>
+              <li className="flex gap-2 items-start">
+                <span className="font-bold text-mali-blue">4 -</span>
+                <span>Les recherches supplémentaires sont encouragées.</span>
+              </li>
+            </ul>
+          </div>
+        </ScrollReveal>
         
         <div className="text-center mt-8">
           <a 
