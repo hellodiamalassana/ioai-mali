@@ -19,7 +19,7 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description, delay = 0, 
     delay={delay}
     className={cn("bg-white rounded-xl p-6 shadow-sm border border-border", className)}
   >
-    <div className="h-12 w-12 rounded-full bg-mali-blue/10 text-mali-blue flex items-center justify-center mb-5">
+    <div className="h-12 w-12 rounded-full bg-mali-red/10 text-mali-red flex items-center justify-center mb-5">
       {icon}
     </div>
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
@@ -29,12 +29,12 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description, delay = 0, 
 
 const Features = () => {
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-white to-blue-50">
+    <section className="w-full py-16 bg-gradient-to-b from-white to-red-50">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in" className="mb-6">
-          <div className="inline-flex mx-auto items-center gap-2 bg-mali-blue/10 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Calendar size={18} className="text-mali-blue" />
-            <span className="font-medium text-mali-blue">Début des tests: 4 avril</span>
+          <div className="inline-flex mx-auto items-center gap-2 bg-mali-red/10 backdrop-blur-sm px-4 py-2 rounded-full">
+            <Calendar size={18} className="text-mali-red" />
+            <span className="font-medium text-mali-red">Début des tests: 4 avril</span>
           </div>
         </ScrollReveal>
 
@@ -51,7 +51,7 @@ const Features = () => {
               href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec"
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+              className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
               Participation
             </a>
@@ -64,7 +64,7 @@ const Features = () => {
             title="Phase 1"
             description="QCM en ligne du 4 au 13 avril. 20 questions accessibles à tous."
             delay={100}
-            className="card-hover bg-blue-50 border-blue-100"
+            className="card-hover bg-red-50 border-red-100"
           />
           
           <Feature 

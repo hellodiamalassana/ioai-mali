@@ -20,7 +20,7 @@ const Index = () => {
       <ApplicationProcess />
       
       {/* Call to Action Section with Competition Date */}
-      <section className="w-full py-16 bg-mali-blue text-white">
+      <section className="w-full py-16 bg-mali-red text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
@@ -47,7 +47,7 @@ const Index = () => {
                 href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
                 Participation
               </a>

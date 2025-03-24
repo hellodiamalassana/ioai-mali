@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Globe } from 'lucide-react';
@@ -7,13 +8,13 @@ const Hero = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50"></div>
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-blue-100/40 to-transparent rounded-bl-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-indigo-100/30 to-transparent rounded-tr-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-rose-50"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-red-100/40 to-transparent rounded-bl-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-rose-100/30 to-transparent rounded-tr-full"></div>
       </div>
       
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-mali-blue/5 rounded-full blur-3xl animate-pulse-soft"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-mali-red/5 rounded-full blur-3xl animate-pulse-soft"></div>
         <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-mali-green/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-2/3 left-1/2 w-72 h-72 bg-mali-yellow/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }}></div>
       </div>
@@ -23,7 +24,7 @@ const Hero = () => {
           <div>
             <ScrollReveal animation="slide-right">
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="inline-block py-1 px-3 bg-blue-100 text-mali-blue rounded-full text-sm font-medium">
+                <span className="inline-block py-1 px-3 bg-red-100 text-mali-red rounded-full text-sm font-medium">
                   IOAI 2025
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
@@ -51,12 +52,12 @@ const Hero = () => {
                   href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                  className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
                 >
                   Participation
                   <ArrowRight size={18} />
                 </a>
-                <Link to="/timeline" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
+                <Link to="/timeline" className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5 shadow-sm hover:shadow">
                   Voir le calendrier
                 </Link>
               </div>
@@ -65,7 +66,7 @@ const Hero = () => {
           
           <ScrollReveal animation="slide-left" delay={300} className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-white/20">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-50/50"></div>
               
               <div className="p-6 relative z-10">
                 <div className="relative mb-6 rounded-lg overflow-hidden shadow-md">
@@ -85,7 +86,7 @@ const Hero = () => {
                     href="https://ioai-official.org/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-mali-blue hover:underline text-sm font-medium"
+                    className="inline-flex items-center gap-1 text-mali-red hover:underline text-sm font-medium"
                   >
                     Site officiel de l'IOAI
                     <ArrowRight size={14} />

@@ -6,7 +6,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white py-16 md:py-24">
+    <section className="bg-gradient-to-b from-red-50 to-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-mali-dark">
@@ -49,7 +49,7 @@ const HeroSection = () => {
             
             <a 
               href="/timeline" 
-              className="px-6 py-3 bg-transparent text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5"
+              className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5"
             >
               Voir le calendrier
             </a>
