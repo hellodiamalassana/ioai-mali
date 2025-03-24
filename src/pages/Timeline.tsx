@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -117,11 +118,7 @@ const Timeline = () => {
         "Tu peux le faire sur n'importe quel appareil (téléphone, ordinateur)",
         "Questions de logique et sur les bases de l'IA",
       ],
-      highlightItems: [
-        "1000 places seulement - Ne tarde pas à t'inscrire!",
-        "500 codes d'accès pour chaque catégorie",
-        "Tu recevras tes résultats par email le 15 avril",
-      ],
+      highlightItems: [],
       isActive: true,
       color: "bg-blue-50"
     },
