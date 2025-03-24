@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -258,7 +257,7 @@ const Timeline = () => {
                     <BookOpen size={16} className="text-mali-blue" />
                     Catégorie Internationale
                   </h4>
-                  <p className="text-sm">Lycéens, élèves des écoles fondamentales et professionnels de moins de 20 ans (en août 2025)</p>
+                  <p className="text-sm">Lycéens, élèves des écoles professionnelles et professionnels de moins de 20 ans (en août 2025)</p>
                 </div>
                 
                 <div className="bg-white p-3 rounded-lg border border-yellow-100">
@@ -294,7 +293,7 @@ const Timeline = () => {
                   title="Catégorie Internationale"
                   description="Réservée aux jeunes de moins de 20 ans, cette catégorie mène à l'IOAI."
                   details={[
-                    "Lycéens et élèves des écoles fondamentales",
+                    "Lycéens et élèves des écoles professionnelles",
                     "Professionnels de moins de 20 ans (en août 2025)",
                     "Objectif: représenter le Mali à l'IOAI 2025 en Chine"
                   ]}
@@ -379,3 +378,4 @@ const Timeline = () => {
 };
 
 export default Timeline;
+

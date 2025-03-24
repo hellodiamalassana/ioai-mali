@@ -73,7 +73,7 @@ const ApplicationForm = () => {
       city: "",
       school: "",
       level: "",
-      termsAccepted: false as unknown as true, // This line fixes the type error
+      termsAccepted: false as unknown as true,
     },
   });
 
@@ -144,7 +144,7 @@ const ApplicationForm = () => {
                       <RadioGroupItem value="international" />
                     </FormControl>
                     <FormLabel className="font-normal cursor-pointer">
-                      Internationale (Lycéens et école fondamentale)
+                      Internationale (Lycéens et école professionnelle)
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
@@ -337,12 +337,12 @@ const ApplicationForm = () => {
                               <SelectItem value="lycee1">Lycée - 1ère année</SelectItem>
                               <SelectItem value="lycee2">Lycée - 2ème année</SelectItem>
                               <SelectItem value="lycee3">Lycée - 3ème année</SelectItem>
-                              <SelectItem value="fondamentale9">École Fondamentale - 9ème année</SelectItem>
-                              <SelectItem value="fondamentale8">École Fondamentale - 8ème année</SelectItem>
-                              <SelectItem value="fondamentale7">École Fondamentale - 7ème année</SelectItem>
-                              <SelectItem value="fondamentale6">École Fondamentale - 6ème année</SelectItem>
-                              <SelectItem value="fondamentale5">École Fondamentale - 5ème année</SelectItem>
-                              <SelectItem value="fondamentale4">École Fondamentale - 4ème année</SelectItem>
+                              <SelectItem value="professionnel9">École Professionnelle - 9ème année</SelectItem>
+                              <SelectItem value="professionnel8">École Professionnelle - 8ème année</SelectItem>
+                              <SelectItem value="professionnel7">École Professionnelle - 7ème année</SelectItem>
+                              <SelectItem value="professionnel6">École Professionnelle - 6ème année</SelectItem>
+                              <SelectItem value="professionnel5">École Professionnelle - 5ème année</SelectItem>
+                              <SelectItem value="professionnel4">École Professionnelle - 4ème année</SelectItem>
                             </>
                           ) : (
                             <>
