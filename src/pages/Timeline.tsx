@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -241,7 +242,7 @@ const Timeline = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={18} className="text-mali-green flex-shrink-0 mt-0.5" />
-                  <span>Recevoir une formation gratuite, même si tu ne vas pas jusqu'au bout</span>
+                  <span>Accéder à des ressources d'auto-formation, même si tu ne vas pas jusqu'au bout</span>
                 </li>
               </ul>
             </ScrollReveal>
