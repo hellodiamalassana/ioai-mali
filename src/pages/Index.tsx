@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
-import Certificate from '@/components/home/Certificate';
 import ApplicationProcess from '@/components/home/ApplicationProcess';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar } from 'lucide-react';
@@ -19,7 +18,6 @@ const Index = () => {
       <Hero />
       <Features />
       <ApplicationProcess />
-      <Certificate />
       
       {/* Call to Action Section with Competition Date */}
       <section className="w-full py-16 bg-mali-blue text-white">
