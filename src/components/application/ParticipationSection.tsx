@@ -8,12 +8,12 @@ const ParticipationSection = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title mb-8">Participation</h2>
+          <h2 className="section-title mb-8 text-mali-dark">Participation</h2>
         </ScrollReveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           <ScrollReveal animation="fade-in" delay={100} className="h-full">
-            <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+            <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-mali-blue to-mali-blue/90 text-white">
               <div className="w-12 h-12 flex items-center justify-center bg-white/50 backdrop-blur rounded-lg mb-4">
                 <GraduationCap size={24} className="text-white" />
               </div>
@@ -29,7 +29,7 @@ const ParticipationSection = () => {
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200} className="h-full">
-            <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-mali-green to-emerald-600 text-white">
+            <div className="h-full rounded-xl p-6 border shadow-sm bg-gradient-to-br from-mali-green to-mali-green/90 text-white">
               <div className="w-12 h-12 flex items-center justify-center bg-white/50 backdrop-blur rounded-lg mb-4">
                 <User size={24} className="text-white" />
               </div>

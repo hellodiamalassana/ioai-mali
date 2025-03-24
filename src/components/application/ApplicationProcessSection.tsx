@@ -10,7 +10,7 @@ const ApplicationProcessSection = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title">Processus de Candidature</h2>
+          <h2 className="section-title text-mali-dark">Processus de Candidature</h2>
         </ScrollReveal>
         
         <div className="mt-12 space-y-12">
@@ -37,7 +37,7 @@ const ApplicationProcessSection = () => {
         </div>
         
         <ScrollReveal animation="fade-in" delay={400} className="mt-12">
-          <div className="bg-blue-50 p-6 rounded-lg border border-mali-blue/20">
+          <div className="bg-mali-blue/5 p-6 rounded-lg border border-mali-blue/20">
             <h3 className="text-xl font-semibold mb-4 text-mali-blue">Conditions de test :</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex gap-2 items-start">
@@ -65,7 +65,7 @@ const ApplicationProcessSection = () => {
             href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+            className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
           >
             Participation
             <ExternalLink size={18} />
