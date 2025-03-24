@@ -80,7 +80,7 @@ const Sponsors = () => {
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={300} className="flex justify-center">
-            <Link to="/contact" className="px-6 py-3 bg-mali-blue text-white rounded-lg font-medium flex items-center gap-2 shadow-lg hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+            <Link to="/contact" className="px-6 py-3 bg-mali-green text-white rounded-lg font-medium flex items-center gap-2 shadow-lg hover:bg-mali-green/90 transition-all hover:-translate-y-0.5">
               Devenir Sponsor
               <ArrowRight size={18} />
             </Link>
@@ -235,7 +235,7 @@ const Sponsors = () => {
           </div>
           
           <ScrollReveal animation="fade-in" delay={500} className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-mali-green text-white font-medium rounded-lg shadow-md hover:bg-mali-green/90 transition-all hover:-translate-y-0.5">
               En savoir plus
               <ArrowRight size={18} />
             </Link>
