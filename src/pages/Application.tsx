@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GraduationCap, User, ArrowRight, CheckCircle, Mail, AlertCircle } from 'lucide-react';
@@ -74,7 +75,7 @@ const Application = () => {
             <Alert className="max-w-2xl mx-auto bg-mali-blue/10 border-mali-blue/20 text-center">
               <AlertCircle className="h-5 w-5 text-mali-blue mx-auto mb-2" />
               <AlertDescription className="text-center font-medium text-mali-blue">
-                La Phase 1 démarre le 4 Avril 2023. Les tokens d'accès seront à usage unique pour chaque candidat.
+                La première étape du concours commence le 4 Avril 2024. Chaque élève recevra un code personnel qui ne peut être utilisé qu'une seule fois.
               </AlertDescription>
             </Alert>
           </ScrollReveal>
