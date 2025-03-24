@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Users, Award, BookOpen, Lock, Zap, Calendar } from 'lucide-react';
+import { Users, Award, Calendar, Lock, Zap } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { cn } from '@/lib/utils';
 
@@ -41,7 +41,7 @@ const Features = () => {
           <Feature 
             icon={<Calendar size={24} />}
             title="Phase 1: Test Initial (4-13 avril)"
-            description="Un simple QCM de 20 questions en ligne, accessible à tous les niveaux. Aucune expérience en programmation requise. 1000 places disponibles! Consacrez juste 30 minutes pour potentiellement changer votre avenir."
+            description="Un simple QCM de 20 questions en ligne, accessible à tous les niveaux. Aucune connaissance particulière requise. 1000 places disponibles! Participez et découvrez le monde de l'IA."
             delay={100}
             className="card-hover bg-blue-50 border-blue-100"
           />
@@ -49,7 +49,7 @@ const Features = () => {
           <Feature 
             icon={<Zap size={24} />}
             title="Phase 2: Approfondissement (18-27 avril)"
-            description="Réservé aux qualifiés de la Phase 1. Un second QCM en ligne qui teste votre logique et compréhension de l'IA, toujours sans programmation complexe. Une étape cruciale pour continuer l'aventure!"
+            description="Réservé aux qualifiés de la Phase 1. Un second QCM en ligne qui teste votre logique et compréhension de l'IA. Une étape cruciale pour continuer l'aventure!"
             delay={200}
             className="card-hover bg-green-50 border-green-100"
           />
@@ -57,7 +57,7 @@ const Features = () => {
           <Feature 
             icon={<Award size={24} />}
             title="Objectif: Beijing 2025!"
-            description="Les meilleurs talents maliens représenteront notre pays lors de la prestigieuse compétition mondiale d'IA en Chine. Voyage et séjour entièrement pris en charge. Une expérience qui transformera votre CV et votre carrière."
+            description="Les meilleurs talents maliens représenteront notre pays lors de la prestigieuse Olympiade mondiale d'IA en Chine. Voyage et séjour entièrement pris en charge. Une expérience inoubliable pour votre avenir."
             delay={300}
             className="card-hover"
           />
@@ -73,9 +73,9 @@ const Features = () => {
           />
           
           <Feature 
-            icon={<BookOpen size={24} />}
-            title="Formation gratuite garantie"
-            description="Tous les participants des Phases 1 et 2 recevront des ressources éducatives gratuites sur l'IA, quel que soit leur résultat. Une opportunité unique d'apprentissage, même sans qualification."
+            icon={<Zap size={24} />}
+            title="Apprenez en participant"
+            description="Même si vous ne réussissez pas à vous qualifier du premier coup, tenter votre chance vous permettra d'apprendre et de progresser dans le domaine de l'IA."
             delay={500}
             className="card-hover"
           />
@@ -83,7 +83,7 @@ const Features = () => {
           <Feature 
             icon={<Lock size={24} />}
             title="Sécurisez votre place maintenant"
-            description="Les places sont limitées! Ne laissez pas passer cette chance unique de faire partie des pionniers de l'IA au Mali. Inscrivez-vous dès aujourd'hui pour réserver votre token d'accès au test."
+            description="Les places sont limitées! Ne laissez pas passer cette chance unique de faire partie des pionniers de l'IA au Mali. Inscrivez-vous dès aujourd'hui pour réserver votre accès au test."
             delay={600}
             className="card-hover"
           />

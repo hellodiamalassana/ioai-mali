@@ -40,15 +40,15 @@ const Index = () => {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
+                <h3 className="text-xl font-semibold mb-3">Apprentissage Automatique</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Maîtrisez les algorithmes qui révolutionnent les industries et créez des solutions innovantes pour les défis spécifiques du Mali et de l'Afrique.
+                  Découvrez les systèmes qui apprennent par eux-mêmes et qui peuvent créer des solutions pour les défis spécifiques du Mali et de l'Afrique.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer nos ressources
+                  En savoir plus
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -64,15 +64,15 @@ const Index = () => {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Traitement du Langage Naturel</h3>
+                <h3 className="text-xl font-semibold mb-3">Traitement du Langage</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Développez des solutions linguistiques adaptées aux langues africaines et créez des applications qui rendent la technologie accessible à tous.
+                  Explorez les technologies qui comprennent et produisent le langage humain, avec un potentiel immense pour les langues africaines.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer nos ressources
+                  En savoir plus
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -90,13 +90,13 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Vision par Ordinateur</h3>
                 <p className="text-muted-foreground flex-grow">
-                  Construisez les systèmes visuels qui transformeront l'agriculture, la santé et l'éducation au Mali, avec des applications adaptées aux réalités locales.
+                  Découvrez comment les machines peuvent voir et comprendre le monde, avec des applications pratiques pour l'agriculture, la santé et l'éducation au Mali.
                 </p>
                 <Link 
                   to="/resources" 
                   className="mt-4 text-mali-blue hover:underline inline-flex items-center gap-1 text-sm font-medium"
                 >
-                  Explorer nos ressources
+                  En savoir plus
                   <ChevronRight size={14} />
                 </Link>
               </div>
@@ -133,7 +133,7 @@ const Index = () => {
                 to="/application" 
                 className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Prêt à commencer l'aventure?
+                Tentez votre chance maintenant
                 <ChevronRight size={18} />
               </Link>
               

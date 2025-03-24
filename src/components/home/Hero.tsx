@@ -37,13 +37,13 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={200}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-                Devenez pionnier de l'IA au Mali et brillez sur la scène mondiale!
+                Découvrir le monde de l'IA et tentez votre chance de briller sur la scène mondiale!
               </h1>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Pour la première fois, le Mali participera à l'Olympiade Internationale d'Intelligence Artificielle! Rejoignez ce mouvement historique et représentez votre pays à Beijing en 2025. Aucune expérience préalable requise!
+                Pour la première fois, le Mali participera à l'Olympiade Internationale d'Intelligence Artificielle! Même si vous ne réussissez pas du premier coup, vous apprendrez beaucoup en essayant. Joignez-vous à cette aventure et représentez votre pays à Beijing en 2025.
               </p>
             </ScrollReveal>
             
@@ -63,7 +63,7 @@ const Hero = () => {
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
                 <Link to="/application" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                  Prêt à commencer l'aventure?
+                  Tentez votre chance maintenant
                   <ArrowRight size={18} />
                 </Link>
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-blue font-medium rounded-lg border border-mali-blue/20 transition-all duration-300 hover:bg-mali-blue/5 shadow-sm hover:shadow">
