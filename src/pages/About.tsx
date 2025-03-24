@@ -87,7 +87,7 @@ const About = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Évaluer les Compétences</h3>
                       <p className="text-muted-foreground">
-                        Évaluer des compétences en codage, apprentissage automatique et résolution de problèmes complexes.
+                        Évaluer des compétences en apprentissage automatique et résolution de problèmes complexes.
                       </p>
                     </div>
                   </div>
@@ -128,9 +128,9 @@ const About = () => {
                 <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
                   <span className="text-2xl font-bold">1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Sélectionner</h3>
+                <h3 className="text-xl font-semibold mb-4">Vulgariser</h3>
                 <p className="text-muted-foreground">
-                  Identifier les talents locaux parmi les lycéens, élèves des écoles professionnelles et du secondaire (moins de 20 ans).
+                  Rendre accessible l'IA au plus grand nombre et susciter l'intérêt des jeunes talents à travers tout le Mali.
                 </p>
               </div>
             </ScrollReveal>
@@ -140,9 +140,9 @@ const About = () => {
                 <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
                   <span className="text-2xl font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Former</h3>
+                <h3 className="text-xl font-semibold mb-4">Sélectionner</h3>
                 <p className="text-muted-foreground">
-                  Former ces jeunes talents grâce à un parcours complet et un accompagnement personnalisé par des experts en IA.
+                  Identifier les talents locaux parmi les lycéens, élèves des écoles professionnelles et du secondaire (moins de 20 ans).
                 </p>
               </div>
             </ScrollReveal>
@@ -165,7 +165,7 @@ const About = () => {
               to="/application" 
               className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5"
             >
-              En savoir plus sur la candidature
+              En savoir plus sur la participation
               <ArrowRight size={18} />
             </Link>
           </ScrollReveal>
