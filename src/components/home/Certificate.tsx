@@ -12,18 +12,8 @@ const Certificate = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal animation="slide-right">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-mali-blue/10 relative overflow-hidden">
-              <img 
-                src="/lovable-uploads/da02bc5c-d59a-4336-a0f0-f927faef83ca.png" 
-                alt="Certificat IOAI" 
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-          </ScrollReveal>
-          
-          <div>
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="w-full lg:w-1/2">
             <ScrollReveal animation="fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">L'IOAI 2025 à Beijing</h2>
             </ScrollReveal>

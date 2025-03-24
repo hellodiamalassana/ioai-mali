@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Star, Users } from 'lucide-react';
@@ -78,7 +77,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50"></div>
               
               <div className="p-6 relative z-10">
-                {/* Optimized image with better quality */}
                 <div className="relative mb-4 rounded-lg overflow-hidden shadow-md">
                   <img 
                     src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200&h=720" 
@@ -97,7 +95,7 @@ const Hero = () => {
                 </div>
                 
                 <img 
-                  src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
+                  src="/lovable-uploads/da02bc5c-d59a-4336-a0f0-f927faef83ca.png" 
                   alt="Certificat d'Accréditation IOAI" 
                   className="w-full h-auto rounded-lg mb-4"
                   loading="eager"
@@ -119,7 +117,6 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-20 h-20 bg-mali-yellow/10 rounded-full"></div>
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-mali-green/10 rounded-full"></div>
           </ScrollReveal>
