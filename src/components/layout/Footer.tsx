@@ -12,12 +12,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-mali-blue font-display text-2xl font-bold">RobotsMali</span>
-              <div className="flex gap-0.5">
-                <div className="w-2 h-2 rounded-full bg-mali-green"></div>
-                <div className="w-2 h-2 rounded-full bg-mali-yellow"></div>
-                <div className="w-2 h-2 rounded-full bg-mali-red"></div>
-              </div>
+              <img 
+                src="/lovable-uploads/1101b00c-468d-4a7b-be11-c2556835df3d.png" 
+                alt="RobotsMali Logo" 
+                className="h-10"
+              />
             </div>
             <p className="text-muted-foreground mb-4">
               Coordinateur national pour l'Olympiade Internationale d'Intelligence Artificielle au Mali

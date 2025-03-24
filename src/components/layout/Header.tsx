@@ -40,12 +40,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <NavLink to="/" className="flex items-center gap-2">
-          <span className="text-mali-blue font-display text-2xl font-bold">RobotsMali</span>
-          <div className="flex gap-0.5">
-            <div className="w-2 h-2 rounded-full bg-mali-green"></div>
-            <div className="w-2 h-2 rounded-full bg-mali-yellow"></div>
-            <div className="w-2 h-2 rounded-full bg-mali-red"></div>
-          </div>
+          <img 
+            src="/lovable-uploads/1101b00c-468d-4a7b-be11-c2556835df3d.png" 
+            alt="RobotsMali Logo" 
+            className="h-8"
+          />
         </NavLink>
 
         {/* Desktop Navigation */}
