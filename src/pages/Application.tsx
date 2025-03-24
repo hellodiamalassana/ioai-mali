@@ -146,8 +146,8 @@ const Application = () => {
               />
               
               <CriteriaItem
-                title="Statut d'étudiant ou professionnel"
-                description="Être un lycéen, élève de l'école fondamentale ou professionnel (moins de 20 ans en août 2025)."
+                title="Statut"
+                description="Être un lycéen, élève de l'école fondamentale (moins de 20 ans en août 2025)."
                 delay={200}
               />
               
