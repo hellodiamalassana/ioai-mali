@@ -15,7 +15,7 @@ const Certificate = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal animation="slide-right">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-mali-blue/10 relative overflow-hidden">
-              {/* Official Certificate Image */}
+              {/* Certificate Image */}
               <img 
                 src="/lovable-uploads/69b22ddc-22f8-42af-81ce-5fa857035f30.png" 
                 alt="Olympiade Internationale d'IA" 
@@ -26,13 +26,14 @@ const Certificate = () => {
           
           <div>
             <ScrollReveal animation="fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">L'IOAI 2025 à Beijing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">L'IOAI 2025</h2>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={200}>
               <p className="text-muted-foreground mb-8">
-                La 2ème édition de l'Olympiade Internationale d'Intelligence Artificielle se tiendra dans la capitale chinoise. 
-                Une opportunité unique pour les jeunes talents maliens de se mesurer aux meilleurs du monde.
+                La 2ème édition de l'Olympiade Internationale d'Intelligence Artificielle se tiendra 
+                dans la ville technologique de Chine. Une opportunité unique pour les jeunes talents maliens 
+                de se mesurer aux meilleurs du monde.
               </p>
             </ScrollReveal>
             
@@ -55,7 +56,7 @@ const Certificate = () => {
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Beijing, Chine</h3>
+                    <h3 className="font-semibold text-lg">Chine</h3>
                     <p className="text-muted-foreground">Plus de 60 pays participants réunis dans un événement mondial.</p>
                   </div>
                 </div>
