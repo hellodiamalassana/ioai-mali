@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Award, Calendar, Lock, Zap } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
