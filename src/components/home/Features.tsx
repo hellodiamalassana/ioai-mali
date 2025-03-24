@@ -3,6 +3,7 @@ import React from 'react';
 import { Award, Calendar, Zap, BookOpen, Users } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -30,8 +31,29 @@ const Features = () => {
   return (
     <section className="w-full py-16 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4">
+        <ScrollReveal animation="fade-in" className="mb-6">
+          <div className="inline-flex mx-auto items-center gap-2 bg-mali-blue/10 backdrop-blur-sm px-4 py-2 rounded-full">
+            <Calendar size={18} className="text-mali-blue" />
+            <span className="font-medium text-mali-blue">Début des tests: 4 avril</span>
+          </div>
+        </ScrollReveal>
+
         <ScrollReveal animation="fade-in">
           <h2 className="section-title">Étapes du concours</h2>
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-in" delay={100} className="text-center mb-8">
+          <p className="max-w-2xl mx-auto text-muted-foreground">
+            Inscrivez-vous dès maintenant et recevez votre code personnel pour débuter les tests le 4 avril.
+          </p>
+          <div className="mt-6">
+            <Link
+              to="/application"
+              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
+            >
+              S'inscrire au concours
+            </Link>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
