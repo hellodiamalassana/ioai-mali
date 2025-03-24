@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, CheckCircle, ArrowRight, Clock, Target, Users, Award, BookOpen, Star } from 'lucide-react';
@@ -360,7 +359,7 @@ const Timeline = () => {
                 to="/application" 
                 className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center gap-2"
               >
-                Participer au concours
+                Je tente ma chance
                 <ArrowRight size={18} />
               </Link>
               
