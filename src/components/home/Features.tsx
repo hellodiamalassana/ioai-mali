@@ -47,12 +47,14 @@ const Features = () => {
             Inscrivez-vous dès maintenant et recevez votre code personnel pour débuter les tests le 4 avril.
           </p>
           <div className="mt-6">
-            <Link
-              to="/application"
+            <a
+              href="https://script.google.com/macros/s/AKfycbyCa4vHiBjzOV-PUw5_QQpEHyMitbrTQ_1Ayif3r513J1YEXSM5Fp0hJD04LWvLLl5GNA/exec"
+              target="_blank" 
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
               Rejoins l'aventure
-            </Link>
+            </a>
           </div>
         </ScrollReveal>
 
