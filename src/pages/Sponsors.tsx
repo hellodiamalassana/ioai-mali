@@ -1,7 +1,7 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { ArrowRight, Heart, Network, Award, Gift } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Sponsorship level component
 interface SponsorLevelProps {
@@ -80,10 +80,10 @@ const Sponsors = () => {
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={300} className="flex justify-center">
-            <button className="px-6 py-3 bg-mali-blue text-white rounded-lg font-medium flex items-center gap-2 shadow-lg hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+            <Link to="/contact" className="px-6 py-3 bg-mali-blue text-white rounded-lg font-medium flex items-center gap-2 shadow-lg hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
               Devenir Sponsor
               <ArrowRight size={18} />
-            </button>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
@@ -235,10 +235,10 @@ const Sponsors = () => {
           </div>
           
           <ScrollReveal animation="fade-in" delay={500} className="mt-16 text-center">
-            <a href="#" className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5">
               En savoir plus
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
