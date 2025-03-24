@@ -51,7 +51,7 @@ const Features = () => {
               to="/application"
               className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
-              S'inscrire au concours
+              Rejoins l'aventure
             </Link>
           </div>
         </ScrollReveal>
