@@ -170,29 +170,29 @@ const Application = () => {
           <div className="mt-12 space-y-12">
             <ProcessStep
               number={1}
-              title="Inscription en Ligne"
-              description="Remplissez le formulaire correspondant à votre catégorie. Un identifiant et des tokens pour la Phase 1 vous seront envoyés par email après validation."
+              title="Enregistrement en Ligne"
+              description="Remplissez le formulaire pour votre catégorie. Vous recevrez par email un identifiant et un code personnel pour accéder à la Phase 1."
               delay={100}
             />
             
             <ProcessStep
               number={2}
-              title="Validation des Phases"
-              description="Le concours se déroule en plusieurs phases (voir Calendrier). À chaque phase, les résultats et instructions vous seront communiqués. Seuls les candidats atteignant le seuil requis passeront à l'étape suivante."
+              title="Réussite des Phases"
+              description="Le concours a plusieurs étapes (voir Calendrier). Après chaque étape, vous recevrez vos résultats et les prochaines instructions. Seuls ceux qui obtiennent les points nécessaires passent à l'étape suivante."
               delay={200}
             />
             
             <ProcessStep
               number={3}
-              title="Accompagnement et Ressources"
-              description="Accédez à nos cours en ligne, tutoriels, vidéos et séances de mentorat pour vous préparer aux épreuves."
+              title="Formation et Aide"
+              description="Vous aurez accès à des cours en ligne, des tutoriels, des vidéos et des séances d'aide pour bien vous préparer aux tests."
               delay={300}
             />
             
             <ProcessStep
               number={4}
-              title="Sélection Finale – Bootcamp"
-              description="Les candidats de la Catégorie Internationale ayant validé la Phase 4 participeront à un Bootcamp intensif en présentiel à RobotsMali. À l'issue de cette phase, un maximum de 4 participants sera sélectionné pour représenter le Mali à l'IOAI en Chine (2–9 août 2025), avec prise en charge complète du voyage."
+              title="Sélection Finale – Camp d'Entraînement"
+              description="Les candidats de la Catégorie Internationale qui réussissent la Phase 4 participeront à un camp d'entraînement intensif à RobotsMali. À la fin, maximum 4 participants seront choisis pour représenter le Mali à l'IOAI en Chine (2–9 août 2025), avec tous les frais de voyage payés."
               delay={400}
             />
           </div>
