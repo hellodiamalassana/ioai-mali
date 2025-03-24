@@ -33,7 +33,7 @@ const Hero = () => {
       
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
       const seconds = Math.floor((difference / 1000) % 60);
       
       setTimeLeft({ days, hours, minutes, seconds });
@@ -111,8 +111,8 @@ const Hero = () => {
               <div className="p-6 relative z-10">
                 <div className="relative mb-6 rounded-lg overflow-hidden shadow-md">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200&h=720" 
-                    alt="Intelligence Artificielle au Mali" 
+                    src="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" 
+                    alt="Beijing, Chine" 
                     className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500"
                     loading="eager"
                     width="1200"
