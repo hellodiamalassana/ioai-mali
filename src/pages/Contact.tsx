@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -51,27 +50,44 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simuler l'envoi d'email
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Préparer les données du formulaire
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('subject', values.subject);
+      formData.append('message', values.message);
       
-      setFormSubmitted(true);
-      setShowDirectEmailInfo(true);
-      
-      toast({
-        title: "Formulaire soumis",
-        description: "Veuillez utiliser le lien d'email direct pour nous contacter.",
-        variant: "default",
+      // Envoyer le formulaire avec FormSubmit
+      const response = await fetch('https://formsubmit.co/info@robotsmali.org', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
       });
       
-      form.reset();
+      if (response.ok) {
+        setFormSubmitted(true);
+        
+        toast({
+          title: "Formulaire envoyé avec succès",
+          description: "Nous vous contacterons dès que possible.",
+          variant: "default",
+        });
+        
+        form.reset();
+      } else {
+        throw new Error('Erreur lors de l\'envoi du formulaire');
+      }
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
+      setShowDirectEmailInfo(true);
+      
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue. Veuillez utiliser l'email directement.",
+        description: "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.",
         variant: "destructive",
       });
-      setShowDirectEmailInfo(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -105,15 +121,6 @@ const Contact = () => {
     { icon: <Instagram size={20} />, name: "Instagram", link: "#" },
     { icon: <Twitter size={20} />, name: "X-twitter", link: "#" },
   ];
-
-  const generateMailtoLink = (values?: z.infer<typeof formSchema>) => {
-    if (!values) return "mailto:info@robotsmali.org";
-    
-    const subject = encodeURIComponent(`[Site Web - ${values.subject}] Message de ${values.name}`);
-    const body = encodeURIComponent(`Nom: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`);
-    
-    return `mailto:info@robotsmali.org?subject=${subject}&body=${body}`;
-  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -216,21 +223,28 @@ const Contact = () => {
                       </div>
                       <h3 className="text-xl font-bold mb-2">Merci pour votre message!</h3>
                       <p className="text-muted-foreground mb-6">
-                        Pour vous assurer que votre message est bien reçu, veuillez également nous contacter directement par email.
+                        Nous avons bien reçu votre message et nous vous contacterons dès que possible.
                       </p>
-                      <a 
-                        href={generateMailtoLink(form.getValues())} 
-                        className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 mx-auto w-fit"
+                      <Button
+                        onClick={() => setFormSubmitted(false)}
+                        variant="outline"
+                        className="border-mali-red text-mali-red hover:bg-red-50"
                       >
-                        Envoyer par email
-                        <Mail size={18} />
-                      </a>
+                        Envoyer un autre message
+                      </Button>
                     </div>
                   ) : (
                     <form 
-                      onSubmit={form.handleSubmit(onSubmit)}
+                      action="https://formsubmit.co/info@robotsmali.org" 
+                      method="POST"
                       className="space-y-6"
-                    >                      
+                    >
+                      {/* Champs FormSubmit nécessaires */}
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_subject" value="Nouveau message du site web Robots Mali" />
+                      <input type="hidden" name="_template" value="table" />
+                      <input type="hidden" name="_next" value={window.location.href} />
+                      
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="name" className="block text-sm font-medium mb-1">Nom complet</label>
@@ -238,12 +252,10 @@ const Contact = () => {
                             id="name"
                             name="name"
                             placeholder="Votre nom" 
-                            {...form.register("name")}
+                            required
+                            minLength={2}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
                           />
-                          {form.formState.errors.name && (
-                            <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.name.message}</p>
-                          )}
                         </div>
                         
                         <div>
@@ -253,12 +265,9 @@ const Contact = () => {
                             name="email"
                             type="email" 
                             placeholder="votre.email@exemple.com" 
-                            {...form.register("email")}
+                            required
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
                           />
-                          {form.formState.errors.email && (
-                            <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.email.message}</p>
-                          )}
                         </div>
                       </div>
                       
@@ -267,18 +276,15 @@ const Contact = () => {
                         <select
                           id="subject"
                           name="subject"
-                          {...form.register("subject")}
+                          required
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
                         >
                           <option value="">Sélectionnez un sujet</option>
-                          <option value="information">Demande d'information</option>
-                          <option value="application">Candidature ONIA</option>
-                          <option value="sponsorship">Partenariat / Sponsoring</option>
-                          <option value="other">Autre</option>
+                          <option value="Demande d'information">Demande d'information</option>
+                          <option value="Candidature ONIA">Candidature ONIA</option>
+                          <option value="Partenariat / Sponsoring">Partenariat / Sponsoring</option>
+                          <option value="Autre">Autre</option>
                         </select>
-                        {form.formState.errors.subject && (
-                          <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.subject.message}</p>
-                        )}
                       </div>
                       
                       <div>
@@ -288,12 +294,10 @@ const Contact = () => {
                           name="message"
                           placeholder="Votre message ici..." 
                           rows={5}
-                          {...form.register("message")}
+                          required
+                          minLength={10}
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors resize-none"
                         />
-                        {form.formState.errors.message && (
-                          <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.message.message}</p>
-                        )}
                       </div>
                       
                       <div className="flex items-center justify-between gap-4 flex-wrap">
