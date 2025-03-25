@@ -8,7 +8,6 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import emailjs from 'emailjs-com';
 
 // Définir le schéma de validation
 const formSchema = z.object({
@@ -26,18 +25,8 @@ const formSchema = z.object({
   })
 });
 
-// Constantes EmailJS - à remplacer par vos propres identifiants
-const EMAILJS_SERVICE_ID = 'service_robotsmali'; // À remplacer
-const EMAILJS_TEMPLATE_ID = 'template_contact_form'; // À remplacer
-const EMAILJS_USER_ID = 'YOUR_USER_ID'; // À remplacer
-
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Initialiser EmailJS
-  useEffect(() => {
-    emailjs.init(EMAILJS_USER_ID);
-  }, []);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -59,37 +48,34 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Préparation des données pour EmailJS
-      const templateParams = {
-        from_name: values.name,
-        from_email: values.email,
-        subject: values.subject,
-        message: values.message,
-        to_email: 'info@robotsmali.org'
-      };
+      // Création du corps du message formaté
+      const body = `
+Nom: ${values.name}
+Email: ${values.email}
+Sujet: ${values.subject}
+
+Message:
+${values.message}
+      `;
       
-      // Envoi de l'email via EmailJS
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
+      // Création de l'URL mailto avec les paramètres
+      const mailtoUrl = `mailto:info@robotsmali.org?subject=${encodeURIComponent(`Contact: ${values.subject}`)}&body=${encodeURIComponent(body)}`;
       
-      if (response.status === 200) {
-        toast({
-          title: "Message envoyé",
-          description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
-          variant: "default",
-        });
-        form.reset();
-      } else {
-        throw new Error('Échec de l\'envoi du message');
-      }
+      // Ouvrir le client email de l'utilisateur
+      window.open(mailtoUrl, '_blank');
+      
+      toast({
+        title: "Email prêt à envoyer",
+        description: "Votre client email a été ouvert avec le message préparé. Veuillez envoyer l'email pour finaliser.",
+        variant: "default",
+      });
+      
+      form.reset();
     } catch (error) {
-      console.error("Erreur lors de l'envoi du message:", error);
+      console.error("Erreur lors de l'ouverture du client email:", error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
+        description: "Une erreur est survenue lors de l'ouverture de votre client email. Veuillez réessayer plus tard.",
         variant: "destructive",
       });
     } finally {
