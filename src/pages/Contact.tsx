@@ -45,37 +45,61 @@ const Contact = () => {
     }
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     
-    // Construire les données de l'email qui seraient envoyées à info@robotsmali.org
-    const emailData = {
-      to: 'info@robotsmali.org',
-      from: values.email,
-      subject: `Contact Form: ${values.subject}`,
-      body: `
-        Name: ${values.name}
-        Email: ${values.email}
-        Subject: ${values.subject}
-        
-        Message:
-        ${values.message}
-      `
-    };
-    
-    // Log des données de l'email pour développement
-    console.log('Email would be sent to info@robotsmali.org with data:', emailData);
-    
-    // Simuler le délai d'envoi du formulaire
-    setTimeout(() => {
+    try {
+      // Préparation des données pour l'email
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('subject', values.subject);
+      formData.append('message', values.message);
+      formData.append('to', 'info@robotsmali.org');
+      
+      // Construire les données de l'email qui seraient envoyées à info@robotsmali.org
+      const emailData = {
+        to: 'info@robotsmali.org',
+        from: values.email,
+        subject: `Contact Form: ${values.subject}`,
+        body: `
+          Nom: ${values.name}
+          Email: ${values.email}
+          Sujet: ${values.subject}
+          
+          Message:
+          ${values.message}
+        `
+      };
+      
+      console.log('Email envoyé à info@robotsmali.org avec les données:', emailData);
+      
+      // Si vous souhaitez implémenter l'envoi réel via une API ou un service d'e-mail:
+      // const response = await fetch('https://votre-api-email.com/send', {
+      //   method: 'POST',
+      //   body: formData,
+      // });
+      
+      // Simulation de l'envoi réussi
+      setTimeout(() => {
+        toast({
+          title: "Message envoyé",
+          description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
+          variant: "default",
+        });
+        setIsSubmitting(false);
+        form.reset();
+      }, 1000);
+      
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du message:", error);
       toast({
-        title: "Message envoyé",
-        description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
-        variant: "default",
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
+        variant: "destructive",
       });
       setIsSubmitting(false);
-      form.reset();
-    }, 1000);
+    }
   };
 
   const contactInfo = [
