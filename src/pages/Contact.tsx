@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -46,17 +47,28 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simple form submission using HTML form submission
-      // The form will be handled by the "netlify" attribute
-      setFormSubmitted(true);
+      // Utiliser FormSubmit - un service gratuit qui ne nécessite pas d'inscription
+      const formElement = document.getElementById('contact-form') as HTMLFormElement;
       
-      toast({
-        title: "Message envoyé",
-        description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
-        variant: "default",
-      });
-      
-      form.reset();
+      if (formElement) {
+        await fetch(formElement.action, {
+          method: 'POST',
+          body: new FormData(formElement),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        setFormSubmitted(true);
+        
+        toast({
+          title: "Message envoyé",
+          description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+          variant: "default",
+        });
+        
+        form.reset();
+      }
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
       toast({
@@ -187,13 +199,20 @@ const Contact = () => {
                     </div>
                   ) : (
                     <form 
-                      name="contact" 
-                      method="POST" 
-                      data-netlify="true"
+                      id="contact-form"
+                      action="https://formsubmit.co/info@robotsmali.org" 
+                      method="POST"
                       onSubmit={form.handleSubmit(onSubmit)}
                       className="space-y-6"
                     >
-                      <input type="hidden" name="form-name" value="contact" />
+                      {/* FormSubmit anti-spam honeypot field */}
+                      <input type="text" name="_honey" style={{ display: 'none' }} />
+                      
+                      {/* Disable captcha */}
+                      <input type="hidden" name="_captcha" value="false" />
+                      
+                      {/* Specify return URL after submission */}
+                      <input type="hidden" name="_next" value={window.location.href} />
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
