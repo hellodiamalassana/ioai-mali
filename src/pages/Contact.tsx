@@ -3,14 +3,30 @@ import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+
+// Définir le schéma de validation
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Le nom doit contenir au moins 2 caractères."
+  }),
+  email: z.string().email({
+    message: "Veuillez entrer une adresse email valide."
+  }),
+  subject: z.string().min(1, {
+    message: "Veuillez sélectionner un sujet."
+  }),
+  message: z.string().min(10, {
+    message: "Le message doit contenir au moins 10 caractères."
+  })
+});
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Scroll to top when component mounts
@@ -18,37 +34,39 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  // Initialiser le formulaire avec react-hook-form et zod
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    }
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     
-    // In a real implementation, you would send an email to info@robotsmali.org
-    // This is a simulation of the form submission
-    
-    // Construct email data that would be sent to info@robotsmali.org
+    // Construire les données de l'email qui seraient envoyées à info@robotsmali.org
     const emailData = {
       to: 'info@robotsmali.org',
-      from: formData.email,
-      subject: `Contact Form: ${formData.subject}`,
+      from: values.email,
+      subject: `Contact Form: ${values.subject}`,
       body: `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Subject: ${formData.subject}
+        Name: ${values.name}
+        Email: ${values.email}
+        Subject: ${values.subject}
         
         Message:
-        ${formData.message}
+        ${values.message}
       `
     };
     
-    // Log the email data to console (for development purposes)
+    // Log des données de l'email pour développement
     console.log('Email would be sent to info@robotsmali.org with data:', emailData);
     
-    // Simulate form submission delay
+    // Simuler le délai d'envoi du formulaire
     setTimeout(() => {
       toast({
         title: "Message envoyé",
@@ -56,12 +74,7 @@ const Contact = () => {
         variant: "default",
       });
       setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+      form.reset();
     }, 1000);
   };
 
@@ -96,7 +109,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16 md:py-24">
+      <section className="bg-gradient-to-b from-red-50 to-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
@@ -124,7 +137,7 @@ const Contact = () => {
                 {contactInfo.map((item, index) => (
                   <ScrollReveal key={index} animation="slide-right" delay={100 * index}>
                     <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-mali-blue flex-shrink-0">
+                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-mali-red flex-shrink-0">
                         {item.icon}
                       </div>
                       
@@ -132,7 +145,9 @@ const Contact = () => {
                         <h3 className="font-semibold text-lg">{item.title}</h3>
                         <a 
                           href={item.link} 
-                          className="text-muted-foreground hover:text-mali-blue transition-colors"
+                          className="text-muted-foreground hover:text-mali-red transition-colors"
+                          target={item.title === "Adresse" ? "_blank" : undefined}
+                          rel={item.title === "Adresse" ? "noopener noreferrer" : undefined}
                         >
                           {item.value}
                         </a>
@@ -151,7 +166,7 @@ const Contact = () => {
                       <a 
                         key={index}
                         href={social.link} 
-                        className="p-3 bg-gray-100 hover:bg-blue-100 text-muted-foreground hover:text-mali-blue rounded-full transition-colors flex items-center justify-center"
+                        className="p-3 bg-gray-100 hover:bg-red-100 text-muted-foreground hover:text-mali-red rounded-full transition-colors flex items-center justify-center"
                         aria-label={social.name}
                       >
                         {social.icon}
@@ -168,88 +183,101 @@ const Contact = () => {
               </ScrollReveal>
               
               <ScrollReveal animation="slide-up" delay={200}>
-                <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-sm border border-blue-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Nom complet
-                      </label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-blue focus:border-transparent outline-none transition-colors"
-                        placeholder="Votre nom"
+                <div className="bg-white p-8 rounded-xl shadow-sm border border-red-100">
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Nom complet</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Votre nom" 
+                                  {...field} 
+                                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Email</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  type="email" 
+                                  placeholder="votre.email@exemple.com" 
+                                  {...field} 
+                                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="subject"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Sujet</FormLabel>
+                            <FormControl>
+                              <select
+                                {...field}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                              >
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="application">Candidature ONIA</option>
+                                <option value="sponsorship">Partenariat / Sponsoring</option>
+                                <option value="other">Autre</option>
+                              </select>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-blue focus:border-transparent outline-none transition-colors"
-                        placeholder="votre.email@exemple.com"
+                      
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Message</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="Votre message ici..." 
+                                rows={5}
+                                {...field} 
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors resize-none"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Sujet
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-blue focus:border-transparent outline-none transition-colors"
-                    >
-                      <option value="">Sélectionnez un sujet</option>
-                      <option value="information">Demande d'information</option>
-                      <option value="application">Candidature ONIA</option>
-                      <option value="sponsorship">Partenariat / Sponsoring</option>
-                      <option value="other">Autre</option>
-                    </select>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-blue focus:border-transparent outline-none transition-colors resize-none"
-                      placeholder="Votre message ici..."
-                    ></textarea>
-                  </div>
-                  
-                  <div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
-                    >
-                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
-                      <Send size={18} />
-                    </button>
-                  </div>
-                </form>
+                      
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                      >
+                        {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
+                        <Send size={18} />
+                      </button>
+                    </form>
+                  </Form>
+                </div>
               </ScrollReveal>
             </div>
           </div>
