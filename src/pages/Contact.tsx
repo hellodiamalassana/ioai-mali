@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -241,10 +240,9 @@ const Contact = () => {
                       method="POST"
                       className="space-y-6"
                     >
-                      {/* Champs FormSubmit nécessaires */}
                       <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_subject" value="Nouveau message du site web Robots Mali" />
-                      <input type="hidden" name="_template" value="table" />
+                      <input type="hidden" name="_subject" value="Nouveau message de Robots Mali: {subject}" />
+                      <input type="hidden" name="_template" value="box" />
                       <input type="hidden" name="_next" value={window.location.href} />
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -334,3 +332,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
