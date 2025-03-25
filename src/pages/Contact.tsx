@@ -9,7 +9,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-// Définir le schéma de validation
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Le nom doit contenir au moins 2 caractères."
@@ -28,12 +27,10 @@ const formSchema = z.object({
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Initialiser le formulaire avec react-hook-form et zod
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,34 +45,29 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Création du corps du message formaté
-      const body = `
-Nom: ${values.name}
-Email: ${values.email}
-Sujet: ${values.subject}
-
-Message:
-${values.message}
-      `;
-      
-      // Création de l'URL mailto avec les paramètres
-      const mailtoUrl = `mailto:info@robotsmali.org?subject=${encodeURIComponent(`Contact: ${values.subject}`)}&body=${encodeURIComponent(body)}`;
-      
-      // Ouvrir le client email de l'utilisateur
-      window.open(mailtoUrl, '_blank');
-      
-      toast({
-        title: "Email prêt à envoyer",
-        description: "Votre client email a été ouvert avec le message préparé. Veuillez envoyer l'email pour finaliser.",
-        variant: "default",
+      const response = await fetch('https://formspree.io/f/info@robotsmali.org', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
       });
       
-      form.reset();
+      if (response.ok) {
+        toast({
+          title: "Message envoyé",
+          description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+          variant: "default",
+        });
+        form.reset();
+      } else {
+        throw new Error('Échec de l\'envoi du message');
+      }
     } catch (error) {
-      console.error("Erreur lors de l'ouverture du client email:", error);
+      console.error("Erreur lors de l'envoi du message:", error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue lors de l'ouverture de votre client email. Veuillez réessayer plus tard.",
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
         variant: "destructive",
       });
     } finally {
