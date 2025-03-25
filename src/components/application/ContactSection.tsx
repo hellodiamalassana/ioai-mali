@@ -15,7 +15,7 @@ const ContactSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={200}>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+          <p className="text-white/90 max-w-2xl mx-auto mb-8 text-lg">
             Si vous avez besoin d'aide ou si vous avez des questions concernant le processus de sélection, n'hésitez pas à nous contacter.
           </p>
         </ScrollReveal>
@@ -24,7 +24,7 @@ const ContactSection = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/contact" 
-              className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10 flex items-center gap-2"
+              className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg transition-all duration-300 hover:bg-white/90 flex items-center gap-2 shadow-lg"
             >
               Nous contacter
               <ArrowRight size={18} />
@@ -40,7 +40,7 @@ const ContactSection = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-in" delay={600} className="mt-8">
-          <div className="inline-flex items-center gap-2 text-white/80 text-sm">
+          <div className="inline-flex items-center gap-2 text-white/90 text-sm">
             <Mail size={16} />
             Contactez-nous à <a href="mailto:info@robotsmali.org" className="underline hover:text-white">info@robotsmali.org</a>
           </div>

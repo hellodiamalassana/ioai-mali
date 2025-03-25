@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -215,19 +216,20 @@ const Contact = () => {
               )}
               
               <ScrollReveal animation="slide-up" delay={200}>
-                <div className="bg-white p-8 rounded-xl shadow-sm border border-red-100">
+                <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
                   {formSubmitted ? (
-                    <div className="text-center py-8">
-                      <div className="mb-4 text-mali-red">
-                        <Mail size={48} className="mx-auto" />
+                    <div className="text-center py-10">
+                      <div className="mb-6 text-mali-red">
+                        <Mail size={64} className="mx-auto" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">Merci pour votre message!</h3>
-                      <p className="text-muted-foreground mb-6">
+                      <h3 className="text-2xl font-bold mb-4">Merci pour votre message!</h3>
+                      <p className="text-muted-foreground mb-8 text-lg">
                         Nous avons bien reçu votre message et nous vous contacterons dès que possible.
                       </p>
                       <Button
                         onClick={() => setFormSubmitted(false)}
                         variant="outline"
+                        size="lg"
                         className="border-mali-red text-mali-red hover:bg-red-50"
                       >
                         Envoyer un autre message
@@ -246,38 +248,38 @@ const Contact = () => {
                       <input type="hidden" name="_next" value={window.location.href} />
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium mb-1">Nom complet</label>
+                        <div className="form-group">
+                          <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700">Nom complet</label>
                           <Input 
                             id="name"
                             name="name"
                             placeholder="Votre nom" 
                             required
                             minLength={2}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                            className="w-full border-gray-200 focus:border-mali-red focus:ring-mali-red shadow-sm rounded-lg"
                           />
                         </div>
                         
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                        <div className="form-group">
+                          <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700">Email</label>
                           <Input 
                             id="email"
                             name="email"
                             type="email" 
                             placeholder="votre.email@exemple.com" 
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                            className="w-full border-gray-200 focus:border-mali-red focus:ring-mali-red shadow-sm rounded-lg"
                           />
                         </div>
                       </div>
                       
-                      <div>
-                        <label htmlFor="subject" className="block text-sm font-medium mb-1">Sujet</label>
+                      <div className="form-group">
+                        <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-700">Sujet</label>
                         <select
                           id="subject"
                           name="subject"
                           required
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                          className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors text-base bg-white shadow-sm"
                         >
                           <option value="">Sélectionnez un sujet</option>
                           <option value="Demande d'information">Demande d'information</option>
@@ -287,8 +289,8 @@ const Contact = () => {
                         </select>
                       </div>
                       
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
+                      <div className="form-group">
+                        <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700">Message</label>
                         <Textarea 
                           id="message"
                           name="message"
@@ -296,15 +298,16 @@ const Contact = () => {
                           rows={5}
                           required
                           minLength={10}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors resize-none"
+                          className="w-full border-gray-200 focus:border-mali-red focus:ring-mali-red shadow-sm rounded-lg resize-none"
                         />
                       </div>
                       
-                      <div className="flex items-center justify-between gap-4 flex-wrap">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                          size="lg"
+                          className="w-full sm:w-auto bg-mali-red hover:bg-mali-red/90 text-white shadow-md"
                         >
                           {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                           <Send size={18} />
@@ -312,7 +315,7 @@ const Contact = () => {
                         
                         <a 
                           href="mailto:info@robotsmali.org"
-                          className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red hover:bg-red-50 transition-all flex items-center justify-center gap-2"
+                          className="w-full sm:w-auto px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red hover:bg-red-50 transition-all flex items-center justify-center gap-2 text-center"
                         >
                           Contacter directement
                           <Mail size={18} />
