@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Mail, Phone, MapPin, Send, Facebook, Linkedin, Youtube, Instagram, Twitter } from 'lucide-react';
@@ -9,6 +8,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import emailjs from 'emailjs-com';
 
 // Définir le schéma de validation
 const formSchema = z.object({
@@ -26,8 +26,18 @@ const formSchema = z.object({
   })
 });
 
+// Constantes EmailJS - à remplacer par vos propres identifiants
+const EMAILJS_SERVICE_ID = 'service_robotsmali'; // À remplacer
+const EMAILJS_TEMPLATE_ID = 'template_contact_form'; // À remplacer
+const EMAILJS_USER_ID = 'YOUR_USER_ID'; // À remplacer
+
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialiser EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_USER_ID);
+  }, []);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -49,48 +59,32 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Préparation des données pour l'email
-      const formData = new FormData();
-      formData.append('name', values.name);
-      formData.append('email', values.email);
-      formData.append('subject', values.subject);
-      formData.append('message', values.message);
-      formData.append('to', 'info@robotsmali.org');
-      
-      // Construire les données de l'email qui seraient envoyées à info@robotsmali.org
-      const emailData = {
-        to: 'info@robotsmali.org',
-        from: values.email,
-        subject: `Contact Form: ${values.subject}`,
-        body: `
-          Nom: ${values.name}
-          Email: ${values.email}
-          Sujet: ${values.subject}
-          
-          Message:
-          ${values.message}
-        `
+      // Préparation des données pour EmailJS
+      const templateParams = {
+        from_name: values.name,
+        from_email: values.email,
+        subject: values.subject,
+        message: values.message,
+        to_email: 'info@robotsmali.org'
       };
       
-      console.log('Email envoyé à info@robotsmali.org avec les données:', emailData);
+      // Envoi de l'email via EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
       
-      // Si vous souhaitez implémenter l'envoi réel via une API ou un service d'e-mail:
-      // const response = await fetch('https://votre-api-email.com/send', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
-      
-      // Simulation de l'envoi réussi
-      setTimeout(() => {
+      if (response.status === 200) {
         toast({
           title: "Message envoyé",
           description: "Votre message a été envoyé à info@robotsmali.org. Nous vous répondrons dans les plus brefs délais.",
           variant: "default",
         });
-        setIsSubmitting(false);
         form.reset();
-      }, 1000);
-      
+      } else {
+        throw new Error('Échec de l\'envoi du message');
+      }
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
       toast({
@@ -98,6 +92,7 @@ const Contact = () => {
         description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
   };
