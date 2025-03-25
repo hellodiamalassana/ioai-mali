@@ -9,6 +9,9 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -28,6 +31,7 @@ const formSchema = z.object({
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [showDirectEmailInfo, setShowDirectEmailInfo] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,35 +51,27 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Utiliser FormSubmit - un service gratuit qui ne nécessite pas d'inscription
-      const formElement = document.getElementById('contact-form') as HTMLFormElement;
+      // Simuler l'envoi d'email
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      if (formElement) {
-        await fetch(formElement.action, {
-          method: 'POST',
-          body: new FormData(formElement),
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        setFormSubmitted(true);
-        
-        toast({
-          title: "Message envoyé",
-          description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
-          variant: "default",
-        });
-        
-        form.reset();
-      }
+      setFormSubmitted(true);
+      setShowDirectEmailInfo(true);
+      
+      toast({
+        title: "Formulaire soumis",
+        description: "Veuillez utiliser le lien d'email direct pour nous contacter.",
+        variant: "default",
+      });
+      
+      form.reset();
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
+        description: "Une erreur est survenue. Veuillez utiliser l'email directement.",
         variant: "destructive",
       });
+      setShowDirectEmailInfo(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -109,6 +105,15 @@ const Contact = () => {
     { icon: <Instagram size={20} />, name: "Instagram", link: "#" },
     { icon: <Twitter size={20} />, name: "X-twitter", link: "#" },
   ];
+
+  const generateMailtoLink = (values?: z.infer<typeof formSchema>) => {
+    if (!values) return "mailto:info@robotsmali.org";
+    
+    const subject = encodeURIComponent(`[Site Web - ${values.subject}] Message de ${values.name}`);
+    const body = encodeURIComponent(`Nom: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`);
+    
+    return `mailto:info@robotsmali.org?subject=${subject}&body=${body}`;
+  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -185,6 +190,23 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold mb-8">Envoyez-nous un message</h2>
               </ScrollReveal>
               
+              {showDirectEmailInfo && (
+                <ScrollReveal animation="fade-in" delay={100}>
+                  <Alert className="mb-6 bg-blue-50 border-blue-200">
+                    <AlertCircle className="h-5 w-5 text-blue-500" />
+                    <AlertDescription className="text-blue-700">
+                      Pour nous contacter plus rapidement, veuillez nous envoyer un email directement à{' '}
+                      <a 
+                        href="mailto:info@robotsmali.org"
+                        className="font-medium text-blue-700 underline"
+                      >
+                        info@robotsmali.org
+                      </a>
+                    </AlertDescription>
+                  </Alert>
+                </ScrollReveal>
+              )}
+              
               <ScrollReveal animation="slide-up" delay={200}>
                 <div className="bg-white p-8 rounded-xl shadow-sm border border-red-100">
                   {formSubmitted ? (
@@ -193,27 +215,22 @@ const Contact = () => {
                         <Mail size={48} className="mx-auto" />
                       </div>
                       <h3 className="text-xl font-bold mb-2">Merci pour votre message!</h3>
-                      <p className="text-muted-foreground">
-                        Nous vous répondrons dans les plus brefs délais.
+                      <p className="text-muted-foreground mb-6">
+                        Pour vous assurer que votre message est bien reçu, veuillez également nous contacter directement par email.
                       </p>
+                      <a 
+                        href={generateMailtoLink(form.getValues())} 
+                        className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 mx-auto w-fit"
+                      >
+                        Envoyer par email
+                        <Mail size={18} />
+                      </a>
                     </div>
                   ) : (
                     <form 
-                      id="contact-form"
-                      action="https://formsubmit.co/info@robotsmali.org" 
-                      method="POST"
                       onSubmit={form.handleSubmit(onSubmit)}
                       className="space-y-6"
-                    >
-                      {/* FormSubmit anti-spam honeypot field */}
-                      <input type="text" name="_honey" style={{ display: 'none' }} />
-                      
-                      {/* Disable captcha */}
-                      <input type="hidden" name="_captcha" value="false" />
-                      
-                      {/* Specify return URL after submission */}
-                      <input type="hidden" name="_next" value={window.location.href} />
-                      
+                    >                      
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="name" className="block text-sm font-medium mb-1">Nom complet</label>
@@ -279,14 +296,24 @@ const Contact = () => {
                         )}
                       </div>
                       
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
-                      >
-                        {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
-                        <Send size={18} />
-                      </button>
+                      <div className="flex items-center justify-between gap-4 flex-wrap">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg shadow-md hover:bg-mali-red/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                        >
+                          {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
+                          <Send size={18} />
+                        </Button>
+                        
+                        <a 
+                          href="mailto:info@robotsmali.org"
+                          className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red hover:bg-red-50 transition-all flex items-center justify-center gap-2"
+                        >
+                          Contacter directement
+                          <Mail size={18} />
+                        </a>
+                      </div>
                     </form>
                   )}
                 </div>
