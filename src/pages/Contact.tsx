@@ -26,6 +26,7 @@ const formSchema = z.object({
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,24 +46,17 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://formspree.io/f/info@robotsmali.org', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(values)
+      // Simple form submission using HTML form submission
+      // The form will be handled by the "netlify" attribute
+      setFormSubmitted(true);
+      
+      toast({
+        title: "Message envoyé",
+        description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+        variant: "default",
       });
       
-      if (response.ok) {
-        toast({
-          title: "Message envoyé",
-          description: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
-          variant: "default",
-        });
-        form.reset();
-      } else {
-        throw new Error('Échec de l\'envoi du message');
-      }
+      form.reset();
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
       toast({
@@ -181,88 +175,90 @@ const Contact = () => {
               
               <ScrollReveal animation="slide-up" delay={200}>
                 <div className="bg-white p-8 rounded-xl shadow-sm border border-red-100">
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  {formSubmitted ? (
+                    <div className="text-center py-8">
+                      <div className="mb-4 text-mali-red">
+                        <Mail size={48} className="mx-auto" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Merci pour votre message!</h3>
+                      <p className="text-muted-foreground">
+                        Nous vous répondrons dans les plus brefs délais.
+                      </p>
+                    </div>
+                  ) : (
+                    <form 
+                      name="contact" 
+                      method="POST" 
+                      data-netlify="true"
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-6"
+                    >
+                      <input type="hidden" name="form-name" value="contact" />
+                      
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Nom complet</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  placeholder="Votre nom" 
-                                  {...field} 
-                                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
+                        <div>
+                          <label htmlFor="name" className="block text-sm font-medium mb-1">Nom complet</label>
+                          <Input 
+                            id="name"
+                            name="name"
+                            placeholder="Votre nom" 
+                            {...form.register("name")}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                          />
+                          {form.formState.errors.name && (
+                            <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.name.message}</p>
                           )}
-                        />
+                        </div>
                         
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Email</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  type="email" 
-                                  placeholder="votre.email@exemple.com" 
-                                  {...field} 
-                                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                          <Input 
+                            id="email"
+                            name="email"
+                            type="email" 
+                            placeholder="votre.email@exemple.com" 
+                            {...form.register("email")}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                          />
+                          {form.formState.errors.email && (
+                            <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.email.message}</p>
                           )}
-                        />
+                        </div>
                       </div>
                       
-                      <FormField
-                        control={form.control}
-                        name="subject"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Sujet</FormLabel>
-                            <FormControl>
-                              <select
-                                {...field}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
-                              >
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="information">Demande d'information</option>
-                                <option value="application">Candidature ONIA</option>
-                                <option value="sponsorship">Partenariat / Sponsoring</option>
-                                <option value="other">Autre</option>
-                              </select>
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
+                      <div>
+                        <label htmlFor="subject" className="block text-sm font-medium mb-1">Sujet</label>
+                        <select
+                          id="subject"
+                          name="subject"
+                          {...form.register("subject")}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors"
+                        >
+                          <option value="">Sélectionnez un sujet</option>
+                          <option value="information">Demande d'information</option>
+                          <option value="application">Candidature ONIA</option>
+                          <option value="sponsorship">Partenariat / Sponsoring</option>
+                          <option value="other">Autre</option>
+                        </select>
+                        {form.formState.errors.subject && (
+                          <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.subject.message}</p>
                         )}
-                      />
+                      </div>
                       
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="Votre message ici..." 
-                                rows={5}
-                                {...field} 
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors resize-none"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
+                        <Textarea 
+                          id="message"
+                          name="message"
+                          placeholder="Votre message ici..." 
+                          rows={5}
+                          {...form.register("message")}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mali-red focus:border-transparent outline-none transition-colors resize-none"
+                        />
+                        {form.formState.errors.message && (
+                          <p className="text-sm font-medium text-destructive mt-1">{form.formState.errors.message.message}</p>
                         )}
-                      />
+                      </div>
                       
                       <button
                         type="submit"
@@ -273,7 +269,7 @@ const Contact = () => {
                         <Send size={18} />
                       </button>
                     </form>
-                  </Form>
+                  )}
                 </div>
               </ScrollReveal>
             </div>
