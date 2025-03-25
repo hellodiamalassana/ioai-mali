@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Calendar } from 'lucide-react';
@@ -29,7 +28,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description, d
 
 const ApplicationProcess = () => {
   return (
-    <section className="w-full py-16 bg-blue-50">
+    <section className="w-full py-16 bg-red-50">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
           <h2 className="section-title">Comment participer</h2>
@@ -91,10 +90,10 @@ const ApplicationProcess = () => {
             
             <div className="mt-6">
               <a 
-                href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec" 
+                href="https://script.google.com/macros/s/AKfycbyrHndW2vb97NHSXFE-gNeQ0rzsyE6JYf4PKDBVmNMcG5kO0_vSP5bg_00-Lbqmo-BUYQ/exec" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 w-fit"
+                className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 w-fit"
               >
                 Participation
                 <ArrowRight size={18} />

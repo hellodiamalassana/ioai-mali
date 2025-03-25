@@ -48,7 +48,7 @@ const Features = () => {
           </p>
           <div className="mt-6">
             <a
-              href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec"
+              href="https://script.google.com/macros/s/AKfycbyrHndW2vb97NHSXFE-gNeQ0rzsyE6JYf4PKDBVmNMcG5kO0_vSP5bg_00-Lbqmo-BUYQ/exec"
               target="_blank" 
               rel="noopener noreferrer"
               className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
