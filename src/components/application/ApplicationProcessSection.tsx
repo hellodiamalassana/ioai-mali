@@ -62,7 +62,7 @@ const ApplicationProcessSection = () => {
         
         <div className="text-center mt-8">
           <a 
-            href="https://script.google.com/macros/s/AKfycbze1H_2LweWLypEbV0ZXiDXux-KOsGacAtBIbGbMyJs_jLCZM-nJnTn-fSBHe37gSkO0Q/exec" 
+            href="https://script.google.com/macros/s/AKfycbzRKOge0OP1KwFvJvgp8Q_qGpFAdnCYhKJjyhyeJ5HwdpCH-v63jXOkwIwRCQozQedbAA/exec" 
             target="_blank" 
             rel="noopener noreferrer"
             className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
