@@ -42,7 +42,7 @@ const ApplicationProcessSection = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex gap-2 items-start">
                 <span className="font-bold text-mali-red">1 -</span>
-                <span>Le test est individuel : aucune tentative de triche ne sera tolérée (vérification en présentiel).</span>
+                <span>Ce test est individuel. Pas la peine de tricher : si vous réussissez la sélection, vos connaissances seront validées par un test en présentiel.</span>
               </li>
               <li className="flex gap-2 items-start">
                 <span className="font-bold text-mali-red">2 -</span>
