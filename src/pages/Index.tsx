@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -29,7 +28,7 @@ const Index = () => {
             </div>
           </ScrollReveal>
           
-          <ScrollReveal animation="fade-in" delay={100}>
+          <ScrollReveal animation="fade-in" delay={200}>
             <h2 className="text-3xl md:text-4xl font-bold mb-5">
               Ensemble, faisons rayonner le Mali à l'IOAI 2025
             </h2>
@@ -44,7 +43,7 @@ const Index = () => {
           <ScrollReveal animation="fade-in" delay={300}>
             <div className="flex flex-wrap justify-center gap-4">
               <a 
-                href="https://script.google.com/macros/s/AKfycbzRKOge0OP1KwFvJvgp8Q_qGpFAdnCYhKJjyhyeJ5HwdpCH-v63jXOkwIwRCQozQedbAA/exec" 
+                href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
