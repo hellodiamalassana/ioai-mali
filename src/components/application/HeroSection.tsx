@@ -35,12 +35,23 @@ const HeroSection = () => {
           </Alert>
         </ScrollReveal>
         
-        {/* Partner logo */}
-        <ScrollReveal animation="fade-in" delay={350} className="mt-8 flex justify-center">
+        {/* Partner logos */}
+        <ScrollReveal animation="fade-in" delay={350} className="mt-8 flex flex-wrap justify-center gap-8">
+          {/* EDUSPACE Logo */}
           <div className="max-w-xs">
             <img 
               src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
               alt="EDUSPACE" 
+              className="w-full object-contain"
+              loading="lazy"
+            />
+          </div>
+          
+          {/* IOAI Logo */}
+          <div className="max-w-xs">
+            <img 
+              src="/lovable-uploads/52b5ada1-f035-4056-b99d-318270e8fcbc.png" 
+              alt="IOAI - International Olympiad in Artificial Intelligence" 
               className="w-full object-contain"
               loading="lazy"
             />

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { ArrowRight, Heart, Network, Award, Gift } from 'lucide-react';
@@ -96,10 +97,21 @@ const Sponsors = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <div className="flex flex-wrap justify-center items-center gap-12">
+              {/* EDUSPACE Logo */}
               <div className="w-80 h-40 flex items-center justify-center bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-all">
                 <img 
                   src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
                   alt="EDUSPACE" 
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* IOAI Logo */}
+              <div className="w-80 h-40 flex items-center justify-center bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-all">
+                <img 
+                  src="/lovable-uploads/52b5ada1-f035-4056-b99d-318270e8fcbc.png" 
+                  alt="IOAI - International Olympiad in Artificial Intelligence" 
                   className="max-h-full max-w-full object-contain"
                   loading="lazy"
                 />
