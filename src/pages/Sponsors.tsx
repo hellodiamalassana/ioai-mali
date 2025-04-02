@@ -88,6 +88,27 @@ const Sponsors = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal animation="fade-in">
+            <h2 className="section-title mb-12">Nos Partenaires Actuels</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              <div className="w-80 h-40 flex items-center justify-center bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-all">
+                <img 
+                  src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
+                  alt="EDUSPACE" 
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">

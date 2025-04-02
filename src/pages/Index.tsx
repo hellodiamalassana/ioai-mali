@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -17,6 +18,40 @@ const Index = () => {
       <Hero />
       <Features />
       <ApplicationProcess />
+      
+      {/* Partners Section */}
+      <section className="w-full py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <ScrollReveal animation="fade-in">
+            <h2 className="section-title mb-12">Nos Partenaires</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              <div className="w-60 h-32 flex items-center justify-center transition-transform hover:scale-105">
+                <img 
+                  src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
+                  alt="EDUSPACE" 
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={300} className="mt-8">
+            <Link 
+              to="/sponsors" 
+              className="text-mali-blue hover:text-mali-red transition-colors duration-300 font-medium flex items-center justify-center gap-2"
+            >
+              Voir tous nos partenaires
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
       
       {/* Call to Action Section with Competition Date */}
       <section className="w-full py-16 bg-mali-red text-white">

@@ -35,6 +35,18 @@ const HeroSection = () => {
           </Alert>
         </ScrollReveal>
         
+        {/* Partner logo */}
+        <ScrollReveal animation="fade-in" delay={350} className="mt-8 flex justify-center">
+          <div className="max-w-xs">
+            <img 
+              src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
+              alt="EDUSPACE" 
+              className="w-full object-contain"
+              loading="lazy"
+            />
+          </div>
+        </ScrollReveal>
+        
         <ScrollReveal animation="fade-in" delay={400} className="mt-8 text-center">
           <div className="flex flex-wrap justify-center gap-4">
             <a 
