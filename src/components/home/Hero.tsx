@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Globe } from 'lucide-react';
+import { ArrowRight, Calendar, Globe, Play } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const Hero = () => {
@@ -49,6 +49,16 @@ const Hero = () => {
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
                 <a 
+                  href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                >
+                  Commencer le Concours
+                  <Play size={18} />
+                </a>
+                
+                <a 
                   href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -57,6 +67,7 @@ const Hero = () => {
                   Participation
                   <ArrowRight size={18} />
                 </a>
+                
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5 shadow-sm hover:shadow">
                   Voir le calendrier
                 </Link>
