@@ -62,7 +62,7 @@ const Features = () => {
           <Feature 
             icon={<Calendar size={24} />}
             title="Phase 1"
-            description="QCM en ligne du 4 au 13 avril. 20 questions accessibles à tous."
+            description="QCM en ligne du 4 au 22 avril. 20 questions accessibles à tous."
             delay={100}
             className="card-hover bg-red-50 border-red-100"
           />
@@ -70,7 +70,7 @@ const Features = () => {
           <Feature 
             icon={<Zap size={24} />}
             title="Phase 2"
-            description="QCM avancé du 18 au 27 avril pour les qualifiés de la Phase 1."
+            description="QCM avancé du 24 au 29 avril pour les qualifiés de la Phase 1."
             delay={200}
             className="card-hover bg-green-50 border-green-100"
           />

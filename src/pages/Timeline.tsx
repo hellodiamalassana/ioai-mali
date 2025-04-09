@@ -109,7 +109,7 @@ const Timeline = () => {
     {
       number: 1,
       title: "Test Initial - Facile et Pour Tous",
-      dates: "4 avril – 13 avril",
+      dates: "4 avril – 22 avril",
       description: "Ton premier pas vers l'aventure! Un test simple que tout le monde peut réussir.",
       items: [
         "Test en ligne avec 20 questions à choix multiples (30 minutes)",
@@ -124,7 +124,7 @@ const Timeline = () => {
     {
       number: 2,
       title: "Second Test - Toujours Accessible",
-      dates: "18 avril – 27 avril",
+      dates: "24 avril – 29 avril",
       description: "Si tu réussis la Phase 1, tu passeras à cette deuxième étape, toujours sans programmation difficile.",
       items: [
         "Test en ligne de 20 questions à choix multiples (45 minutes)",
@@ -155,7 +155,7 @@ const Timeline = () => {
       number: 4,
       title: "Cours Personnalisés en Ligne",
       dates: "23 mai – 27 juin",
-      description: "Tu suivras des cours adaptés à ton niveau avec des experts en IA.",
+      description: "Tu suiviras des cours adaptés à ton niveau avec des experts en IA.",
       items: [
         "Cours en ligne (5 à 10 heures par semaine)",
         "Formation adaptée à ton niveau, même débutant",
@@ -205,11 +205,11 @@ const Timeline = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-mali-blue font-medium">
                   <div className="w-6 h-6 rounded-full bg-mali-blue/10 flex items-center justify-center text-sm">1</div>
-                  <span>4-13 avril: Phase 1 (Test facile en ligne)</span>
+                  <span>4-22 avril: Phase 1 (Test facile en ligne)</span>
                 </li>
                 <li className="flex items-center gap-2 text-mali-green font-medium">
                   <div className="w-6 h-6 rounded-full bg-mali-green/10 flex items-center justify-center text-sm">2</div>
-                  <span>18-27 avril: Phase 2 (Second test)</span>
+                  <span>24-29 avril: Phase 2 (Second test)</span>
                 </li>
               </ul>
               <div className="mt-6 bg-white p-3 rounded-lg border border-blue-100">
