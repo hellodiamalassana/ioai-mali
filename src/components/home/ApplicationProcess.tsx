@@ -112,7 +112,7 @@ const ApplicationProcess = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 mb-4 text-mali-blue font-medium">
                     <Calendar size={18} />
-                    <span>Début des tests: 4 avril 2024</span>
+                    <span>Début des tests: 4 avril 2025</span>
                   </div>
                   
                   <div className="space-y-3">
