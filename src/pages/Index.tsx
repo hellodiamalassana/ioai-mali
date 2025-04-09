@@ -70,7 +70,7 @@ const Index = () => {
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Calendar size={18} />
-              <span className="font-medium">Début des tests: 4 avril</span>
+              <span className="font-medium">Début des tests: 4 avril 2025</span>
             </div>
           </ScrollReveal>
           

@@ -34,7 +34,7 @@ const Features = () => {
         <ScrollReveal animation="fade-in" className="mb-6">
           <div className="inline-flex mx-auto items-center gap-2 bg-mali-red/10 backdrop-blur-sm px-4 py-2 rounded-full">
             <Calendar size={18} className="text-mali-red" />
-            <span className="font-medium text-mali-red">Début des tests: 4 avril</span>
+            <span className="font-medium text-mali-red">Début des tests: 4 avril 2025</span>
           </div>
         </ScrollReveal>
 

@@ -29,7 +29,7 @@ const Hero = () => {
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   <Calendar size={14} />
-                  <span>Début: 4 avril</span>
+                  <span>Début: 4 avril 2025</span>
                 </div>
               </div>
             </ScrollReveal>

@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Alert className="max-w-2xl mx-auto bg-mali-yellow/10 border-mali-yellow/20 text-center">
             <AlertCircle className="h-5 w-5 text-mali-yellow mx-auto mb-2" />
             <AlertDescription className="text-center font-medium text-mali-dark">
-              La première étape du concours commence le 4 Avril 2024. Chaque élève recevra un code personnel qui ne peut être utilisé qu'une seule fois.
+              La première étape du concours commence le 4 Avril 2025. Chaque élève recevra un code personnel qui ne peut être utilisé qu'une seule fois.
             </AlertDescription>
           </Alert>
         </ScrollReveal>
