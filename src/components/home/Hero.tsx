@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Globe, Play } from 'lucide-react';
+import { ArrowRight, Calendar, Play } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
+import ImportantInfo from './ImportantInfo';
 
 const Hero = () => {
   return (
@@ -22,6 +22,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            <ScrollReveal animation="fade-in">
+              <ImportantInfo />
+            </ScrollReveal>
+            
             <ScrollReveal animation="slide-right">
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="inline-block py-1 px-3 bg-red-100 text-mali-red rounded-full text-sm font-medium">
