@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -5,9 +6,9 @@ import ApplicationProcess from '@/components/home/ApplicationProcess';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Countdown from "@/components/home/Countdown";
 
 const Index = () => {
+  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,20 +18,7 @@ const Index = () => {
       <Hero />
       <Features />
       <ApplicationProcess />
-
-      {/* Countdown Section */}
-      <section className="w-full py-12 bg-mali-yellow/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-mali-dark">
-            Résultats disponibles avant la Phase 2 !
-          </h2>
-          <p className="text-md md:text-lg text-mali-dark/80 mb-2">
-            Les résultats seront communiqués avant le lancement de la Phase 2 (24 avril 2025).
-          </p>
-          <Countdown />
-        </div>
-      </section>
-
+      
       {/* Partners Section */}
       <section className="w-full py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
