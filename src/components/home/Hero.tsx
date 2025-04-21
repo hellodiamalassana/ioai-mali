@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Play } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
-import ImportantInfo from './ImportantInfo';
 import Countdown from './Countdown';
 
 const Hero = () => {
@@ -24,8 +22,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            
             <ScrollReveal animation="fade-in">
-              <ImportantInfo />
               <div className="mt-4 text-center text-mali-blue font-semibold">
                 <span>Les résultats seront disponibles avant le lancement de la Phase 2 :</span>
                 <Countdown />
