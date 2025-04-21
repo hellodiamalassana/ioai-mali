@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Play } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import ImportantInfo from './ImportantInfo';
+import Countdown from './Countdown';
 
 const Hero = () => {
   return (
@@ -24,9 +26,13 @@ const Hero = () => {
           <div>
             <ScrollReveal animation="fade-in">
               <ImportantInfo />
+              <div className="mt-4 text-center text-mali-blue font-semibold">
+                <span>Les résultats seront disponibles avant le lancement de la Phase 2 :</span>
+                <Countdown />
+              </div>
             </ScrollReveal>
             
-            <ScrollReveal animation="slide-right">
+            <ScrollReveal animation="slide-right" className="mt-6">
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="inline-block py-1 px-3 bg-red-100 text-mali-red rounded-full text-sm font-medium">
                   IOAI 2025
