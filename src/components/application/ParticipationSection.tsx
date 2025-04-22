@@ -8,7 +8,7 @@ const ParticipationSection = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title mb-8 text-mali-dark">Participation</h2>
+          <h2 className="section-title mb-8 text-mali-dark">Catégories</h2>
         </ScrollReveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">

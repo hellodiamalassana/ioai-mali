@@ -59,18 +59,6 @@ const ApplicationProcessSection = () => {
             </ul>
           </div>
         </ScrollReveal>
-        
-        <div className="text-center mt-8">
-          <a 
-            href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
-          >
-            Participation
-            <ExternalLink size={18} />
-          </a>
-        </div>
       </div>
     </section>
   );

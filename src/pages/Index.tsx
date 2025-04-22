@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -92,15 +93,6 @@ const Index = () => {
               >
                 Voir les résultats
               </Link>
-              
-              <a 
-                href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-transparent text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/10"
-              >
-                Participation
-              </a>
             </div>
           </ScrollReveal>
         </div>
