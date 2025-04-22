@@ -1,12 +1,9 @@
-
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { AlertCircle, ExternalLink, Globe, Play } from 'lucide-react';
 import { Alert, AlertDescription } from "@/components/ui/alert";
-
 const HeroSection = () => {
-  return (
-    <section className="bg-gradient-to-b from-red-50 to-white py-16 md:py-24">
+  return <section className="bg-gradient-to-b from-red-50 to-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-mali-dark">
@@ -37,26 +34,13 @@ const HeroSection = () => {
         
         <ScrollReveal animation="fade-in" delay={400} className="mt-8 text-center">
           <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
-            >
-              Commencer le Concours
-              <Play size={18} />
-            </a>
-            <a 
-              href="/timeline" 
-              className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5"
-            >
+            
+            <a href="/timeline" className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5">
               Voir le calendrier
             </a>
           </div>
         </ScrollReveal>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
