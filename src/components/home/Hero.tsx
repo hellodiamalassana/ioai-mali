@@ -78,7 +78,7 @@ const Hero = () => {
                   <div className="w-full max-w-md">
                     <Alert className="bg-yellow-50 border-yellow-200">
                       <AlertDescription>
-                        Les résultats de la Phase 1 seront disponibles à partir du 23 avril 2025
+                        Les résultats de la Phase 1 seront disponibles le 23 avril 2025 à 00h00 GMT
                       </AlertDescription>
                     </Alert>
                   </div>
