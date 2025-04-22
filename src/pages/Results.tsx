@@ -9,10 +9,10 @@ import { read, utils } from 'xlsx';
 import { useToast } from '@/hooks/use-toast';
 
 interface ResultData {
-  Rang: number;
-  Nom: string;
-  Score: string;
-  Statut: string;
+  'Nom Complet': string;
+  'Sexe': string;
+  'Ville': string;
+  'Dernier établissement scolaire': string;
 }
 
 const Results = () => {
@@ -75,22 +75,20 @@ const Results = () => {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Rang</TableHead>
-                      <TableHead>Nom</TableHead>
-                      <TableHead>Score</TableHead>
-                      <TableHead>Statut</TableHead>
+                      <TableHead>Nom Complet</TableHead>
+                      <TableHead>Sexe</TableHead>
+                      <TableHead>Ville</TableHead>
+                      <TableHead>Dernier établissement scolaire</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {results.length > 0 ? (
                       results.map((result, index) => (
                         <TableRow key={index}>
-                          <TableCell>{result.Rang}</TableCell>
-                          <TableCell>{result.Nom}</TableCell>
-                          <TableCell>{result.Score}</TableCell>
-                          <TableCell className={result.Statut.toLowerCase() === 'qualifié' ? 'text-green-600' : ''}>
-                            {result.Statut}
-                          </TableCell>
+                          <TableCell>{result['Nom Complet']}</TableCell>
+                          <TableCell>{result['Sexe']}</TableCell>
+                          <TableCell>{result['Ville']}</TableCell>
+                          <TableCell>{result['Dernier établissement scolaire']}</TableCell>
                         </TableRow>
                       ))
                     ) : (
