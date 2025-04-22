@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Calendar } from 'lucide-react';
@@ -128,6 +129,23 @@ const ApplicationProcess = () => {
             </Card>
           </ScrollReveal>
         </div>
+
+        <ScrollReveal animation="fade-in" delay={600} className="mt-12 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Étapes du concours</h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+            Inscrivez-vous dès maintenant et recevez votre code personnel pour débuter les tests le 4 avril.
+          </p>
+          
+          <div className="flex justify-center">
+            <Link 
+              to="/application" 
+              className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center gap-2"
+            >
+              Je m'inscris
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
