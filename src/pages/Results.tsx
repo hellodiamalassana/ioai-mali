@@ -15,7 +15,7 @@ const Results = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h1 className="text-3xl font-semibold mb-8">
-              Résultats - Phase 1
+              Résultats
             </h1>
           </ScrollReveal>
 
