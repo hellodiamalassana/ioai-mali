@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,7 @@ const Results = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h1 className="text-3xl font-semibold mb-8">
-              Résultats - Phase 2
+              Résultats - Phase 1
             </h1>
           </ScrollReveal>
 
