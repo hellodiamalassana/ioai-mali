@@ -1,8 +1,7 @@
-
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/button';
-import { FileDown, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 const Results = () => {
   useEffect(() => {
@@ -35,16 +34,7 @@ const Results = () => {
                 allowFullScreen
               />
             </div>
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a 
-                href="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" 
-                download="Liste_Candidats_IOAI_Phase2.png"
-                className="flex items-center gap-2 px-4 py-2 bg-mali-red text-white rounded-md hover:bg-mali-red/90 transition-colors"
-              >
-                <FileDown size={18} />
-                Télécharger l'image
-              </a>
-              
+            <div className="mt-4 flex justify-center">
               <Button
                 variant="outline"
                 className="flex items-center gap-2 border-mali-red text-mali-red hover:bg-mali-red/10"
