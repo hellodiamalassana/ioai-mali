@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/button';
-import { FileDown } from 'lucide-react';
+import { FileDown, Download } from 'lucide-react';
 
 const Results = () => {
   useEffect(() => {
@@ -35,19 +35,27 @@ const Results = () => {
                 allowFullScreen
               />
             </div>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a 
-                href="https://docs.google.com/spreadsheets/d/1Gxa4kkdBQlIK9RNOhJDGG-swACJ-9VnH5JsgEIBGaUE/export?format=pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" 
+                download="Liste_Candidats_IOAI_Phase2.png"
                 className="flex items-center gap-2 px-4 py-2 bg-mali-red text-white rounded-md hover:bg-mali-red/90 transition-colors"
               >
                 <FileDown size={18} />
-                Télécharger le PDF
+                Télécharger l'image
               </a>
+              
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 border-mali-red text-mali-red hover:bg-mali-red/10"
+                onClick={() => window.open("https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/pub?output=pdf", "_blank")}
+              >
+                <Download size={18} />
+                Version PDF
+              </Button>
             </div>
             <p className="text-sm text-gray-600 mt-2 text-center">
-              Si vous ne voyez pas la liste, utilisez le bouton ci-dessus pour télécharger le PDF.
+              Pour une meilleure expérience, visualisez directement la liste dans l'iframe ci-dessus.
             </p>
           </ScrollReveal>
         </div>
