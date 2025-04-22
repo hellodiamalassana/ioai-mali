@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -7,6 +8,7 @@ import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
+  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,6 +19,7 @@ const Index = () => {
       <Features />
       <ApplicationProcess />
       
+      {/* Partners Section */}
       <section className="w-full py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
@@ -25,6 +28,7 @@ const Index = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <div className="flex flex-wrap justify-center items-center gap-12">
+              {/* EDUSPACE Logo */}
               <div className="w-60 h-32 flex items-center justify-center transition-transform hover:scale-105">
                 <img 
                   src="/lovable-uploads/7cc919d7-d1d7-4368-975d-44c37a313fb8.png" 
@@ -34,6 +38,7 @@ const Index = () => {
                 />
               </div>
               
+              {/* IOAI Logo */}
               <div className="w-60 h-32 flex items-center justify-center transition-transform hover:scale-105">
                 <img 
                   src="/lovable-uploads/52b5ada1-f035-4056-b99d-318270e8fcbc.png" 
@@ -59,35 +64,38 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Call to Action Section with Competition Date */}
       <section className="w-full py-16 bg-mali-red text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Calendar size={18} />
-              <span className="font-medium">Résultats Phase 1 disponibles</span>
+              <span className="font-medium">Début des tests: 4 avril 2025</span>
             </div>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <h2 className="text-3xl md:text-4xl font-bold mb-5">
-              Découvrez les résultats de la Phase 1 de l'IOAI 2025
+              Ensemble, faisons rayonner le Mali à l'IOAI 2025
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
-              Les résultats de la première phase sont maintenant disponibles. Consultez votre classement et votre statut de qualification pour la Phase 2.
+              Parents, enseignants, professionnels, étudiants - nous avons tous un rôle à jouer dans ce projet national. Les inscriptions sont ouvertes pour tous !
             </p>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={300}>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
-                to="/results"
+              <a 
+                href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
               >
-                Voir les résultats
-              </Link>
+                Participation
+              </a>
               
               <Link 
                 to="/timeline" 
