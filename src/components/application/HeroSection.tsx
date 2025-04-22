@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { AlertCircle, ExternalLink, Globe, Play } from 'lucide-react';
