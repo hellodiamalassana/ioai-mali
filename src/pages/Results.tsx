@@ -37,7 +37,7 @@ const Results = () => {
             </div>
             <div className="mt-4 flex justify-center">
               <a 
-                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/export?format=pdf" 
+                href="https://docs.google.com/spreadsheets/d/1Gxa4kkdBQlIK9RNOhJDGG-swACJ-9VnH5JsgEIBGaUE/export?format=pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-mali-red text-white rounded-md hover:bg-mali-red/90 transition-colors"
