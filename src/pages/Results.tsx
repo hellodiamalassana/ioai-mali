@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -30,13 +29,49 @@ const initialResults: ResultData[] = [
     'Ville': 'Bamako',
     'Dernier établissement scolaire': 'UIE'
   },
-  // ... tous les autres résultats
-].map(result => ({
-  'Nom Complet': result['Nom Complet'],
-  'Sexe': result['Sexe'],
-  'Ville': result['Ville'],
-  'Dernier établissement scolaire': result['Dernier établissement scolaire']
-}));
+  {
+    'Nom Complet': 'Nouh Aly BARRY',
+    'Sexe': 'Masculin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'Lycée Technique de Bamako'
+  },
+  {
+    'Nom Complet': 'MAMADOU LAMINE FOFANA',
+    'Sexe': 'Masculin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'lycée TECHNIQUE DE Bamako'
+  },
+  {
+    'Nom Complet': 'Amina Oumar Traoré',
+    'Sexe': 'Féminin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'Lycée Privé les Castors'
+  },
+  {
+    'Nom Complet': 'Kabel Cisse',
+    'Sexe': 'Féminin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'Enko International School of Bamako'
+  },
+  {
+    'Nom Complet': 'Cheickna Sidi CISSE',
+    'Sexe': 'Masculin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'Lycée Mamadou BEYE'
+  },
+  {
+    'Nom Complet': 'mariam toure',
+    'Sexe': 'Féminin',
+    'Ville': 'banako',
+    'Dernier établissement scolaire': 'graine d\'eveil'
+  },
+  {
+    'Nom Complet': 'Djan Mande Sacko',
+    'Sexe': 'Masculin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'Lycée kalilou fofana de Bougouni'
+  }
+];
 
 const Results = () => {
   const [results, setResults] = useState<ResultData[]>(initialResults);
