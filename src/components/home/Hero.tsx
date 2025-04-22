@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Play } from 'lucide-react';
@@ -7,8 +6,10 @@ import { Alert, AlertDescription } from '../ui/alert';
 
 const Hero = () => {
   const phase2Start = new Date('2025-04-24');
+  const resultsPhase1Start = new Date('2025-04-23T00:00:00Z');
   const now = new Date();
   const isPhase2Active = now >= phase2Start;
+  const isResultsPhase1Accessible = now >= resultsPhase1Start;
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
@@ -73,13 +74,23 @@ const Hero = () => {
                   </a>
                 )}
                 
-                <Link 
-                  to="/results"
-                  className="px-6 py-3 bg-mali-yellow text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-yellow/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
-                >
-                  Résultats Phase 1
-                  <ArrowRight size={18} />
-                </Link>
+                {!isResultsPhase1Accessible ? (
+                  <div className="w-full max-w-md">
+                    <Alert className="bg-yellow-50 border-yellow-200">
+                      <AlertDescription>
+                        Les résultats de la Phase 1 seront disponibles à partir du 23 avril 2025
+                      </AlertDescription>
+                    </Alert>
+                  </div>
+                ) : (
+                  <Link 
+                    to="/results"
+                    className="px-6 py-3 bg-mali-yellow text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-yellow/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                  >
+                    Résultats Phase 1
+                    <ArrowRight size={18} />
+                  </Link>
+                )}
                 
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5 shadow-sm hover:shadow">
                   Voir le calendrier
@@ -129,4 +140,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
