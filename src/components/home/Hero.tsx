@@ -57,7 +57,7 @@ const Hero = () => {
               <div className="flex flex-wrap gap-4">
                 {!isPhase2Active ? <div className="w-full max-w-md">
                     <Alert className="border-yellow-200 bg-[#fb5d0a]/[0.81] mx-0">
-                      <AlertDescription>
+                      <AlertDescription className="bg-[#fffff4]/0">
                         La Phase 2 sera accessible à partir du 24 avril 2025
                       </AlertDescription>
                     </Alert>
