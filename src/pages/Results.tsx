@@ -2,11 +2,19 @@
 import React, { useState } from 'react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { FileSpreadsheet, Upload } from 'lucide-react';
+import { FileSpreadsheet, Pencil, Trash2 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { read, utils } from 'xlsx';
 import { useToast } from '@/hooks/use-toast';
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from '@/components/ui/alert-dialog';
 
 interface ResultData {
   'Nom Complet': string;
@@ -17,30 +25,18 @@ interface ResultData {
 
 const Results = () => {
   const [results, setResults] = useState<ResultData[]>([]);
+  const [selectedResult, setSelectedResult] = useState<number | null>(null);
   const { toast } = useToast();
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
-    try {
-      const data = await file.arrayBuffer();
-      const workbook = read(data);
-      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-      const jsonData = utils.sheet_to_json<ResultData>(worksheet);
-
-      setResults(jsonData);
-      toast({
-        title: "Fichier chargé avec succès",
-        description: `${jsonData.length} résultats importés`,
-      });
-    } catch (error) {
-      toast({
-        title: "Erreur lors du chargement",
-        description: "Le format du fichier n'est pas valide",
-        variant: "destructive",
-      });
-    }
+  const handleDeleteResult = (index: number) => {
+    const newResults = [...results];
+    newResults.splice(index, 1);
+    setResults(newResults);
+    setSelectedResult(null);
+    toast({
+      title: "Résultat supprimé",
+      description: "Le résultat a été supprimé avec succès",
+    });
   };
 
   return (
@@ -49,25 +45,9 @@ const Results = () => {
         <ScrollReveal animation="fade-in">
           <Card className="mb-8">
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <FileSpreadsheet className="w-6 h-6 text-green-600" />
-                  <CardTitle>Résultats de la Phase 1 - IOAI 2025</CardTitle>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" className="gap-2">
-                    <Upload className="w-4 h-4" />
-                    <label className="cursor-pointer">
-                      Importer Excel
-                      <input
-                        type="file"
-                        accept=".xlsx,.xls"
-                        className="hidden"
-                        onChange={handleFileUpload}
-                      />
-                    </label>
-                  </Button>
-                </div>
+              <div className="flex items-center gap-3">
+                <FileSpreadsheet className="w-6 h-6 text-green-600" />
+                <CardTitle>Résultats de la Phase 1 - IOAI 2025</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -79,6 +59,7 @@ const Results = () => {
                       <TableHead>Sexe</TableHead>
                       <TableHead>Ville</TableHead>
                       <TableHead>Dernier établissement scolaire</TableHead>
+                      <TableHead className="w-[100px]">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -89,12 +70,28 @@ const Results = () => {
                           <TableCell>{result['Sexe']}</TableCell>
                           <TableCell>{result['Ville']}</TableCell>
                           <TableCell>{result['Dernier établissement scolaire']}</TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => console.log('Edit', index)}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                              >
+                                <Pencil className="w-4 h-4 text-blue-600" />
+                              </button>
+                              <button
+                                onClick={() => setSelectedResult(index)}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                              >
+                                <Trash2 className="w-4 h-4 text-red-600" />
+                              </button>
+                            </div>
+                          </TableCell>
                         </TableRow>
                       ))
                     ) : (
                       <TableRow>
-                        <TableCell className="text-center" colSpan={4}>
-                          Importez un fichier Excel pour voir les résultats
+                        <TableCell className="text-center" colSpan={5}>
+                          Aucun résultat disponible
                         </TableCell>
                       </TableRow>
                     )}
@@ -105,6 +102,26 @@ const Results = () => {
           </Card>
         </ScrollReveal>
       </div>
+
+      <AlertDialog open={selectedResult !== null} onOpenChange={() => setSelectedResult(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Confirmer la suppression</AlertDialogTitle>
+            <AlertDialogDescription>
+              Êtes-vous sûr de vouloir supprimer ce résultat ? Cette action ne peut pas être annulée.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuler</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-red-600 hover:bg-red-700"
+              onClick={() => selectedResult !== null && handleDeleteResult(selectedResult)}
+            >
+              Supprimer
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
