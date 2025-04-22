@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Calendar } from 'lucide-react';
@@ -88,18 +87,6 @@ const ApplicationProcess = () => {
                 </ul>
               </div>
             </ScrollReveal>
-            
-            <div className="mt-6">
-              <a 
-                href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-mali-red text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-red/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2 w-fit"
-              >
-                Participation
-                <ArrowRight size={18} />
-              </a>
-            </div>
           </div>
           
           <ScrollReveal animation="slide-left" delay={200}>

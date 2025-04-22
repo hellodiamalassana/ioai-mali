@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { AlertCircle, ExternalLink, Globe, Play } from 'lucide-react';
@@ -46,17 +45,6 @@ const HeroSection = () => {
               Commencer le Concours
               <Play size={18} />
             </a>
-            
-            <a 
-              href="https://script.google.com/macros/s/AKfycbx42zuK8-f5R0TjpwEHEjUpiNgxhdcu5BXjIJjaosFSukL0hI5Kt01eN6zBBsapnyEm2A/exec" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2"
-            >
-              Participation
-              <ExternalLink size={18} />
-            </a>
-            
             <a 
               href="/timeline" 
               className="px-6 py-3 bg-transparent text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5"
