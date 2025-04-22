@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
@@ -63,7 +62,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Call to Action Section */}
       <section className="w-full py-16 bg-mali-red text-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
@@ -83,17 +81,6 @@ const Index = () => {
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
               Parents, enseignants, professionnels, étudiants - nous avons tous un rôle à jouer dans ce projet national. Les inscriptions sont ouvertes pour tous !
             </p>
-          </ScrollReveal>
-          
-          <ScrollReveal animation="fade-in" delay={300}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link 
-                to="/results" 
-                className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-              >
-                Voir les résultats
-              </Link>
-            </div>
           </ScrollReveal>
         </div>
       </section>
