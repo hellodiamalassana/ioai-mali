@@ -1,9 +1,15 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Globe, Play } from 'lucide-react';
+import { ArrowRight, Calendar, Play } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
+import { Alert, AlertDescription } from '../ui/alert';
 
 const Hero = () => {
+  const phase2Start = new Date('2025-04-24');
+  const now = new Date();
+  const isPhase2Active = now >= phase2Start;
+
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
@@ -47,15 +53,25 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
-                <a 
-                  href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
-                >
-                  Commencer Phase 2
-                  <Play size={18} />
-                </a>
+                {!isPhase2Active ? (
+                  <div className="w-full max-w-md">
+                    <Alert className="bg-yellow-50 border-yellow-200">
+                      <AlertDescription>
+                        La Phase 2 sera accessible à partir du 24 avril 2025
+                      </AlertDescription>
+                    </Alert>
+                  </div>
+                ) : (
+                  <a 
+                    href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                  >
+                    Commencer Phase 2
+                    <Play size={18} />
+                  </a>
+                )}
                 
                 <Link 
                   to="/results"
@@ -113,3 +129,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
