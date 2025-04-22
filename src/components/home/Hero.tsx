@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Play } from 'lucide-react';
+import { ArrowRight, Calendar, Play, AlertTriangle } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { Alert, AlertDescription } from '../ui/alert';
 
@@ -76,8 +76,9 @@ const Hero = () => {
                 
                 {!isResultsPhase1Accessible ? (
                   <div className="w-full max-w-md">
-                    <Alert className="bg-yellow-50 border-yellow-200">
-                      <AlertDescription>
+                    <Alert className="bg-red-50 border-red-200">
+                      <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
+                      <AlertDescription className="text-red-700 font-semibold">
                         Les résultats de la Phase 1 seront disponibles le 23 avril 2025 à 00h00 GMT
                       </AlertDescription>
                     </Alert>
@@ -85,7 +86,7 @@ const Hero = () => {
                 ) : (
                   <Link 
                     to="/results"
-                    className="px-6 py-3 bg-mali-yellow text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-yellow/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+                    className="px-6 py-3 bg-red-500 text-white font-bold rounded-lg transition-all duration-300 hover:bg-red-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
                   >
                     Résultats Phase 1
                     <ArrowRight size={18} />
