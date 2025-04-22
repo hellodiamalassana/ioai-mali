@@ -2,7 +2,7 @@
 import React from 'react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { FileExcel } from 'lucide-react';
+import { FileSpreadsheet } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const Results = () => {
@@ -13,7 +13,7 @@ const Results = () => {
           <Card className="mb-8">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <FileExcel className="w-6 h-6 text-green-600" />
+                <FileSpreadsheet className="w-6 h-6 text-green-600" />
                 <CardTitle>Résultats de la Phase 1 - IOAI 2025</CardTitle>
               </div>
             </CardHeader>
