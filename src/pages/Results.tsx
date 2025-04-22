@@ -1,6 +1,8 @@
 
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { Button } from '@/components/ui/button';
+import { FileDown } from 'lucide-react';
 
 const Results = () => {
   useEffect(() => {
@@ -33,10 +35,19 @@ const Results = () => {
                 allowFullScreen
               />
             </div>
-            <p className="text-sm text-gray-600 mt-2">
-              Si vous ne voyez pas la liste, <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/export?format=pdf" target="_blank" rel="noopener noreferrer" className="text-mali-blue hover:text-mali-red transition-colors duration-300">
-                téléchargez le PDF
-              </a>.
+            <div className="mt-4 flex justify-center">
+              <a 
+                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/export?format=pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-mali-red text-white rounded-md hover:bg-mali-red/90 transition-colors"
+              >
+                <FileDown size={18} />
+                Télécharger le PDF
+              </a>
+            </div>
+            <p className="text-sm text-gray-600 mt-2 text-center">
+              Si vous ne voyez pas la liste, utilisez le bouton ci-dessus pour télécharger le PDF.
             </p>
           </ScrollReveal>
         </div>
