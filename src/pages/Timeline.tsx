@@ -336,12 +336,12 @@ const Timeline = () => {
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal animation="fade-in">
-            <h2 className="text-3xl font-bold mb-6">Prêt à commencer l'aventure?</h2>
+            <h2 className="text-3xl font-bold mb-6">Inscrivez-vous dès maintenant</h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Les premières étapes sont faciles et accessibles à tous! Maintenant pour tenter ta chance et peut-être représenter le Mali en Chine en 2025.
+              Recevez votre code personnel pour débuter les tests le 4 avril. Chaque participant aura un identifiant unique qui ne peut être utilisé qu'une seule fois.
             </p>
           </ScrollReveal>
           
@@ -351,7 +351,7 @@ const Timeline = () => {
                 to="/application" 
                 className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all flex items-center gap-2"
               >
-                Je tente ma chance
+                Je m'inscris
                 <ArrowRight size={18} />
               </Link>
             </div>
