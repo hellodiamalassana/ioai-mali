@@ -23,8 +23,23 @@ interface ResultData {
   'Dernier établissement scolaire': string;
 }
 
+const initialResults: ResultData[] = [
+  {
+    'Nom Complet': 'Halleg Badara Doumbia',
+    'Sexe': 'Masculin',
+    'Ville': 'Bamako',
+    'Dernier établissement scolaire': 'UIE'
+  },
+  // ... tous les autres résultats
+].map(result => ({
+  'Nom Complet': result['Nom Complet'],
+  'Sexe': result['Sexe'],
+  'Ville': result['Ville'],
+  'Dernier établissement scolaire': result['Dernier établissement scolaire']
+}));
+
 const Results = () => {
-  const [results, setResults] = useState<ResultData[]>([]);
+  const [results, setResults] = useState<ResultData[]>(initialResults);
   const [selectedResult, setSelectedResult] = useState<number | null>(null);
   const { toast } = useToast();
 
@@ -63,38 +78,30 @@ const Results = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {results.length > 0 ? (
-                      results.map((result, index) => (
-                        <TableRow key={index}>
-                          <TableCell>{result['Nom Complet']}</TableCell>
-                          <TableCell>{result['Sexe']}</TableCell>
-                          <TableCell>{result['Ville']}</TableCell>
-                          <TableCell>{result['Dernier établissement scolaire']}</TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                              <button
-                                onClick={() => console.log('Edit', index)}
-                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                              >
-                                <Pencil className="w-4 h-4 text-blue-600" />
-                              </button>
-                              <button
-                                onClick={() => setSelectedResult(index)}
-                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                              >
-                                <Trash2 className="w-4 h-4 text-red-600" />
-                              </button>
-                            </div>
-                          </TableCell>
-                        </TableRow>
-                      ))
-                    ) : (
-                      <TableRow>
-                        <TableCell className="text-center" colSpan={5}>
-                          Aucun résultat disponible
+                    {results.map((result, index) => (
+                      <TableRow key={index}>
+                        <TableCell>{result['Nom Complet']}</TableCell>
+                        <TableCell>{result['Sexe']}</TableCell>
+                        <TableCell>{result['Ville']}</TableCell>
+                        <TableCell>{result['Dernier établissement scolaire']}</TableCell>
+                        <TableCell>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => console.log('Edit', index)}
+                              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            >
+                              <Pencil className="w-4 h-4 text-blue-600" />
+                            </button>
+                            <button
+                              onClick={() => setSelectedResult(index)}
+                              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            >
+                              <Trash2 className="w-4 h-4 text-red-600" />
+                            </button>
+                          </div>
                         </TableCell>
                       </TableRow>
-                    )}
+                    ))}
                   </TableBody>
                 </Table>
               </div>
