@@ -10,6 +10,21 @@ const Results = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleDownloadPDF = () => {
+    // Create a link to the PDF file
+    const link = document.createElement('a');
+    link.href = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/pub?output=pdf';
+    link.setAttribute('download', 'Resultats_Phase1_IOAI.pdf');
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleViewCertificate = () => {
+    window.open('https://docs.google.com/document/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/pub', '_blank');
+  };
+
   return (
     <div className="min-h-screen">
       <section className="w-full py-16 bg-white">
@@ -29,11 +44,18 @@ const Results = () => {
                 </AlertDescription>
               </Alert>
               <div className="flex gap-2">
-                <Button variant="outline" className="flex items-center gap-2">
+                <Button 
+                  variant="outline" 
+                  className="flex items-center gap-2"
+                  onClick={handleViewCertificate}
+                >
                   <FileText size={16} />
                   Voir attestation
                 </Button>
-                <Button className="flex items-center gap-2 bg-mali-red hover:bg-mali-red/80">
+                <Button 
+                  className="flex items-center gap-2 bg-mali-red hover:bg-mali-red/80"
+                  onClick={handleDownloadPDF}
+                >
                   <Download size={16} />
                   Télécharger PDF
                 </Button>
