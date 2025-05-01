@@ -1,25 +1,30 @@
+
 import React, { useEffect } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { MedalIcon, FileText, Download } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+
 const Results = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const handleDownloadPDF = () => {
     // Create a link to the PDF file
     const link = document.createElement('a');
     link.href = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/pub?output=pdf';
-    link.setAttribute('download', 'Resultats_Phase1_IOAI.pdf');
+    link.setAttribute('download', 'Resultats_Phase2_IOAI.pdf');
     link.setAttribute('target', '_blank');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
   const handleViewCertificate = () => {
     window.open('https://docs.google.com/document/d/e/2PACX-1vQBxjqiFko0Vcb0NlS1waChk0mv8RtRopI6V9Blns02sQdeK14vupwThSe0bsEzO0P4cQ8y-EqLx2HN/pub', '_blank');
   };
+
   return <div className="min-h-screen">
       <section className="w-full py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -59,4 +64,5 @@ const Results = () => {
       </section>
     </div>;
 };
+
 export default Results;

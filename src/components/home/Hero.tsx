@@ -1,14 +1,17 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Play, AlertTriangle } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { Alert, AlertDescription } from '../ui/alert';
+
 const Hero = () => {
-  const phase2Start = new Date('2025-04-24');
-  const resultsPhase1Start = new Date('2025-04-23T00:00:00Z');
+  const phase3Start = new Date('2025-05-01');
+  const resultsPhase2Start = new Date('2025-04-30T00:00:00Z');
   const now = new Date();
-  const isPhase2Active = now >= phase2Start;
-  const isResultsPhase1Accessible = now >= resultsPhase1Start;
+  const isPhase3Active = now >= phase3Start;
+  const isResultsPhase2Accessible = now >= resultsPhase2Start;
+
   return <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-rose-50"></div>
@@ -55,26 +58,26 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
-                {!isPhase2Active ? <div className="w-full max-w-md">
+                {!isPhase3Active ? <div className="w-full max-w-md">
                     <Alert className="border-yellow-200 bg-[#fb5d0a]/[0.81] mx-0">
                       <AlertDescription className="bg-[#fffff4]/0">
-                        La Phase 2 sera accessible à partir du 24 avril 2025
+                        La Phase 3 sera accessible à partir du 1 mai 2025
                       </AlertDescription>
                     </Alert>
                   </div> : <a href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                    Commencer Phase 2
+                    Commencer Phase 3
                     <Play size={18} />
                   </a>}
                 
-                {!isResultsPhase1Accessible ? <div className="w-full max-w-md">
+                {!isResultsPhase2Accessible ? <div className="w-full max-w-md">
                     <Alert className="bg-red-50 border-red-200">
                       <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
                       <AlertDescription className="text-red-700 font-semibold">
-                        Les résultats de la Phase 1 seront disponibles le 23 avril 2025 à 00h00 GMT
+                        Les résultats de la Phase 2 seront disponibles le 30 avril 2025 à 00h00 GMT
                       </AlertDescription>
                     </Alert>
                   </div> : <Link to="/results" className="px-6 py-3 bg-red-500 text-white font-bold rounded-lg transition-all duration-300 hover:bg-red-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                    Résultats Phase 1
+                    Résultats Phase 2
                     <ArrowRight size={18} />
                   </Link>}
                 
@@ -111,4 +114,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
