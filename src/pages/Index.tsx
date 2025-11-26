@@ -16,66 +16,6 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Hero />
       
-      {/* Dates importantes Section */}
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <ScrollReveal animation="fade-in">
-            <h2 className="section-title text-2xl md:text-3xl lg:text-4xl mb-8 md:mb-12 text-center">Dates Importantes</h2>
-          </ScrollReveal>
-          
-          <ScrollReveal animation="fade-in" delay={200}>
-            <div className="max-w-4xl mx-auto space-y-3 md:space-y-4">
-              <div className="bg-gradient-to-r from-mali-green/10 to-mali-green/5 border-l-4 border-mali-green p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Début des tests</p>
-                <p className="text-muted-foreground text-sm md:text-base">14 décembre 2025</p>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-blue/10 to-mali-blue/5 border-l-4 border-mali-blue p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Phase 1 : QCM en ligne</p>
-                <p className="text-muted-foreground text-sm md:text-base">14 décembre 2025 - 11 janvier 2026</p>
-                <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Toutes catégories</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-blue/10 to-mali-blue/5 border-l-4 border-mali-blue p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Phase 2 : QCM avancé</p>
-                <p className="text-muted-foreground text-sm md:text-base">18 janvier - 1 février 2026</p>
-                <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Toutes catégories</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-blue/10 to-mali-blue/5 border-l-4 border-mali-blue p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Phase 3 : Exercices pratiques</p>
-                <p className="text-muted-foreground text-sm md:text-base">8 février - 1 mars 2026</p>
-                <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Toutes catégories</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-yellow/20 to-mali-yellow/10 border-l-4 border-mali-yellow p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Certification (Catégorie Nationale)</p>
-                <p className="text-muted-foreground text-sm md:text-base">À partir du 8 mars 2026</p>
-                <span className="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded">🎓 Catégorie Nationale</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-red/10 to-mali-red/5 border-l-4 border-mali-red p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Phase 4 : Cours en ligne</p>
-                <p className="text-muted-foreground text-sm md:text-base">À partir du 8 mars 2026</p>
-                <span className="inline-block mt-2 text-xs bg-red-100 text-red-700 px-2 py-1 rounded">🏆 Catégorie Internationale uniquement</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-mali-red/10 to-mali-red/5 border-l-4 border-mali-red p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Phase 5 : Stage final</p>
-                <p className="text-muted-foreground text-sm md:text-base">[Dates à définir]</p>
-                <span className="inline-block mt-2 text-xs bg-red-100 text-red-700 px-2 py-1 rounded">🏆 Catégorie Internationale uniquement</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-red-600/20 to-red-600/10 border-l-4 border-red-600 p-3 md:p-4 rounded-r-lg hover:shadow-md transition-shadow">
-                <p className="font-semibold text-mali-dark mb-1 text-sm md:text-base">Voyage à Abu Dhabi</p>
-                <p className="text-muted-foreground text-sm md:text-base">2-8 août 2026</p>
-                <span className="inline-block mt-2 text-xs bg-red-100 text-red-700 px-2 py-1 rounded">🏆 Catégorie Internationale uniquement</span>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-      
       <Features />
       
       {/* Deux parcours disponibles Section */}
