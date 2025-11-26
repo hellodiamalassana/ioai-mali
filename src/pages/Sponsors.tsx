@@ -76,7 +76,7 @@ const Sponsors = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-8">
-              Votre soutien est essentiel pour permettre aux jeunes talents maliens de participer à l'IOAI et de représenter notre pays sur la scène internationale.
+              Votre soutien est essentiel pour permettre aux jeunes talents maliens de participer à l'IOAI et de représenter notre pays sur la scène internationale à Abu Dhabi en 2026, mais aussi pour offrir des formations en IA à tous les Maliens intéressés.
             </p>
           </ScrollReveal>
           

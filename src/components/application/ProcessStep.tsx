@@ -3,7 +3,7 @@ import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 interface ProcessStepProps {
-  number: number;
+  number: number | string;
   title: string;
   description: string;
   delay?: number;
