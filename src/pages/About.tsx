@@ -22,7 +22,7 @@ const About = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-12">
-              Découvrez la compétition internationale la plus prestigieuse en IA pour les lycéens et comment le Mali y participe pour la première fois.
+              Découvrez la compétition internationale la plus prestigieuse en IA, ouverte aux jeunes de moins de 20 ans et à tous les passionnés, et comment le Mali y participe pour la deuxième année consécutive.
             </p>
           </ScrollReveal>
         </div>
