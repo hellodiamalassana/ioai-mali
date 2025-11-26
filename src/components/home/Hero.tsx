@@ -87,7 +87,7 @@ const Hero = () => {
               
               <div className="p-6 relative z-10">
                 <div className="relative mb-6 rounded-lg overflow-hidden shadow-md">
-                  <img src="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" alt="Abu Dhabi, UAE" className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500" loading="eager" width="1200" height="720" />
+                  <img src="/images/abu-dhabi-skyline.jpg" alt="Abu Dhabi, UAE - IOAI 2026" className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500" loading="eager" width="1200" height="720" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 
