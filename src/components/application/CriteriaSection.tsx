@@ -1,21 +1,27 @@
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import CriteriaItem from './CriteriaItem';
+import { Trophy, GraduationCap } from 'lucide-react';
 
 const CriteriaSection = () => {
   return (
-    <section className="py-16 bg-mali-yellow/10">
+    <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-mali-yellow/5 to-white">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
-          <h2 className="section-title text-mali-dark">Critères d'Éligibilité</h2>
+          <h2 className="section-title text-2xl md:text-3xl lg:text-4xl mb-12 md:mb-16 text-mali-dark">Critères d'Éligibilité</h2>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
           {/* Catégorie Internationale */}
-          <ScrollReveal animation="fade-in" delay={100}>
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-mali-blue/20">
-              <h3 className="text-2xl font-semibold mb-6 text-mali-blue">Pour la Catégorie Internationale</h3>
-              <div className="space-y-6">
+          <ScrollReveal animation="slide-right" delay={100}>
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-blue/20 hover:shadow-xl transition-shadow h-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-mali-blue flex items-center gap-3">
+                <div className="w-10 h-10 bg-mali-blue/10 rounded-full flex items-center justify-center">
+                  <Trophy size={20} className="text-mali-blue" />
+                </div>
+                Catégorie Internationale
+              </h3>
+              <div className="space-y-5 md:space-y-6">
                 <CriteriaItem
                   title="✓ Résider au Mali"
                   description="Les candidats doivent résider au Mali pour être éligibles à la sélection nationale."
@@ -50,10 +56,15 @@ const CriteriaSection = () => {
           </ScrollReveal>
           
           {/* Catégorie Nationale */}
-          <ScrollReveal animation="fade-in" delay={200}>
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-mali-green/20">
-              <h3 className="text-2xl font-semibold mb-6 text-mali-green">Pour la Catégorie Nationale</h3>
-              <div className="space-y-6">
+          <ScrollReveal animation="slide-left" delay={200}>
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-green/20 hover:shadow-xl transition-shadow h-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-mali-green flex items-center gap-3">
+                <div className="w-10 h-10 bg-mali-green/10 rounded-full flex items-center justify-center">
+                  <GraduationCap size={20} className="text-mali-green" />
+                </div>
+                Catégorie Nationale
+              </h3>
+              <div className="space-y-5 md:space-y-6">
                 <CriteriaItem
                   title="✓ Aucune restriction d'âge"
                   description="Cette catégorie est ouverte à tous, quel que soit l'âge."
