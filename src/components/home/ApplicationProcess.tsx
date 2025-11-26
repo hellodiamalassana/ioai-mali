@@ -65,27 +65,39 @@ const ApplicationProcess = () => {
             />
             
             <ScrollReveal animation="fade-in" delay={500}>
-              <div className="bg-white p-5 md:p-6 rounded-lg border border-mali-blue/20 shadow-sm">
-                <h3 className="text-base md:text-lg font-semibold mb-4 text-mali-blue">Conditions de test :</h3>
-                <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
-                  <li className="flex gap-3 items-start">
-                    <span className="font-bold text-mali-blue min-w-[24px]">1 -</span>
-                    <span>Ce test est individuel. Pas la peine de tricher : si vous réussissez la sélection, vos connaissances seront validées par un test en présentiel.</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <span className="font-bold text-mali-blue min-w-[24px]">2 -</span>
-                    <span>Aucune limite de temps, le compte à rebours n'est pas actif.</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <span className="font-bold text-mali-blue min-w-[24px]">3 -</span>
-                    <span>Vous pouvez vous déconnecter et continuer ultérieurement.</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <span className="font-bold text-mali-blue min-w-[24px]">4 -</span>
-                    <span>Les recherches supplémentaires sont encouragées.</span>
-                  </li>
-                </ul>
-              </div>
+              <Card className="overflow-hidden border-mali-blue/20 shadow-md">
+                <div className="bg-gradient-to-r from-mali-blue/10 to-mali-blue/5 p-5 md:p-6 border-b border-mali-blue/20">
+                  <h3 className="text-base md:text-lg font-bold text-mali-blue">📋 Conditions de test</h3>
+                </div>
+                <CardContent className="p-5 md:p-6">
+                  <ul className="space-y-4 text-sm md:text-base">
+                    <li className="flex gap-3 items-start group">
+                      <div className="w-7 h-7 bg-mali-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                        1
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed">Ce test est individuel. Pas la peine de tricher : si vous réussissez la sélection, vos connaissances seront validées par un test en présentiel.</span>
+                    </li>
+                    <li className="flex gap-3 items-start group">
+                      <div className="w-7 h-7 bg-mali-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                        2
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed">Aucune limite de temps, le compte à rebours n'est pas actif.</span>
+                    </li>
+                    <li className="flex gap-3 items-start group">
+                      <div className="w-7 h-7 bg-mali-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                        3
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed">Vous pouvez vous déconnecter et continuer ultérieurement.</span>
+                    </li>
+                    <li className="flex gap-3 items-start group">
+                      <div className="w-7 h-7 bg-mali-blue text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                        4
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed">Les recherches supplémentaires sont encouragées.</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </ScrollReveal>
           </div>
           
