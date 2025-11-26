@@ -28,7 +28,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description, d
 
 const ApplicationProcess = () => {
   return (
-    <section className="w-full py-12 md:py-16 bg-red-50">
+    <section className="w-full py-12 md:py-16 bg-gradient-to-b from-red-50 to-white">
       <div className="container mx-auto px-4">
         <ScrollReveal animation="fade-in">
           <h2 className="section-title text-2xl md:text-3xl lg:text-4xl">Processus de Candidature</h2>

@@ -19,16 +19,16 @@ const Index = () => {
       <Features />
       
       {/* Deux parcours disponibles Section */}
-      <section className="w-full py-12 md:py-16 bg-gradient-to-b from-white to-red-50">
+      <section className="w-full py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
             <h2 className="section-title text-2xl md:text-3xl lg:text-4xl mb-8 md:mb-12 text-center">Deux Parcours Disponibles</h2>
           </ScrollReveal>
           
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Catégorie Internationale */}
             <ScrollReveal animation="slide-right" delay={100}>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-red/20 hover:border-mali-red/40 transition-colors">
+              <div className="bg-gradient-to-br from-white to-red-50 rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-red/20 hover:border-mali-red/40 transition-all hover:shadow-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-mali-red text-white rounded-full p-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +82,7 @@ const Index = () => {
             
             {/* Catégorie Nationale */}
             <ScrollReveal animation="slide-left" delay={200}>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-green/20 hover:border-mali-green/40 transition-colors">
+              <div className="bg-gradient-to-br from-white to-green-50 rounded-xl p-6 md:p-8 shadow-lg border-2 border-mali-green/20 hover:border-mali-green/40 transition-all hover:shadow-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-mali-green text-white rounded-full p-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
