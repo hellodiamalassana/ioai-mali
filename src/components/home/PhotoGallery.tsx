@@ -1,0 +1,184 @@
+import React, { useState } from 'react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
+import { Card, CardContent } from '@/components/ui/card';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+// Placeholder images - À remplacer par les vraies photos
+const galleryImages = [
+  {
+    id: 1,
+    src: '/placeholder.svg',
+    alt: 'Participants IOAI 2025 à Beijing',
+    caption: 'Les participants lors de la cérémonie d\'ouverture'
+  },
+  {
+    id: 2,
+    src: '/placeholder.svg',
+    alt: 'Compétition IOAI 2025',
+    caption: 'Session de compétition intensive'
+  },
+  {
+    id: 3,
+    src: '/placeholder.svg',
+    alt: 'Équipe Mali IOAI 2025',
+    caption: 'L\'équipe malienne à Beijing'
+  },
+  {
+    id: 4,
+    src: '/placeholder.svg',
+    alt: 'Cérémonie de remise des prix',
+    caption: 'Cérémonie de clôture et remise des médailles'
+  },
+  {
+    id: 5,
+    src: '/placeholder.svg',
+    alt: 'Échanges culturels IOAI',
+    caption: 'Moments d\'échange avec les autres délégations'
+  },
+  {
+    id: 6,
+    src: '/placeholder.svg',
+    alt: 'Visite culturelle Beijing',
+    caption: 'Découverte des sites emblématiques de Beijing'
+  }
+];
+
+const PhotoGallery = () => {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => {
+    setSelectedImage(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  const goToPrevious = () => {
+    if (selectedImage !== null) {
+      setSelectedImage(selectedImage === 0 ? galleryImages.length - 1 : selectedImage - 1);
+    }
+  };
+
+  const goToNext = () => {
+    if (selectedImage !== null) {
+      setSelectedImage(selectedImage === galleryImages.length - 1 ? 0 : selectedImage + 1);
+    }
+  };
+
+  return (
+    <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4">
+        <ScrollReveal animation="fade-in">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-mali-red/10 px-4 py-2 rounded-full mb-4">
+              <span className="text-mali-red font-semibold text-sm">ÉDITION 2025</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-mali-dark">
+              L'Aventure IOAI 2025 à Beijing
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Revivez les moments forts de l'édition précédente et imaginez votre propre parcours vers Abu Dhabi 2026
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryImages.map((image, index) => (
+            <ScrollReveal 
+              key={image.id} 
+              animation="scale" 
+              delay={index * 100}
+            >
+              <Card 
+                className="group cursor-pointer overflow-hidden border-2 border-transparent hover:border-mali-blue/30 transition-all duration-300 hover:shadow-xl"
+                onClick={() => openLightbox(index)}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white font-medium text-sm">{image.caption}</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal animation="fade-in" delay={600}>
+          <div className="text-center mt-12">
+            <Card className="inline-block bg-gradient-to-r from-mali-yellow/10 to-mali-red/10 border-mali-yellow/30">
+              <CardContent className="p-6">
+                <p className="text-mali-dark font-medium mb-2">
+                  🌟 <span className="font-bold">Votre tour est venu !</span>
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Inscrivez-vous dès maintenant pour vivre cette expérience inoubliable à Abu Dhabi 2026
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </ScrollReveal>
+
+        {/* Lightbox Modal */}
+        <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
+          <DialogContent className="max-w-5xl p-0 bg-black/95 border-0">
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
+                onClick={closeLightbox}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+
+              {selectedImage !== null && (
+                <>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                    onClick={goToPrevious}
+                  >
+                    <ChevronLeft className="h-8 w-8" />
+                  </Button>
+
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                    onClick={goToNext}
+                  >
+                    <ChevronRight className="h-8 w-8" />
+                  </Button>
+
+                  <div className="p-4">
+                    <img
+                      src={galleryImages[selectedImage].src}
+                      alt={galleryImages[selectedImage].alt}
+                      className="w-full h-auto max-h-[80vh] object-contain"
+                    />
+                    <p className="text-white text-center mt-4 text-lg">
+                      {galleryImages[selectedImage].caption}
+                    </p>
+                  </div>
+                </>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    </section>
+  );
+};
+
+export default PhotoGallery;

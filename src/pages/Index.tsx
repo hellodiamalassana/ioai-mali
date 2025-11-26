@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import Features from '@/components/home/Features';
+import PhotoGallery from '@/components/home/PhotoGallery';
 import ApplicationProcess from '@/components/home/ApplicationProcess';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Calendar, ArrowRight, Check } from 'lucide-react';
@@ -17,6 +18,8 @@ const Index = () => {
       <Hero />
       
       <Features />
+      
+      <PhotoGallery />
       
       {/* Deux parcours disponibles Section */}
       <section className="w-full py-12 md:py-16 bg-white">
