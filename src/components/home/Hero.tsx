@@ -35,7 +35,7 @@ const Hero = () => {
             <ScrollReveal animation="slide-right">
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="inline-block py-1 px-3 bg-red-100 text-mali-red rounded-full text-sm font-medium">
-                  IOAI 2025
+                  IOAI 2026
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   <Calendar size={14} />
