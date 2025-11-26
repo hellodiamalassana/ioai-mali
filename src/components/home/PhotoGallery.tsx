@@ -5,43 +5,42 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Placeholder images - À remplacer par les vraies photos
 const galleryImages = [
   {
     id: 1,
-    src: '/placeholder.svg',
-    alt: 'Participants IOAI 2025 à Beijing',
-    caption: 'Les participants lors de la cérémonie d\'ouverture'
+    src: '/images/gallery/ioai-2025-ceremony-team.jpg',
+    alt: 'Équipe malienne sur scène lors de la cérémonie IOAI 2025',
+    caption: 'Fierté malienne 🇲🇱 - Notre équipe représente le Mali sur la scène internationale à Beijing'
   },
   {
     id: 2,
-    src: '/placeholder.svg',
-    alt: 'Compétition IOAI 2025',
-    caption: 'Session de compétition intensive'
+    src: '/images/gallery/ioai-2025-certificate-award.jpg',
+    alt: 'Remise de certificat à un participant malien IOAI 2025',
+    caption: 'Moment de reconnaissance - Remise officielle des certificats de participation'
   },
   {
     id: 3,
-    src: '/placeholder.svg',
-    alt: 'Équipe Mali IOAI 2025',
-    caption: 'L\'équipe malienne à Beijing'
+    src: '/images/gallery/ioai-2025-mali-team-awards.jpg',
+    alt: 'Équipe Mali avec certificats et drapeau IOAI 2025',
+    caption: 'Mission accomplie ! L\'équipe malienne célèbre ses certificats d\'excellence'
   },
   {
     id: 4,
-    src: '/placeholder.svg',
-    alt: 'Cérémonie de remise des prix',
-    caption: 'Cérémonie de clôture et remise des médailles'
+    src: '/images/gallery/ioai-2025-space-museum.jpg',
+    alt: 'Participante malienne au musée spatial de Beijing',
+    caption: 'Découverte culturelle - Visite du musée spatial et des technologies de pointe en Chine'
   },
   {
     id: 5,
-    src: '/placeholder.svg',
-    alt: 'Échanges culturels IOAI',
-    caption: 'Moments d\'échange avec les autres délégations'
+    src: '/images/gallery/ioai-2025-opening-ceremony.jpg',
+    alt: 'Cérémonie d\'ouverture IOAI 2025 avec délégations internationales',
+    caption: 'Cérémonie d\'ouverture - Plus de 40 pays réunis pour célébrer l\'intelligence artificielle'
   },
   {
     id: 6,
-    src: '/placeholder.svg',
-    alt: 'Visite culturelle Beijing',
-    caption: 'Découverte des sites emblématiques de Beijing'
+    src: '/images/gallery/ioai-2025-mali-team-official.jpg',
+    alt: 'Photo officielle équipe Mali devant panneau IOAI',
+    caption: 'Notre équipe au complet devant le panneau officiel de la 2ème édition IOAI'
   }
 ];
 
@@ -74,13 +73,13 @@ const PhotoGallery = () => {
         <ScrollReveal animation="fade-in">
           <div className="text-center mb-12">
             <div className="inline-block bg-mali-red/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-mali-red font-semibold text-sm">ÉDITION 2025</span>
+              <span className="text-mali-red font-semibold text-sm">ÉDITION 2025 - BEIJING</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-mali-dark">
-              L'Aventure IOAI 2025 à Beijing
+              Le Mali Brille à l'International 🇲🇱
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Revivez les moments forts de l'édition précédente et imaginez votre propre parcours vers Abu Dhabi 2026
+              Revivez l'aventure exceptionnelle de nos participants à Beijing 2025 et préparez-vous pour Abu Dhabi 2026 !
             </p>
           </div>
         </ScrollReveal>
