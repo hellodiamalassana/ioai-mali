@@ -117,72 +117,72 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-blue-50">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <ScrollReveal animation="fade-in">
-            <h2 className="section-title">L'Aventure IOAI Mali</h2>
+            <h2 className="section-title text-2xl md:text-3xl lg:text-4xl mb-6">L'Aventure IOAI Mali</h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
-            <p className="section-subtitle">
+            <p className="section-subtitle max-w-3xl mx-auto mb-12 md:mb-16">
               Pour la deuxième année consécutive, le Mali participe à l'IOAI grâce à RobotsMali. Notre mission est claire et ambitieuse.
             </p>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <ScrollReveal animation="slide-up" delay={300} className="h-full">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
-                <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <ScrollReveal animation="slide-up" delay={100}>
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                <div className="w-14 h-14 flex items-center justify-center bg-gradient-to-br from-mali-blue to-mali-blue/80 rounded-xl text-white mb-6 shadow-md">
                   <span className="text-2xl font-bold">1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Vulgariser</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-4 text-mali-dark">Vulgariser</h3>
+                <p className="text-muted-foreground flex-grow">
                   Rendre accessible l'IA au plus grand nombre et susciter l'intérêt des jeunes talents à travers tout le Mali.
                 </p>
               </div>
             </ScrollReveal>
             
-            <ScrollReveal animation="slide-up" delay={300} className="h-full">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
-                <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
+            <ScrollReveal animation="slide-up" delay={200}>
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                <div className="w-14 h-14 flex items-center justify-center bg-gradient-to-br from-mali-green to-mali-green/80 rounded-xl text-white mb-6 shadow-md">
                   <span className="text-2xl font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Sélectionner</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-4 text-mali-dark">Sélectionner</h3>
+                <p className="text-muted-foreground flex-grow">
                   Identifier les talents locaux parmi les lycéens, élèves des écoles professionnelles et du secondaire (moins de 20 ans en août 2026) pour la compétition internationale.
                 </p>
               </div>
             </ScrollReveal>
             
-            <ScrollReveal animation="slide-up" delay={400} className="h-full">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
-                <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
+            <ScrollReveal animation="slide-up" delay={300}>
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                <div className="w-14 h-14 flex items-center justify-center bg-gradient-to-br from-mali-yellow to-mali-yellow/80 rounded-xl text-white mb-6 shadow-md">
                   <span className="text-2xl font-bold">3</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Former</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-4 text-mali-dark">Former</h3>
+                <p className="text-muted-foreground flex-grow">
                   Offrir des formations en IA à tous les participants, quel que soit leur âge, avec certification RobotsMali.
                 </p>
               </div>
             </ScrollReveal>
             
-            <ScrollReveal animation="slide-up" delay={500} className="h-full">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
-                <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
+            <ScrollReveal animation="slide-up" delay={400}>
+              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                <div className="w-14 h-14 flex items-center justify-center bg-gradient-to-br from-mali-red to-mali-red/80 rounded-xl text-white mb-6 shadow-md">
                   <span className="text-2xl font-bold">4</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Représenter</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-4 text-mali-dark">Représenter</h3>
+                <p className="text-muted-foreground flex-grow">
                   Envoyer une équipe nationale compétitive à Abu Dhabi pour représenter fièrement le Mali sur la scène internationale.
                 </p>
               </div>
             </ScrollReveal>
           </div>
           
-          <ScrollReveal animation="fade-in" delay={600} className="mt-16 text-center">
+          <ScrollReveal animation="fade-in" delay={500} className="mt-12 md:mt-16 text-center">
             <Link 
               to="/application" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-mali-blue text-white font-medium rounded-lg shadow-md hover:bg-mali-blue/90 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-mali-blue text-white font-medium rounded-lg shadow-lg hover:bg-mali-blue/90 transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               En savoir plus sur la participation
               <ArrowRight size={18} />
