@@ -55,7 +55,14 @@ const About = () => {
                         <div className="h-5 w-5 rounded-full bg-mali-yellow/20 text-mali-yellow flex items-center justify-center mt-1">
                           <span className="h-2 w-2 rounded-full bg-mali-yellow"></span>
                         </div>
-                        <p><strong>2ᵉ édition (2025) :</strong> À Beijing, Chine, attendue avec plus de 60 pays participants.</p>
+                        <p><strong>2ᵉ édition (2025) :</strong> Beijing, Chine - Première participation du Mali</p>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <div className="h-5 w-5 rounded-full bg-mali-red/20 text-mali-red flex items-center justify-center mt-1">
+                          <span className="h-2 w-2 rounded-full bg-mali-red"></span>
+                        </div>
+                        <p><strong>3ᵉ édition (2026) :</strong> Abu Dhabi, United Arab Emirates - Deuxième participation du Mali</p>
                       </div>
                     </div>
                   </div>
@@ -118,7 +125,7 @@ const About = () => {
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="section-subtitle">
-              Pour la première fois, le Mali participe à l'IOAI grâce à RobotsMali. Notre mission est claire et ambitieuse.
+              Pour la deuxième année consécutive, le Mali participe à l'IOAI grâce à RobotsMali. Notre mission est claire et ambitieuse.
             </p>
           </ScrollReveal>
           
@@ -135,14 +142,26 @@ const About = () => {
               </div>
             </ScrollReveal>
             
-            <ScrollReveal animation="slide-up" delay={400} className="h-full">
+            <ScrollReveal animation="slide-up" delay={300} className="h-full">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
                 <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
                   <span className="text-2xl font-bold">2</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Sélectionner</h3>
                 <p className="text-muted-foreground">
-                  Identifier les talents locaux parmi les lycéens, élèves des écoles professionnelles et du secondaire (moins de 20 ans).
+                  Identifier les talents locaux parmi les lycéens, élèves des écoles professionnelles et du secondaire (moins de 20 ans en août 2026) pour la compétition internationale.
+                </p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="slide-up" delay={400} className="h-full">
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
+                <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
+                  <span className="text-2xl font-bold">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Former</h3>
+                <p className="text-muted-foreground">
+                  Offrir des formations en IA à tous les participants, quel que soit leur âge, avec certification RobotsMali.
                 </p>
               </div>
             </ScrollReveal>
@@ -150,11 +169,11 @@ const About = () => {
             <ScrollReveal animation="slide-up" delay={500} className="h-full">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-blue-100 h-full">
                 <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-lg text-mali-blue mb-6">
-                  <span className="text-2xl font-bold">3</span>
+                  <span className="text-2xl font-bold">4</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Représenter</h3>
                 <p className="text-muted-foreground">
-                  Envoyer une équipe nationale compétitive à Beijing pour représenter fièrement le Mali sur la scène internationale.
+                  Envoyer une équipe nationale compétitive à Abu Dhabi pour représenter fièrement le Mali sur la scène internationale.
                 </p>
               </div>
             </ScrollReveal>

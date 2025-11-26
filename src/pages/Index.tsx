@@ -68,19 +68,19 @@ const Index = () => {
           <ScrollReveal animation="fade-in">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Calendar size={18} />
-              <span className="font-medium">Début des tests: 4 avril 2025</span>
+              <span className="font-medium">Début des tests: 14 décembre 2025</span>
             </div>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <h2 className="text-3xl md:text-4xl font-bold mb-5">
-              Ensemble, faisons rayonner le Mali à l'IOAI 2025
+              Ensemble, faisons rayonner le Mali à l'IOAI 2026
             </h2>
           </ScrollReveal>
           
           <ScrollReveal animation="fade-in" delay={200}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-6">
-              Parents, enseignants, professionnels, étudiants - nous avons tous un rôle à jouer dans ce projet national. Les inscriptions sont ouvertes pour tous !
+              Deux parcours disponibles : représentez le Mali à Abu Dhabi (Catégorie Internationale) ou obtenez une certification RobotsMali en IA (Catégorie Nationale). Les inscriptions sont ouvertes pour tous !
             </p>
           </ScrollReveal>
         </div>

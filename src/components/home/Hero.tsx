@@ -6,11 +6,11 @@ import ScrollReveal from '../ui/ScrollReveal';
 import { Alert, AlertDescription } from '../ui/alert';
 
 const Hero = () => {
-  const phase3Start = new Date('2025-05-01');
-  const resultsPhase2Start = new Date('2025-04-30T00:00:00Z');
+  const phase1Start = new Date('2025-12-14');
+  const resultsPhase0Start = new Date('2025-12-13T00:00:00Z');
   const now = new Date();
-  const isPhase3Active = now >= phase3Start;
-  const isResultsPhase2Accessible = now >= resultsPhase2Start;
+  const isPhase1Active = now >= phase1Start;
+  const isResultsPhase0Accessible = now >= resultsPhase0Start;
 
   return <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
@@ -39,7 +39,7 @@ const Hero = () => {
                 </span>
                 <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   <Calendar size={14} />
-                  <span>Début Phases 3 : 1 mai 2025</span>
+                  <span>Début Phase 1 : 14 décembre 2025</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -52,34 +52,27 @@ const Hero = () => {
             
             <ScrollReveal animation="fade-in" delay={400}>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Ensemble, bâtissons l'avenir de l'IA au Mali ! Que vous soyez étudiant, enseignant, professionnel ou passionné, cette aventure est pour vous. Rejoignez-nous pour représenter fièrement le Mali à l'IOAI 2025 à Beijing.
+                Ensemble, bâtissons l'avenir de l'IA au Mali ! Que vous soyez étudiant, enseignant, professionnel ou passionné, cette aventure est pour vous. Rejoignez-nous pour représenter fièrement le Mali à l'IOAI 2026 à Abu Dhabi.
               </p>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-in" delay={600}>
               <div className="flex flex-wrap gap-4">
-                {!isPhase3Active ? <div className="w-full max-w-md">
+                {!isPhase1Active ? <div className="w-full max-w-md">
                     <Alert className="border-yellow-200 bg-[#fb5d0a]/[0.81] mx-0">
                       <AlertDescription className="bg-[#fffff4]/0">
-                        La Phase 3 sera accessible à partir du 1 mai 2025
+                        La Phase 1 sera accessible à partir du 14 décembre 2025
                       </AlertDescription>
                     </Alert>
                   </div> : <a href="https://olimpicofrancais.eduspace.com.br/web/public/users/educational_tokens/sessions/new" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-mali-green text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-green/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                    Commencer Phase 3
+                    Commencer Phase 1
                     <Play size={18} />
                   </a>}
                 
-                {!isResultsPhase2Accessible ? <div className="w-full max-w-md">
-                    <Alert className="bg-red-50 border-red-200">
-                      <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
-                      <AlertDescription className="text-red-700 font-semibold">
-                        Les résultats de la Phase 2 seront disponibles le 30 avril 2025 à 00h00 GMT
-                      </AlertDescription>
-                    </Alert>
-                  </div> : <Link to="/results" className="px-6 py-3 bg-red-500 text-white font-bold rounded-lg transition-all duration-300 hover:bg-red-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
-                    Résultats Phase 2
-                    <ArrowRight size={18} />
-                  </Link>}
+                <Link to="/application" className="px-6 py-3 bg-mali-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-mali-blue/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
+                  S'inscrire maintenant
+                  <ArrowRight size={18} />
+                </Link>
                 
                 <Link to="/timeline" className="px-6 py-3 bg-white text-mali-red font-medium rounded-lg border border-mali-red/20 transition-all duration-300 hover:bg-mali-red/5 shadow-sm hover:shadow">
                   Voir le calendrier
@@ -94,7 +87,7 @@ const Hero = () => {
               
               <div className="p-6 relative z-10">
                 <div className="relative mb-6 rounded-lg overflow-hidden shadow-md">
-                  <img src="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" alt="Beijing, Chine" className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500" loading="eager" width="1200" height="720" />
+                  <img src="/lovable-uploads/38f18643-f066-4cbe-afd5-63fc53a5716f.png" alt="Abu Dhabi, UAE" className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500" loading="eager" width="1200" height="720" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
                 
